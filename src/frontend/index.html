@@ -1,0 +1,1740 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Return to the Source - Pan-African Film Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Transformative Pan-African film lab bridging history, healing, and future narratives through trauma-informed cinema education.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* =================================================================
+       OPTIMIZED HOME STYLES - Enhanced performance and visual design
+       ================================================================= */
+    
+    /* CSS Custom Properties */
+    :root {
+      /* Typography */
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+      
+      /* Font Weights */
+      --fw-light: 300;
+      --fw-regular: 400;
+      --fw-medium: 500;
+      --fw-semibold: 600;
+      --fw-bold: 700;
+      --fw-black: 900;
+      
+      /* Font Sizes */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 1.875rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+      --text-6xl: 3.75rem;
+      
+      /* Line Heights */
+      --lh-tight: 1.2;
+      --lh-normal: 1.5;
+      --lh-relaxed: 1.75;
+      
+      /* Colors - African-inspired palette */
+      --primary: #8B4513;
+      --primary-dark: #5D2F0A;
+      --primary-light: #CD853F;
+      --accent-gold: #DAA520;
+      --accent-copper: #B87333;
+      --accent-earth: #8B7355;
+      
+      --surface-primary: #FFFFFF;
+      --surface-secondary: #FEFEFE;
+      --surface-elevated: #F8F9FA;
+      --surface-inverse: #1A1A1A;
+      
+      --text-primary: #1A1A1A;
+      --text-secondary: #4A5568;
+      --text-tertiary: #718096;
+      --text-inverse: #FFFFFF;
+      
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --border-strong: rgba(0, 0, 0, 0.16);
+      
+      /* Spacing Scale */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      
+      /* Border Radius */
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+      --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+      
+      /* Transitions */
+      --transition-fast: 0.15s;
+      --transition-base: 0.3s;
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+      
+      /* Layout */
+      --container-max: 1200px;
+      --content-max: 65ch;
+    }
+    
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: var(--lh-normal);
+      color: var(--text-primary);
+      background-color: var(--surface-primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+    
+    .section {
+      padding: var(--space-20) 0;
+    }
+    
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: var(--space-4);
+      background: var(--primary);
+      color: var(--text-inverse);
+      padding: var(--space-2) var(--space-4);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      z-index: 1000;
+      transition: top var(--transition-base);
+    }
+    
+    .skip-link:focus {
+      top: var(--space-4);
+    }
+    
+    /* =================================================================
+       HEADER - Refined navigation with better mobile experience
+       ================================================================= */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 100;
+      transition: all var(--transition-base);
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-display);
+      font-weight: var(--fw-bold);
+      font-size: var(--text-lg);
+    }
+    
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+    }
+    
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+      list-style: none;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: var(--fw-medium);
+      padding: var(--space-2) 0;
+      position: relative;
+      transition: color var(--transition-base);
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--primary);
+    }
+
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      border-radius: 1px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+
+    .mobile-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 2px 0;
+      transition: all var(--transition-base);
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-weight: var(--fw-medium);
+      padding: var(--space-2) 0;
+      cursor: pointer;
+      transition: color var(--transition-base);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .dropbtn:hover,
+    .dropbtn.active {
+      color: var(--primary);
+    }
+
+    .dropbtn::after {
+      content: '▾';
+      font-size: 0.8rem;
+      transition: transform var(--transition-base);
+    }
+
+    .dropdown.open .dropbtn::after {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--surface-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all var(--transition-base);
+      z-index: 1000;
+      padding: var(--space-2) 0;
+    }
+
+    .dropdown.open .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: var(--space-3) var(--space-4);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      border-radius: 0;
+    }
+
+    .dropdown-content a:hover {
+      background: var(--surface-secondary);
+      color: var(--primary);
+    }
+    
+    /* =================================================================
+       HERO SECTION - Immersive and engaging with better typography
+       ================================================================= */
+    .hero-mission {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg,
+        rgba(139, 69, 19, 0.85) 0%,
+        rgba(139, 69, 19, 0.75) 50%,
+        rgba(205, 133, 63, 0.85) 100%),
+        url('img/events/P1091997.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--text-inverse);
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23grain)" opacity="0.03"/></svg>');
+      pointer-events: none;
+    }
+    
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to top, 
+        rgba(26, 26, 26, 0.4) 0%, 
+        transparent 100%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-top: var(--space-20);
+    }
+    
+    .mission-badge {
+      display: inline-block;
+      background: rgba(218, 165, 32, 0.15);
+      border: 1px solid var(--accent-gold);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-2) var(--space-6);
+      margin-bottom: var(--space-8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .badge-text {
+      color: var(--accent-gold);
+      font-weight: var(--fw-semibold);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: var(--fw-black);
+      line-height: var(--lh-tight);
+      margin-bottom: var(--space-4);
+      background: linear-gradient(135deg, 
+        var(--text-inverse) 0%, 
+        var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-rendering: optimizeLegibility;
+    }
+    
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: var(--fw-semibold);
+      margin-bottom: var(--space-6);
+      color: var(--accent-gold);
+      font-style: italic;
+    }
+    
+    .hero-description {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: var(--lh-relaxed);
+      max-width: 70ch;
+      margin: 0 auto var(--space-12);
+      opacity: 0.9;
+    }
+    
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--space-8);
+      max-width: 600px;
+      margin: 0 auto;
+      padding: var(--space-8) 0;
+    }
+    
+    .metric-item {
+      text-align: center;
+    }
+    
+    .metric-number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--fw-black);
+      color: var(--accent-gold);
+      line-height: 1;
+    }
+    
+    .metric-label {
+      font-size: var(--text-sm);
+      font-weight: var(--fw-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: var(--space-2);
+      opacity: 0.8;
+    }
+    
+    /* =================================================================
+       APPROACH SECTION - Enhanced card design with better spacing
+       ================================================================= */
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--space-16);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-6);
+      color: var(--text-primary);
+    }
+    
+    .section-intro {
+      font-size: var(--text-lg);
+      line-height: var(--lh-relaxed);
+      color: var(--text-secondary);
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-8);
+    }
+    
+    .approach-card {
+      background: var(--surface-elevated);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base) var(--ease-out);
+      border: 1px solid var(--border-subtle);
+    }
+    
+    .approach-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-gold);
+    }
+    
+    .approach-icon {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--primary);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all var(--transition-fast) var(--ease-out);
+      display: block;
+      text-align: center;
+      margin-bottom: var(--space-4);
+      line-height: 1;
+      opacity: 0.9;
+    }
+
+    .approach-icon:hover {
+      color: var(--primary-light);
+      transform: scale(1.1);
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 1;
+    }
+
+    /* Icon-specific styling */
+    .approach-icon[data-icon="history"] {
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .approach-icon[data-icon="healing"] {
+      border-radius: 50%;
+      background: var(--surface-secondary);
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-4);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .approach-icon[data-icon="cinema"] {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .approach-icon[data-icon="global"] {
+      position: relative;
+    }
+
+    .approach-icon[data-icon="global"]::before {
+      content: "●";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.6em;
+      color: var(--primary);
+    }
+    
+    .approach-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-4);
+      color: var(--primary);
+    }
+    
+    .approach-card p {
+      line-height: var(--lh-relaxed);
+      color: var(--text-secondary);
+    }
+    
+    /* =================================================================
+       TEAM PREVIEW - Elegant leadership showcase
+       ================================================================= */
+    .bg-light {
+      background-color: var(--surface-secondary);
+    }
+    
+    .grid-responsive {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-6);
+    }
+    
+    .card-standard {
+      background: var(--surface-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-base) var(--ease-out);
+      border: 1px solid var(--border-subtle);
+    }
+    
+    .card-standard:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: var(--fw-bold);
+      color: var(--accent-gold);
+      margin-bottom: var(--space-2);
+    }
+    
+    .card-standard h4 {
+      font-size: var(--text-base);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-3);
+    }
+    
+    .card-text {
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      font-size: var(--text-sm);
+    }
+    
+    /* =================================================================
+       STATS SECTION - Impactful metrics display
+       ================================================================= */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-12);
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: var(--space-6);
+      background: var(--surface-elevated);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+    }
+    
+    .stat-number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--fw-black);
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+    
+    .stat-label {
+      font-size: var(--text-sm);
+      font-weight: var(--fw-medium);
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .highlight-box {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-copper));
+      color: var(--text-inverse);
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+    
+    .highlight-box h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-4);
+    }
+    
+    .highlight-box p {
+      font-size: var(--text-lg);
+      line-height: var(--lh-relaxed);
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+    
+    /* =================================================================
+       BUTTONS AND CTA ELEMENTS
+       ================================================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--text-base);
+      font-weight: var(--fw-semibold);
+      text-decoration: none;
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base) var(--ease-out);
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+      min-height: 48px;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: var(--text-inverse);
+      border-color: var(--primary);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--text-inverse);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-8);
+    }
+    
+    /* =================================================================
+       BLOG PREVIEW - Enhanced card design
+       ================================================================= */
+    .blog-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-8);
+    }
+    
+    .blog-card {
+      background: var(--surface-primary);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: all var(--transition-base) var(--ease-out);
+      border: 1px solid var(--border-subtle);
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--accent-gold);
+    }
+    
+    .blog-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-base) var(--ease-out);
+    }
+    
+    .blog-card:hover .blog-image img {
+      transform: scale(1.05);
+    }
+    
+    .blog-content {
+      padding: var(--space-6);
+    }
+    
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-4);
+      font-size: var(--text-sm);
+    }
+    
+    .blog-category {
+      background: var(--accent-gold);
+      color: var(--text-inverse);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .blog-meta time {
+      color: var(--text-tertiary);
+      font-weight: var(--fw-medium);
+    }
+    
+    .blog-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-4);
+      line-height: var(--lh-tight);
+    }
+    
+    .blog-excerpt {
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-4);
+    }
+    
+    .blog-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: var(--fw-semibold);
+      font-size: var(--text-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: all var(--transition-base);
+    }
+    
+    .blog-link:hover {
+      color: var(--primary-dark);
+      gap: var(--space-3);
+    }
+    
+    /* =================================================================
+       PARTNERS SECTION - Professional logo showcase
+       ================================================================= */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .partner-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base) var(--ease-out);
+      min-height: 120px;
+      border: 1px solid var(--border-subtle);
+    }
+    
+    .partner-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-gold);
+    }
+    
+    .partner-item img {
+      max-width: 100%;
+      max-height: 80px;
+      object-fit: contain;
+      filter: grayscale(0.2);
+      transition: all var(--transition-base) var(--ease-out);
+    }
+    
+    .partner-item:hover img {
+      filter: grayscale(0);
+      transform: scale(1.02);
+    }
+    
+    /* =================================================================
+       CTA SECTION - Compelling call to action
+       ================================================================= */
+    .cta {
+      background: linear-gradient(135deg, 
+        var(--primary) 0%, 
+        var(--primary-dark) 100%);
+      color: var(--text-inverse);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255, 255, 255, 0.05) 50%, 
+        transparent 70%);
+      pointer-events: none;
+    }
+    
+    .cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-4);
+    }
+    
+    .cta p {
+      font-size: var(--text-lg);
+      line-height: var(--lh-relaxed);
+      max-width: 60ch;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* =================================================================
+       FOOTER - Clean and informative
+       ================================================================= */
+    .site-footer {
+      background: var(--surface-inverse);
+      color: var(--text-inverse);
+      padding: var(--space-16) 0 var(--space-8);
+    }
+    
+    .footer-content {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+    
+    .footer-section h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-4);
+      color: var(--accent-gold);
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: var(--space-2);
+    }
+    
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+    
+    .footer-section a:hover {
+      color: var(--accent-gold);
+    }
+    
+    .footer-section p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-2);
+    }
+    
+    .footer-section em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-8);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    /* =================================================================
+       UTILITY CLASSES
+       ================================================================= */
+    .text-center { text-align: center; }
+    .mt-3 { margin-top: var(--space-12); }
+    .mt-4 { margin-top: var(--space-16); }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s var(--ease-out);
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* =================================================================
+        RESPONSIVE DESIGN - Mobile-first approach
+        ================================================================= */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: var(--shadow-lg);
+        padding: var(--space-4);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        width: 100%;
+      }
+
+      .nav-menu a {
+        display: block;
+        padding: var(--space-4);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      /* Mobile dropdown styles */
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+        margin-left: var(--space-4);
+      }
+
+      .dropdown-content a {
+        padding: var(--space-3) var(--space-6);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .dropdown.open .dropdown-content {
+        max-height: 200px;
+        overflow: visible;
+      }
+      
+      .hero-content {
+        padding-top: var(--space-16);
+      }
+      
+      .hero-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+      }
+      
+      .approach-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      
+      .approach-card {
+        padding: var(--space-6);
+      }
+      
+      .grid-responsive {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+      }
+      
+      .blog-preview-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+      }
+      
+      .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .section {
+        padding: var(--space-16) 0;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 var(--space-4);
+      }
+
+      .header-content {
+        padding: var(--space-3) var(--space-4);
+      }
+
+      .hero-content {
+        padding-top: var(--space-12);
+      }
+
+      .hero-section {
+        background-attachment: scroll; /* Better mobile performance */
+        min-height: 80vh; /* Shorter on mobile */
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .metric-item {
+        padding: var(--space-4);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .partners-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+      }
+
+      .partner-item {
+        padding: var(--space-4);
+        min-height: 100px;
+      }
+
+      .partner-item img {
+        max-height: 60px;
+      }
+
+      .section {
+        padding: var(--space-12) 0;
+      }
+
+      .section-header {
+        margin-bottom: var(--space-12);
+      }
+
+      .approach-card {
+        padding: var(--space-5);
+      }
+
+      .card-standard {
+        padding: var(--space-5);
+      }
+
+      .blog-content {
+        padding: var(--space-5);
+      }
+
+      .blog-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+      }
+
+      .highlight-box {
+        padding: var(--space-6);
+      }
+    }
+    
+    /* =================================================================
+       ANIMATION AND INTERACTION ENHANCEMENTS
+       ================================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .fade-in {
+        opacity: 1;
+        transform: none;
+      }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --surface-primary: #1A1A1A;
+        --surface-secondary: #2A2A2A;
+        --surface-elevated: #3A3A3A;
+        --surface-inverse: #FFFFFF;
+        
+        --text-primary: #FFFFFF;
+        --text-secondary: #B3B3B3;
+        --text-tertiary: #8A8A8A;
+        --text-inverse: #1A1A1A;
+        
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-strong: rgba(255, 255, 255, 0.16);
+      }
+      
+      .site-header {
+        background: rgba(26, 26, 26, 0.95);
+      }
+      
+      .bg-light {
+        background-color: var(--surface-secondary);
+      }
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      :root {
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.4);
+        --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+      
+      .approach-card,
+      .card-standard,
+      .stat-card,
+      .blog-card,
+      .partner-item {
+        border: 2px solid var(--text-primary);
+      }
+    }
+    
+    /* Print styles */
+    @media print {
+      .hero-section {
+        min-height: auto;
+        background: var(--text-primary) !important;
+        color: var(--text-inverse) !important;
+        page-break-inside: avoid;
+      }
+      
+      .site-header,
+      .partners-section,
+      .cta {
+        display: none;
+      }
+      
+      .section {
+        padding: var(--space-8) 0;
+        page-break-inside: avoid;
+      }
+      
+      .approach-card:hover,
+      .card-standard:hover,
+      .blog-card:hover,
+      .partner-item:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+      }
+    }
+  </style>
+</head>
+
+<body class="home">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo">
+      <img src="img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
+      <span>Return to the Source</span>
+    </a>
+
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">About ▾</button>
+          <ul class="dropdown-content">
+            <li><a href="about.html">Mission & Strategy</a></li>
+            <li><a href="team.html">Leadership Team</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <button class="dropbtn">Editions ▾</button>
+          <ul class="dropdown-content">
+            <li><a href="edition1.html">Edition 1</a></li>
+            <li><a href="edition2.html">Edition 2</a></li>
+            <li><a href="impact.html">Impact Metrics</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- Hero Section -->
+  <section class="hero-mission">
+    <div class="container hero-content">
+      <div class="mission-badge">
+        <span class="badge-text">Est. 2024</span>
+      </div>
+      <h1 class="hero-title">Return to the Source</h1>
+      <p class="hero-subtitle">Transformative African Cinema Leadership</p>
+      <p class="hero-description">
+        A groundbreaking Pan-African film lab that bridges history, healing, and future narratives.
+        We redefine film education as both artistic expression and therapeutic intervention,
+        creating a transformative approach to confronting colonial legacies and reclaiming African stories.
+      </p>
+
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <span class="metric-number">12</span>
+          <span class="metric-label">Fellows Trained</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-number">4</span>
+          <span class="metric-label">Countries</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-number">100%</span>
+          <span class="metric-label">Alumni Creating</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revolutionary Approach -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Revolutionary Approach</h2>
+        <p class="section-intro">We combine cinematic expertise, industry development, and trauma-informed care to create a holistic approach that serves individual artistic development while contributing to broader community healing and cultural reclamation.</p>
+      </div>
+
+      <div class="approach-grid">
+        <div class="approach-card fade-in">
+          <div class="approach-icon" data-icon="history">⧉</div>
+          <h3>History as Material</h3>
+          <p>We treat oral testimony, sacred geographies, and embodied ritual as primary sources equal to any colonial archive, transforming landscape into living classroom.</p>
+        </div>
+
+        <div class="approach-card fade-in">
+          <div class="approach-icon" data-icon="healing">○</div>
+          <h3>Healing as Protocol</h3>
+          <p>A registered psychological counselor is embedded in every residency, ensuring that confronting genocide, slavery, or forced migration happens inside a container of care.</p>
+        </div>
+
+        <div class="approach-card fade-in">
+          <div class="approach-icon" data-icon="cinema">▶</div>
+          <h3>Process as Product</h3>
+          <p>We green-light experiences, not projects. If transformation happens but no film emerges, the lab is still scored as a success.</p>
+        </div>
+
+        <div class="approach-card fade-in">
+          <div class="approach-icon" data-icon="global">◎</div>
+          <h3>Rotating Geographies</h3>
+          <p>Each edition anchors in a different trauma landscape, building a lattice of Pan-African memory sites rather than a single branded campus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four-Pillar Leadership -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Four-Pillar Leadership</h2>
+        <p class="section-intro">Gender-balanced expertise spanning decolonial theory, strategic production, visionary filmmaking, and trauma-informed healing.</p>
+      </div>
+
+      <div class="grid-responsive">
+        <div class="card-standard fade-in">
+          <div class="card-content">
+            <h3 class="card-title">Theory</h3>
+            <h4>Dr. Nashilongweshipwe Mushaandja</h4>
+            <p class="card-text">Theoretical Architect transforming indigenous knowledge systems into sophisticated decolonial methodologies.</p>
+          </div>
+        </div>
+
+        <div class="card-standard fade-in">
+          <div class="card-content">
+            <h3 class="card-title">Infrastructure</h3>
+            <h4>Fibby Kioria</h4>
+            <p class="card-text">Strategic Producer building Pan-African cultural infrastructure and sustainable funding models.</p>
+          </div>
+        </div>
+
+        <div class="card-standard fade-in">
+          <div class="card-content">
+            <h3 class="card-title">Cinema</h3>
+            <h4>Perivi Katjavivi</h4>
+            <p class="card-text">Visionary Filmmaker directing Namibia's first Academy Award submission and pioneering African narrative sovereignty.</p>
+          </div>
+        </div>
+
+        <div class="card-standard fade-in">
+          <div class="card-content">
+            <h3 class="card-title">Healing</h3>
+            <h4>Marcella Katjijova</h4>
+            <p class="card-text">Healing Architect specializing in intergenerational trauma and transforming film education into therapeutic intervention.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <a href="team.html" class="btn btn-primary">Meet the Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Edition 1 Impact -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Edition 1 Impact</h2>
+        <p class="section-intro">Our inaugural lab in Ovitoto, Namibia, demonstrated the transformative power of combining cinematic excellence with trauma-informed healing and cultural reclamation.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card fade-in">
+          <span class="stat-number">12</span>
+          <div class="stat-label">Pan-African Fellows Trained</div>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-number">8</span>
+          <div class="stat-label">Collaborative Films Completed</div>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-number">3</span>
+          <div class="stat-label">Genocide Sites Reclaimed</div>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-number">€67k</span>
+          <div class="stat-label">Alumni Grants Secured</div>
+        </div>
+      </div>
+
+      <div class="highlight-box fade-in">
+        <h3>Community Dividend</h3>
+        <p>N$ 18,000 in local procurement and 4 paid trainee positions for Ovitoto youth, ensuring our work directly benefits host communities.</p>
+      </div>
+
+      <div class="text-center">
+        <a href="edition1.html" class="btn btn-outline">Read Full Impact Report</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Story -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Latest Story</h2>
+        <p class="section-intro">Exploring the transformative power of trauma-informed filmmaking in African cinema.</p>
+      </div>
+
+      <div class="blog-preview-grid">
+        <article class="blog-card fade-in">
+          <div class="blog-image">
+            <img src="img/blog/healing.webp" alt="Healing through film workshop in Namibia" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Healing & Community</span>
+              <time datetime="2024-11-28">November 28, 2024</time>
+            </div>
+            <h3 class="blog-title">When Filmmakers Heal History: How a Namibian Lab Rewrote the Rules of African Cinema</h3>
+            <p class="blog-excerpt">How Return to the Source's Pan-African Film Lab & Residency is transforming African cinema through trauma-informed filmmaking practices and community-centered approaches to cultural reclamation.</p>
+            <a href="blog/healing-through-film.html" class="blog-link">Read the full story →</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="blog.html" class="btn btn-primary">Explore All Stories</a>
+        <a href="resources/docs/Return to the Source_ Reimagining Cinema as Collective Healing.pdf" class="btn btn-outline" target="_blank">Download Full Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Partners & Supporters</h2>
+        <p class="section-intro">We collaborate with leading institutions and organizations committed to African cultural development and cinematic excellence.</p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="partner-item fade-in">
+          <img src="img/partners/berlinale-talents.webp" alt="Berlinale Talents" loading="lazy">
+        </div>
+        <div class="partner-item fade-in">
+          <img src="img/partners/Namibia-Film-Commission-960x640.webp" alt="Namibia Film Commission" loading="lazy">
+        </div>
+        <div class="partner-item fade-in">
+          <img src="img/partners/Goethe-Institut.webp" alt="Goethe-Institut Namibia" loading="lazy">
+        </div>
+        <div class="partner-item fade-in">
+          <img src="img/partners/mastercard.webp" alt="Mastercard Foundation" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta section">
+    <div class="container">
+      <h2>Ready to Transform African Cinema?</h2>
+      <p>Join us in creating new pathways for authentic African storytelling that honors the past while building the future.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary">Get Involved</a>
+        <a href="about.html" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Return to the Source</h3>
+        <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema.</p>
+        <p><em>"Rooted in Story, Focused Through Craft"</em></p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="about.html">Mission & Values</a></li>
+          <li><a href="team.html">Leadership Team</a></li>
+          <li><a href="edition1.html">Edition 1 Impact</a></li>
+          <li><a href="impact.html">Measuring Success</a></li>
+          <li><a href="portfolio.html">Team Portfolios</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <p><a href="mailto:info@returntothesource.org">info@returntothesource.org</a></p>
+        <p><a href="mailto:creative@returntothesource.org">creative@returntothesource.org</a></p>
+        <p>Windhoek, Namibia</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="resources/docs/RTS1 Film Lab HandBook Final_2.pdf">Edition 1 Handbook</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Partners & Supporters</h3>
+        <p>Mastercard Foundation</p>
+        <p>Goethe-Institut Namibia</p>
+        <p>DW Akademie</p>
+        <p>Berlinale Film Festival</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Enhanced JavaScript for better interactivity
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', function() {
+        const isExpanded = navMenu.classList.contains('active');
+        navMenu.classList.toggle('active');
+        mobileToggle.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+
+    // Dropdown menu functionality
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+      const dropbtn = dropdown.querySelector('.dropbtn');
+
+      dropbtn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Close other dropdowns
+        dropdowns.forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('open');
+          }
+        });
+
+        // Toggle current dropdown
+        dropdown.classList.toggle('open');
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('open');
+        });
+      }
+    });
+
+    // Close dropdowns on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('open');
+        });
+      }
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Enhanced intersection observer for fade-in animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Add staggered delay for multiple elements
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    let lastScrollY = window.scrollY;
+    
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      
+      if (header) {
+        if (currentScrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.98)';
+          header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+          header.style.boxShadow = 'none';
+        }
+      }
+      
+      lastScrollY = currentScrollY;
+    });
+    
+    // Enhanced button interactions
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+      });
+      
+      btn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+    
+    // Keyboard navigation improvements
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+      }
+    });
+    
+    document.addEventListener('mousedown', function() {
+      document.body.classList.remove('keyboard-navigation');
+    });
+  });
+  
+  // Performance optimization: Preload critical images
+  function preloadCriticalImages() {
+    const criticalImages = [
+      'img/events/P1091997.webp' // Used as hero background
+    ];
+
+    criticalImages.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+  }
+
+  // Call preload function
+  preloadCriticalImages();
+</script>
+</body>
+</html>

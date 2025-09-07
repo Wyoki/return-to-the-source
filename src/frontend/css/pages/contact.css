@@ -1,0 +1,452 @@
+/* =================================================================
+   CONTACT – Hero, Form, Map, FAQ
+   Enhanced with improved accessibility, performance, and UX
+   ================================================================= */
+@import "theme.unified.css";
+
+/* ----------------------------------------------
+   HERO – Enhanced contrast and responsive text
+   ---------------------------------------------- */
+.contact-hero {
+  /* Improved gradient for better readability */
+  background:
+    linear-gradient(
+      135deg,
+      hsla(var(--hue-earth) 40% 12% / .75) 0%,
+      hsla(var(--hue-forest) 45% 8% / .85) 100%
+    ),
+    image-set(
+      url("../img/contact@2x.webp") type("image/webp") 2x,
+      url("../img/contact@1x.webp") type("image/webp") 1x,
+      url("../img/contact@2x.jpg") 2x,
+      url("../img/contact@1x.jpg") 1x
+    ) center/cover;
+  color: var(--text-inverse);
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* Ensure text remains readable on all devices */
+  text-shadow: 0 2px 4px hsla(0 0% 0% / .5);
+}
+
+/* Improve text hierarchy within hero */
+.contact-hero h1 {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  margin-block-end: var(--space-4);
+}
+
+.contact-hero p {
+  font-size: var(--text-lg);
+  max-width: 60ch;
+}
+
+/* ----------------------------------------------
+   CONTACT SECTION – Better spacing and layout
+   ---------------------------------------------- */
+.contact-section {
+  padding-block: var(--space-12);
+  container-type: inline-size; /* Enable container queries for future flexibility */
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* Responsive grid for larger screens */
+@media (min-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+}
+
+/* ----------------------------------------------
+   CONTACT INFO – Enhanced visual hierarchy
+   ---------------------------------------------- */
+.contact-info {
+  margin-block-end: var(--space-8);
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start; /* Better alignment for multi-line content */
+  gap: var(--space-4);
+  margin-block-end: var(--space-6);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-fast);
+}
+
+/* Subtle hover effect for contact methods */
+.contact-method:hover {
+  background-color: var(--surface-secondary);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark, var(--primary)));
+  color: var(--text-inverse);
+  border-radius: 50%;
+  flex-shrink: 0;
+  /* Add subtle shadow for depth */
+  box-shadow: 0 2px 8px hsla(var(--hue-primary) 50% 50% / .15);
+}
+
+.contact-text {
+  flex: 1;
+}
+
+.contact-text strong {
+  display: block;
+  color: var(--text-primary);
+  margin-block-end: var(--space-1);
+  font-size: var(--text-lg);
+}
+
+.contact-text span {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+}
+
+/* ----------------------------------------------
+   FORM – Enhanced accessibility and validation
+   ---------------------------------------------- */
+.contact-form {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.form-group {
+  margin-block-end: var(--space-6);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-block-end: var(--space-2);
+  font-weight: var(--fw-medium);
+  color: var(--text-primary);
+  /* Ensure labels are associated with their inputs */
+  cursor: pointer;
+}
+
+/* Required field indicator */
+.form-label.required::after {
+  content: " *";
+  color: var(--error);
+  font-weight: var(--fw-bold);
+}
+
+.form-control {
+  width: 100%;
+  padding: var(--space-4);
+  border: 2px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  background: var(--surface-primary);
+  font-size: var(--text-base);
+  font-family: inherit;
+  transition: 
+    border-color var(--transition-fast), 
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+/* Improved focus states */
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 
+    0 0 0 3px hsla(var(--hue-primary) 50% 50% / .25),
+    0 2px 4px hsla(0 0% 0% / .1);
+  background-color: var(--surface-primary);
+  outline: none; /* Remove default outline since we have custom focus styles */
+}
+
+/* Textarea specific styling */
+.form-control[rows] {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* Error states with better contrast */
+.form-control[aria-invalid="true"] {
+  border-color: var(--error);
+  background-color: hsla(var(--hue-error) 20% 95% / .5);
+}
+
+.form-control[aria-invalid="true"]:focus {
+  box-shadow: 
+    0 0 0 3px hsla(var(--hue-error) 50% 50% / .25),
+    0 2px 4px hsla(0 0% 0% / .1);
+}
+
+/* Success state for completed fields */
+.form-control:valid:not(:placeholder-shown) {
+  border-color: var(--success, #22c55e);
+}
+
+.error-message {
+  display: none;
+  font-size: var(--text-sm);
+  color: var(--error);
+  margin-block-start: var(--space-2);
+  font-weight: var(--fw-medium);
+  /* Add icon for better visual communication */
+  position: relative;
+  padding-inline-start: var(--space-5);
+}
+
+.error-message::before {
+  content: "⚠";
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--error);
+}
+
+.form-control[aria-invalid="true"] + .error-message {
+  display: block;
+  animation: slideIn var(--transition-fast) ease-out;
+}
+
+/* Form submission button enhancements */
+.form-submit {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark, var(--primary)));
+  color: var(--text-inverse);
+  border: none;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-md);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px hsla(var(--hue-primary) 50% 50% / .3);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+}
+
+/* Loading state for form submission */
+.form-submit.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.form-submit.loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* ----------------------------------------------
+   MAP – Responsive and accessible
+   ---------------------------------------------- */
+.map-section {
+  margin-block: var(--space-12);
+  padding-inline: var(--space-4);
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: var(--radius-xl);
+  /* Better loading state */
+  background: 
+    linear-gradient(45deg, var(--neutral-200), var(--neutral-100)) 
+    center/cover;
+  box-shadow: 0 4px 12px hsla(0 0% 0% / .1);
+  overflow: hidden;
+}
+
+/* Map loading skeleton */
+.map-container::before {
+  content: "Loading map...";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ----------------------------------------------
+   FAQ – Enhanced accordion with smooth animations
+   ---------------------------------------------- */
+.faq-section {
+  background-color: var(--surface-secondary);
+  padding-block: var(--space-12);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.faq-item {
+  border-block-end: 1px solid var(--neutral-200);
+  margin-block-end: var(--space-2);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface-primary);
+  box-shadow: 0 1px 3px hsla(0 0% 0% / .05);
+}
+
+.faq-item:last-child {
+  border-block-end: none;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-lg);
+  font-weight: var(--fw-medium);
+  background: none;
+  border: none;
+  text-align: left;
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  color: var(--text-primary);
+}
+
+.faq-question:hover {
+  background-color: var(--surface-secondary);
+}
+
+.faq-question:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+/* Enhanced expand/collapse icon */
+.faq-question::after {
+  content: "+";
+  font-size: var(--text-2xl);
+  font-weight: var(--fw-light);
+  transition: transform var(--transition-normal);
+  color: var(--primary);
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background: hsla(var(--hue-primary) 50% 50% / .1);
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-question::after {
+  content: "−";
+  transform: rotate(180deg);
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+/* Smooth accordion animation */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: 
+    max-height var(--transition-slow) ease-out,
+    padding var(--transition-slow) ease-out;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Adjust based on content */
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+/* ----------------------------------------------
+   ANIMATIONS – Smooth micro-interactions
+   ---------------------------------------------- */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ----------------------------------------------
+   RESPONSIVE DESIGN – Mobile-first approach
+   ---------------------------------------------- */
+@media (max-width: 767px) {
+  .contact-hero {
+    min-height: 40vh;
+    text-align: center;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin-inline: auto;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+  
+  .faq-question {
+    font-size: var(--text-base);
+  }
+}
+
+/* ----------------------------------------------
+   ACCESSIBILITY ENHANCEMENTS
+   ---------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .form-control,
+  .faq-question::after,
+  .faq-answer,
+  .form-submit {
+    transition: none;
+  }
+  
+  .form-submit.loading::after {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-control {
+    border-width: 3px;
+  }
+  
+  .form-control:focus {
+    box-shadow: 0 0 0 3px currentColor;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "return-to-the-source",
+  "version": "1.1.0",
+  "description": "Pan-African film lab – static front-end + light Node serve",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/backend/server.js",
+    "start": "node src/backend/server.js",
+    "audit": "lhci autorun --config=lighthouserc.json",
+    "audit:watch": "chokidar 'team.html' 'css/main.css' -c 'npm run audit'",
+    "validate": "npm run validate:html & npm run validate:css",
+    "validate:html": "html-validate team.html",
+    "validate:css": "stylelint css/main.css"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.14.0",
+    "chokidar-cli": "^3.0.0",
+    "html-validate": "^8.7.4",
+    "nodemon": "^3.1.10",
+    "stylelint": "^16.6.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^5.1.0"
+  }
+}

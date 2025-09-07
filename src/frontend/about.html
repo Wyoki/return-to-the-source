@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About – Return to the Source</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn about Return to the Source's revolutionary approach to African film education, combining trauma-informed care, decolonial methodologies, and community-led partnerships.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/pages/theme.unified.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <style>
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .mission-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .badge-text {
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .highlight-solution {
+      color: var(--primary);
+      position: relative;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      margin-bottom: 3rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-metrics {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .metric-item {
+      text-align: center;
+    }
+
+    .metric-number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+    }
+
+    .framework-introduction {
+      padding: 5rem 0;
+      background: white;
+    }
+
+    .framework-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .framework-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .framework-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .transformation-visual {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .old-model, .new-model {
+      background: var(--surface-secondary);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+
+    .old-model {
+      border-left: 4px solid var(--error);
+    }
+
+    .new-model {
+      border-left: 4px solid var(--success);
+    }
+
+    .old-model h3, .new-model h3 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .problem-list, .solution-list {
+      list-style: none;
+    }
+
+    .problem-list li, .solution-list li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .problem-list li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: var(--error);
+      font-weight: bold;
+    }
+
+    .solution-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: bold;
+    }
+
+    .transformation-arrow {
+      font-size: 2rem;
+      color: #6c757d;
+      text-align: center;
+    }
+
+    .values-pillars {
+      padding: 5rem 0;
+      background: var(--light-gray);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .pillars-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .pillar-card {
+      background: var(--surface-primary);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .pillar-number {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .pillar-content h3 {
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .pillar-description {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .pillar-impact {
+      font-size: 0.9rem;
+    }
+
+    .impact-label {
+      color: var(--primary);
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    .impact-text {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+      .hero-metrics {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .transformation-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .transformation-arrow {
+        transform: rotate(90deg);
+      }
+
+      .pillars-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .pillar-card {
+        padding: 1.5rem;
+      }
+
+      .section-intro {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-metrics {
+        gap: 1.5rem;
+      }
+
+      .metric-number {
+        font-size: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .framework-header h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="about">
+<header class="site-header">
+  <div class="container header-content">
+    <a href="index.html" class="logo">
+      <img class="img-contain" data-src="img/logos/RTS_Logo.png" src="img/logos/RTS_Logo.png" alt="Return to the Source" width="140" height="70">
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown"><button class="dropbtn">About ▾</button>
+          <ul class="dropdown-content">
+            <li><a href="about.html" class="active">Mission & Values</a></li>
+            <li><a href="team.html">Leadership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+
+        <li><a href="edition1.html">Edition 1</a></li>
+        <li><a href="#partners">Partners</a></li>
+      </ul>
+      <div class="nav-backdrop" hidden></div>
+      <button class="mobile-toggle" aria-label="open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <section class="hero-mission">
+    <div class="container hero-content">
+      <div class="mission-badge">
+        <span class="badge-text">Est. 2024</span>
+      </div>
+      <h1 class="hero-title">Reimagining Film Education Through <span class="highlight-solution">African Memory Systems</span></h1>
+      <p class="hero-subtitle">We replace donor-driven templates with community-authored curricula—centring Namibian genocide sites, Ethiopian sonic traditions and Kenyan distribution ingenuity in one continuum of practice.</p>
+
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <span class="metric-number">3</span>
+          <span class="metric-label">Countries</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-number">85%</span>
+          <span class="metric-label">Local Authorship</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-number">120h</span>
+          <span class="metric-label">Support/Participant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="framework-introduction">
+    <div class="container">
+      <div class="framework-header">
+        <h2>A Revolutionary Framework</h2>
+        <p class="framework-subtitle">Moving from extractive to regenerative models in African film education</p>
+      </div>
+
+      <div class="transformation-visual">
+        <div class="old-model">
+          <h3>Traditional Model</h3>
+          <ul class="problem-list">
+            <li>External curricula imposed on local contexts</li>
+            <li>Trauma engagement without psychological support</li>
+            <li>Short-term project outcomes prioritized</li>
+            <li>Single-location campus model</li>
+          </ul>
+        </div>
+
+        <div class="transformation-arrow">→</div>
+
+        <div class="new-model">
+          <h3>Our Approach</h3>
+          <ul class="solution-list">
+            <li>Community-authored learning pathways</li>
+            <li>Trauma-informed care as foundation</li>
+            <li>Long-term transformation valued</li>
+            <li>Pan-African network of memory sites</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-pillars">
+    <div class="container">
+      <div class="section-header">
+        <h2>Five Core Values</h2>
+        <p class="section-subtitle">Non-negotiable principles that guide every lab, partnership and peso spent.</p>
+      </div>
+      
+      <div class="pillars-container">
+        <article class="pillar-card">
+          <span class="pillar-number">01</span>
+          <div class="pillar-content">
+            <h3>Memory Infrastructure</h3>
+            <p class="pillar-description">Oral testimony, sacred geographies and embodied ritual are treated as primary sources—equal to any colonial ledger.</p>
+            <div class="pillar-impact">
+              <span class="impact-label">Impact:</span>
+              <span class="impact-text">Landscape becomes archive; song becomes data</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="pillar-card">
+          <span class="pillar-number">02</span>
+          <div class="pillar-content">
+            <h3>Care is Infrastructure</h3>
+            <p class="pillar-description">A registered psychological counsellor is budgeted as line-item #1. Engaging genocide or slavery without a containment plan is unethical filmmaking.</p>
+            <div class="pillar-impact">
+              <span class="impact-label">Impact:</span>
+              <span class="impact-text">Healing integrated into every process</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="pillar-card">
+          <span class="pillar-number">03</span>
+          <div class="pillar-content">
+            <h3>African Frames First</h3>
+            <p class="pillar-description">European partners adapt to Namibian protocols—never the reverse. Agenda, language and tempo are set by the host community.</p>
+            <div class="pillar-impact">
+              <span class="impact-label">Impact:</span>
+              <span class="impact-text">True narrative sovereignty</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="pillar-card">
+          <span class="pillar-number">04</span>
+          <div class="pillar-content">
+            <h3>Process = Product</h3>
+            <p class="pillar-description">We green-light experiences, not projects. If transformation happens but no film emerges, the lab is still scored as a success.</p>
+            <div class="pillar-impact">
+              <span class="impact-label">Impact:</span>
+              <span class="impact-text">Focus on transformative journey</span>
+            </div>
+          </div>
+        </article>
+        
+        <article class="pillar-card">
+          <span class="pillar-number">05</span>
+          <div class="pillar-content">
+            <h3>Rotating Geographies</h3>
+            <p class="pillar-description">Each edition anchors in a different trauma landscape—building a lattice of Pan-African memory sites rather than a single branded campus.</p>
+            <div class="pillar-impact">
+              <span class="impact-label">Impact:</span>
+              <span class="impact-text">Cross-continental knowledge exchange</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="strategy">
+    <div class="container">
+      <h2>Strategic Implementation</h2>
+      <p class="section-intro">How our values translate into concrete action through four operational levers.</p>
+
+      <div class="strategy-container">
+        <article class="lever">
+          <div class="lever-header">
+            <h3>Memory Infrastructure</h3>
+            <span class="lever-tag">Values 1 & 5</span>
+          </div>
+          <p>We train filmmakers to treat oral testimony, sacred geographies and embodied ritual as primary sources equal to any colonial ledger. Each rotating geography becomes both classroom and archive, with local knowledge systems informing our pedagogical approach.</p>
+        </article>
+
+        <article class="lever">
+          <div class="lever-header">
+            <h3>Trauma-Informed Pedagogy</h3>
+            <span class="lever-tag">Value 2</span>
+          </div>
+          <p>A registered psychological counsellor is embedded in every residency, ensuring that confronting genocide, slavery or forced migration happens inside a container of care. Mental health support isn't an afterthought—it's foundational infrastructure.</p>
+        </article>
+
+        <article class="lever">
+          <div class="lever-header">
+            <h3>Community-Led Partnerships</h3>
+            <span class="lever-tag">Values 3 & 4</span>
+          </div>
+          <p>Rather than pitch-training extractive models, we unlock patient capital (Mastercard Enablement, Goethe-Institut, DW Akademie) that values cultural sovereignty and transformative process as outcomes in themselves.</p>
+        </article>
+
+        <article class="lever">
+          <div class="lever-header">
+            <h3>Pan-African Network</h3>
+            <span class="lever-tag">Value 5</span>
+          </div>
+          <p>Our rotating geographies create cross-pollination between trauma landscapes, building solidarity networks that span continents. Madagascar's healing practices inform Namibian approaches; Cape Verdean musical traditions travel to Ethiopian sound archives.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-metrics">
+    <div class="container">
+      <h2>Measuring What Matters</h2>
+      <p class="section-intro">Success metrics that honor process over product.</p>
+      
+      <div class="metrics-grid">
+        <div class="metric">
+          <h4>Community Ownership</h4>
+          <p>Percentage of curricula authored by local knowledge holders rather than external consultants</p>
+        </div>
+        <div class="metric">
+          <h4>Healing Integration</h4>
+          <p>Hours of psychological support provided per participant across all programming</p>
+        </div>
+        <div class="metric">
+          <h4>Cross-Geography Exchange</h4>
+          <p>Number of collaborative projects spanning multiple editions and trauma landscapes</p>
+        </div>
+        <div class="metric">
+          <h4>Narrative Sovereignty</h4>
+          <p>Stories told by and for African communities, measured against extraction-based metrics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container text-center">
+      <h2>Who Holds This Space?</h2>
+      <p>Meet the four-pillar leadership team—Theory, Infrastructure, Cinema, Healing—who converge on one goal: African narrative sovereignty.</p>
+      <a href="team.html" class="btn btn-primary">Meet the Architects →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>Return to the Source</h3>
+        <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema.</p>
+        <p class="mt-2"><em>"Rooted in Story, Focused Through Craft"</em></p>
+      </div>
+
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">Mission & Values</a></li>
+          <li><a href="team.html">Leadership Team</a></li>
+          <li><a href="edition1.html">Edition 1 Impact</a></li>
+          <li><a href="impact.html">Measuring Success</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p><a href="mailto:info@returntothesource.org">info@returntothesource.org</a></p>
+        <p><a href="mailto:creative@returntothesource.org">creative@returntothesource.org</a></p>
+        <p class="mt-1">Windhoek, Namibia</p>
+      </div>
+
+      <div>
+        <h4>Partners & Supporters</h4>
+        <p>Mastercard Foundation</p>
+        <p>Goethe-Institut Namibia</p>
+        <p>DW Akademie</p>
+        <p>Berlinale Film Festival</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/bundle.js"></script>
+
+<style>
+/* Enhanced styling for the merged content */
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.values-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background: var(--surface-secondary);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--error);
+  transition: transform 0.2s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-2px);
+}
+
+.value-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.strategy-container {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.lever {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.lever:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.lever-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lever-tag {
+  background: var(--primary-50);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metric {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+  color: white;
+}
+
+.metric h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.metric p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.impact-metrics {
+  background: var(--surface-secondary);
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .lever-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .values-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+</body>
+</html>

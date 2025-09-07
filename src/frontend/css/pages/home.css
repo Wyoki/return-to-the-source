@@ -1,0 +1,725 @@
+/* =================================================================
+   HOME – Hero, Editions, Stats, Testimonials, CTA
+   Enhanced with performance optimizations and accessibility improvements
+   ================================================================= */
+@import "theme.unified.css"; /* global tokens */
+
+/* ----------------------------------------------
+   HERO – Enhanced immersive experience with better performance
+   ---------------------------------------------- */
+.hero-mission {
+  position: relative;
+  padding: clamp(6rem, 15vh, 12rem) 0;
+  /* Optimized background with Ovaherero image and reduced opacity */
+  background:
+    linear-gradient(135deg,
+      hsla(var(--hue-earth), 60%, 15%, 0.4) 0%,
+      hsla(var(--hue-forest), 55%, 10%, 0.6) 100%
+    ),
+    url("../img/logos/ovaherero-genocide-foundation.webp") center/cover no-repeat;
+  color: var(--text-inverse);
+  overflow: hidden;
+  /* Performance: Create new stacking context to optimize repaints */
+  will-change: transform;
+  /* Accessibility: Ensure sufficient contrast */
+  min-height: 60vh;
+}
+
+/* Enhanced film grain with better performance */
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* More efficient noise pattern with reduced complexity */
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.025"/></svg>');
+  pointer-events: none; /* Prevent interaction blocking */
+  /* GPU acceleration for smooth rendering */
+  transform: translateZ(0);
+}
+
+.hero-mission .hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw + 1rem, 6rem);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  margin-block-end: var(--space-4);
+  color: var(--text-inverse);
+  /* Improved text rendering */
+  text-rendering: optimizeLegibility;
+  /* Prevent font loading flash */
+  font-display: swap;
+  /* Better mobile readability */
+  text-wrap: balance;
+}
+
+.hero-mission .hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  max-width: 55ch;
+  opacity: 0.9;
+  /* Enhanced line spacing for better readability */
+  line-height: var(--lh-relaxed);
+  /* Smooth text wrapping */
+  text-wrap: pretty;
+}
+
+/* ----------------------------------------------
+   FEATURED EDITIONS – Enhanced grid with better responsive behavior
+   ---------------------------------------------- */
+.featured-editions {
+  background-color: var(--surface-secondary);
+  /* Add subtle texture for visual interest */
+  position: relative;
+}
+
+.edition-grid {
+  --min-width: 280px;
+  --gap: var(--space-8);
+  /* Enhanced grid with better breakpoint handling */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--min-width), 100%), 1fr));
+  gap: var(--gap);
+  /* Better alignment on smaller screens */
+  align-items: start;
+  /* Container query support preparation */
+  container-type: inline-size;
+}
+
+.edition-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-elevated);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  /* Enhanced transitions with reduced motion support */
+  transition: 
+    transform var(--transition-fast) var(--ease-back),
+    box-shadow var(--transition-fast) var(--ease-back);
+  /* Performance optimization */
+  will-change: transform;
+  /* Prevent layout shifts */
+  contain: layout;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .edition-card {
+    transition: box-shadow var(--transition-fast);
+  }
+  .edition-card:hover {
+    transform: none;
+  }
+}
+
+.edition-card:hover,
+.edition-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  /* Enhanced focus state for accessibility */
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+.edition-card-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  background-color: var(--neutral-200); /* CLS guard */
+  /* Performance: Optimize image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  /* Accessibility: Ensure images are meaningful */
+  alt: attr(data-alt);
+}
+
+.edition-card-content {
+  padding: var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Better text flow */
+  gap: var(--space-3);
+}
+
+.edition-card-footer {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ----------------------------------------------
+   STATS – Enhanced with intersection observer ready animations
+   ---------------------------------------------- */
+.stats-section {
+  background-color: var(--primary-dark);
+  color: var(--text-inverse);
+  /* Add subtle pattern */
+  background-image: radial-gradient(circle at 50% 50%, 
+    hsla(var(--hue-primary), 30%, 25%, 0.1) 0%, 
+    transparent 50%);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: var(--space-8);
+  /* Better alignment */
+  align-items: baseline;
+}
+
+.stat-card {
+  text-align: center;
+  /* Enhanced animation states */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 
+    opacity 0.6s var(--ease-out),
+    transform 0.6s var(--ease-out);
+  /* Stagger animation support */
+  transition-delay: calc(var(--animation-index, 0) * 0.1s);
+}
+
+.stat-card.animated {
+  opacity: 1;
+  transform: none;
+}
+
+/* Motion-safe alternative */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card {
+    transform: none;
+    transition: opacity 0.3s var(--ease-out);
+  }
+}
+
+.stat-number {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: var(--fw-black);
+  color: var(--accent-gold);
+  line-height: 1;
+  /* Enhanced number formatting */
+  font-variant-numeric: tabular-nums;
+  /* Better text rendering */
+  text-rendering: optimizeLegibility;
+}
+
+.stat-label {
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-wide);
+  opacity: 0.9;
+  /* Better text hierarchy */
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------
+   TESTIMONIALS – Enhanced editorial design with better readability
+   ---------------------------------------------- */
+.testimonials-section {
+  background-color: var(--surface-secondary);
+  /* Add subtle texture */
+  background-image: linear-gradient(45deg, 
+    transparent 49%, 
+    hsla(var(--hue-primary), 10%, 50%, 0.02) 50%, 
+    transparent 51%);
+}
+
+.testimonial-card {
+  padding: var(--space-8);
+  border-left: 4px solid var(--accent-gold);
+  background: var(--surface-primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  box-shadow: var(--shadow-sm);
+  /* Enhanced positioning */
+  position: relative;
+  /* Better focus states */
+  transition: box-shadow var(--transition-fast);
+}
+
+.testimonial-card:hover,
+.testimonial-card:focus-within {
+  box-shadow: var(--shadow-md);
+}
+
+/* Add quote marks for better visual hierarchy */
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-size: 3rem;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+.testimonial-content {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-style: italic;
+  line-height: var(--lh-relaxed);
+  /* Better text flow */
+  text-wrap: pretty;
+  /* Indent to accommodate quote mark */
+  margin-left: var(--space-2);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  /* Better typography */
+  font-weight: var(--fw-medium);
+}
+
+.testimonial-author-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Add subtle border */
+  border: 2px solid var(--border-subtle);
+  /* Performance optimization */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ----------------------------------------------
+   CTA – Enhanced with better accessibility and visual impact
+   ---------------------------------------------- */
+.cta-section {
+  background: linear-gradient(135deg, 
+    var(--accent-gold), 
+    var(--accent-light));
+  color: var(--text-dark);
+  text-align: center;
+  /* Enhanced visual interest */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle animation background */
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    hsla(0, 0%, 100%, 0.1) 50%, 
+    transparent 70%);
+  transform: translateX(-100%);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cta-section::before {
+    animation: none;
+  }
+}
+
+.cta-title {
+  color: inherit;
+  margin-block-end: var(--space-6);
+  /* Better text rendering */
+  text-rendering: optimizeLegibility;
+  text-wrap: balance;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  /* Better alignment on small screens */
+  align-items: center;
+}
+
+/* ----------------------------------------------
+   RESPONSIVE ENHANCEMENTS
+   ---------------------------------------------- */
+
+/* Enhanced mobile experience */
+@media (max-width: 768px) {
+  .edition-grid {
+    --min-width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .testimonial-card {
+    padding: var(--space-6);
+  }
+
+  .hero-mission {
+    padding: clamp(4rem, 10vh, 8rem) 0;
+  }
+
+  .hero-mission .hero-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  .hero-mission .hero-subtitle {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero-mission {
+    padding: clamp(3rem, 8vh, 6rem) 0;
+  }
+
+  .hero-mission .hero-title {
+    font-size: clamp(1.8rem, 9vw, 3rem);
+    letter-spacing: -0.01em;
+  }
+
+  .hero-mission .hero-subtitle {
+    font-size: clamp(0.85rem, 4vw, 1.1rem);
+  }
+
+  .stat-number {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .stat-label {
+    font-size: var(--text-base);
+  }
+
+  .edition-card-content {
+    padding: var(--space-4);
+  }
+
+  .testimonial-content {
+    font-size: var(--text-lg);
+  }
+
+  .testimonial-author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .testimonial-author-image {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* High-resolution display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .edition-card-image,
+  .testimonial-author-image {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ----------------------------------------------
+   BLOG PREVIEW – Enhanced card design for homepage
+   ---------------------------------------------- */
+.blog-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.blog-card {
+  background: var(--surface-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-fast) var(--ease-out), box-shadow var(--transition-fast) var(--ease-out);
+  /* Performance optimization */
+  will-change: transform;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.blog-card:hover .blog-image img {
+  transform: scale(1.05);
+}
+
+.blog-content {
+  padding: var(--space-5);
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.blog-category {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.blog-meta time {
+  color: var(--text-secondary);
+  font-weight: var(--fw-medium);
+}
+
+.blog-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  line-height: var(--lh-tight);
+  /* Better text wrapping */
+  text-wrap: balance;
+}
+
+.blog-excerpt {
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-4);
+  /* Better text flow */
+  text-wrap: pretty;
+}
+
+.blog-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  font-size: var(--text-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: color var(--transition-fast);
+}
+
+.blog-link:hover {
+  color: var(--accent-hover);
+}
+
+.blog-link::after {
+  content: '→';
+  transition: transform var(--transition-fast);
+}
+
+.blog-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments for blog preview */
+@media (max-width: 768px) {
+  .blog-preview-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .blog-card {
+    margin-bottom: var(--space-2);
+  }
+
+  .blog-content {
+    padding: var(--space-4);
+  }
+
+  .blog-title {
+    font-size: var(--text-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .blog-category {
+    align-self: flex-start;
+  }
+}
+
+/* ----------------------------------------------
+    PARTNERS GRID – Prominent full-color logos
+    ---------------------------------------------- */
+.partners-section {
+  background: var(--surface-secondary);
+  padding: var(--space-8) 0;
+  position: relative;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-8);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast) var(--ease-out);
+  min-height: 120px;
+  /* Better focus states */
+  position: relative;
+}
+
+.partner-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.partner-item img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  /* Full color, no filters */
+  filter: none;
+  opacity: 1;
+  transition: transform var(--transition-fast) var(--ease-out);
+  /* Better loading */
+  loading: lazy;
+  decoding: async;
+  /* Better image rendering */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.partner-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Enhanced responsive design for partners grid */
+@media (max-width: 768px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    padding: 0 var(--space-6);
+  }
+
+  .partner-item {
+    padding: var(--space-4);
+    min-height: 100px;
+  }
+
+  .partner-item img {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-section {
+    padding: var(--space-6) 0;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding: 0 var(--space-4);
+  }
+
+  .partner-item {
+    padding: var(--space-3);
+    min-height: 80px;
+  }
+
+  .partner-item img {
+    max-height: 50px;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .partner-item {
+    transition: box-shadow var(--transition-fast);
+  }
+
+  .partner-item:hover {
+    transform: none;
+  }
+
+  .partner-item img {
+    transition: none;
+  }
+
+  .partner-item:hover img {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .partner-item {
+    border: 2px solid var(--text-primary);
+  }
+}
+
+/* Print styles */
+@media print {
+  .hero-mission {
+    background: var(--neutral-800);
+    color: var(--neutral-100);
+    page-break-inside: avoid;
+  }
+
+  .edition-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .blog-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-md);
+  }
+
+  .partners-section {
+    display: none;
+  }
+}

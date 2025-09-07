@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog – Return to the Source</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stories, insights, and updates from Return to the Source Film Lab. Exploring African cinema, memory, and cultural reclamation.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/pages/theme.unified.css">
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, var(--primary-50) 0%, var(--surface-primary) 100%);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .blog-post {
+      background: var(--surface-primary);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+
+    .post-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 1.5rem;
+    }
+
+    .post-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .post-excerpt {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .read-more {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    .blog-categories {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .category-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-light);
+      background: var(--surface-primary);
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .featured-post {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      background: var(--surface-primary);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .featured-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .featured-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .featured-excerpt {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        height: 200px;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <img src="img/logos/RTS_Logo.png" alt="Return to the Source" width="140" height="70">
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <h1>Stories & Insights</h1>
+        <p class="subtitle">Exploring African cinema, memory preservation, and cultural reclamation</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <nav class="blog-categories">
+        <a href="#all" class="category-btn active">All Posts</a>
+        <a href="#filmmaking" class="category-btn">Filmmaking</a>
+        <a href="#memory" class="category-btn">Memory & History</a>
+        <a href="#community" class="category-btn">Community</a>
+        <a href="#impact" class="category-btn">Impact Stories</a>
+      </nav>
+
+      <!-- Featured Post -->
+      <article class="featured-post">
+        <img src="img/blog/healing.webp" alt="Healing through film workshop in Namibia" class="featured-image">
+        <div class="featured-content">
+          <h2 class="featured-title">When Filmmakers Heal History: How a Namibian Lab Rewrote the Rules of African Cinema</h2>
+          <p class="featured-excerpt">How Return to the Source's Pan-African Film Lab & Residency is transforming African cinema through trauma-informed filmmaking practices and community-centered approaches to cultural reclamation.</p>
+          <a href="blog/healing-through-film.html" class="read-more">Read the full story →</a>
+        </div>
+      </article>
+
+      <!-- Newsletter Signup -->
+      <section class="cta" style="margin-top: 4rem;">
+        <div class="container text-center">
+          <h2>Stay Updated</h2>
+          <p>Subscribe to receive our latest stories, insights, and updates from the world of African cinema.</p>
+          <a href="contact.html" class="btn btn-primary">Subscribe to Updates</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Return to the Source</h3>
+        <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation & community healing through cinema.</p>
+        <p class="mt-2"><em>"Rooted in Story, Focused Through Craft"</em></p>
+      </div>
+
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">Mission & Values</a></li>
+          <li><a href="team.html">Leadership Team</a></li>
+          <li><a href="impact.html">Measuring Success</a></li>
+          <li><a href="blog.html">Stories & Insights</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="resources/handbook.html">Edition 1 Handbook</a></li>
+          <li><a href="portfolio.html">Team Portfolios</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p><a href="mailto:info@returntothesource.org">info@returntothesource.org</a></p>
+        <p><a href="mailto:creative@returntothesource.org">creative@returntothesource.org</a></p>
+        <p class="mt-1">Windhoek, Namibia</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/bundle.js"></script>
+</body>
+</html>
