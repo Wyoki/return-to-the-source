@@ -7,33 +7,838 @@
   <meta name="description" content="Connect with Return to the Source. Reach the architects of memory infrastructure, funding strategy, cinematic language, or trauma-informed care.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/pages/theme.unified.css">
-  <link rel="stylesheet" href="css/pages/contact.css">
+  <style>
+    /* =================================================================
+       HEADER STYLES - Transparent with scroll-based blur effects
+       ================================================================= */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0);
+      z-index: 100;
+      transition: all var(--transition-base);
+      will-change: background, backdrop-filter, border-bottom;
+    }
+
+    .site-header.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.95);
+      font-family: var(--font-display);
+      font-weight: var(--fw-bold);
+      font-size: var(--text-lg);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      transition: color var(--transition-base);
+    }
+
+    .site-header.scrolled .logo {
+      color: var(--text-primary);
+      text-shadow: none;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+      list-style: none;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: var(--fw-medium);
+      padding: var(--space-2) 0;
+      position: relative;
+      transition: color var(--transition-base);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .site-header.scrolled .nav-menu a {
+      color: var(--text-secondary);
+      text-shadow: none;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--accent-gold);
+    }
+
+    .site-header.scrolled .nav-menu a:hover,
+    .site-header.scrolled .nav-menu a.active {
+      color: var(--primary);
+    }
+
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      border-radius: 1px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+
+    .mobile-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 2px 0;
+      transition: all var(--transition-base);
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-weight: var(--fw-medium);
+      padding: var(--space-2) 0;
+      cursor: pointer;
+      transition: color var(--transition-base);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .dropbtn:hover,
+    .dropbtn.active {
+      color: var(--primary);
+    }
+
+    .dropbtn::after {
+      content: '▾';
+      font-size: 0.8rem;
+      transition: transform var(--transition-base);
+    }
+
+    .dropdown.open .dropbtn::after {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--surface-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all var(--transition-base);
+      z-index: 1000;
+      padding: var(--space-2) 0;
+    }
+
+    .dropdown.open .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: var(--space-3) var(--space-4);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      border-radius: 0;
+    }
+
+    .dropdown-content a:hover {
+      background: var(--surface-secondary);
+      color: var(--primary);
+    }
+
+    /* =================================================================
+       FOOTER STYLES - Same as main site
+       ================================================================= */
+    .footer {
+      background: var(--surface-inverse);
+      color: var(--text-inverse);
+      padding: var(--space-16) 0 var(--space-8);
+    }
+
+    .footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+
+    .footer-section h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-4);
+      color: var(--accent-gold);
+    }
+
+    .footer-section h4 {
+      font-size: var(--text-base);
+      font-weight: var(--fw-semibold);
+      margin-bottom: var(--space-3);
+      color: var(--text-inverse);
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: var(--space-2);
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+
+    .footer-section a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-section p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-2);
+    }
+
+    .footer-section em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-8);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* =================================================================
+       CONTACT PAGE STYLES - Beautiful and modern design
+       ================================================================= */
+    /* =================================================================
+       CONTACT PAGE STYLES - Beautiful and modern design
+       ================================================================= */
+
+    /* Hero Section */
+    .hero-mission {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg,
+        rgba(139, 69, 19, 0.9) 0%,
+        rgba(139, 69, 19, 0.8) 50%,
+        rgba(205, 133, 63, 0.9) 100%),
+        url('img/events/P1091768.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--text-inverse);
+      overflow: hidden;
+      padding-top: 80px; /* Account for fixed header */
+      margin-top: -80px; /* Compensate for the padding */
+    }
+
+    .hero-mission::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23grain)" opacity="0.03"/></svg>');
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .mission-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .badge-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg,
+        var(--text-inverse) 0%,
+        var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+      background: var(--surface-primary);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .card-header {
+      margin-bottom: 2rem;
+    }
+
+    .card-header h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 1rem;
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+      background: var(--surface-primary);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      align-self: flex-start;
+    }
+
+    /* Contact Methods */
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .method-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--surface-secondary);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .method-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+
+    .method-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius-lg);
+      font-size: 1.5rem;
+    }
+
+    .method-content h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .method-content a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .method-content a:hover {
+      text-decoration: underline;
+    }
+
+    .method-content p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .method-content address {
+      font-style: normal;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Newsletter Card */
+    .newsletter-card {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-radius: var(--radius-xl);
+      text-align: center;
+    }
+
+    .newsletter-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-card p {
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+    }
+
+    .newsletter-form .btn {
+      padding: 0.75rem 1.5rem;
+      white-space: nowrap;
+    }
+
+    /* Team Contact Grid */
+    .team-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-member-card {
+      background: var(--surface-primary);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .team-member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+    }
+
+    .member-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--primary-light);
+    }
+
+    .member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .member-info h4 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .member-role {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .member-contact {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--primary);
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+    }
+
+    .member-contact:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .contact-form-card,
+      .contact-info-card {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-mission {
+        min-height: 60vh;
+        background-attachment: scroll;
+        padding-top: 70px; /* Adjusted for mobile header height */
+        margin-top: -70px;
+      }
+
+      .hero-content {
+        padding: 1rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+      }
+
+      .contact-form-card,
+      .contact-info-card {
+        padding: 1.5rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .method-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .method-icon {
+        align-self: center;
+      }
+
+      .team-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input,
+      .newsletter-form .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-mission {
+        min-height: 50vh;
+        padding: 2rem 0;
+        padding-top: 65px; /* Adjusted for mobile header height */
+        margin-top: -65px;
+      }
+
+      .contact-form-card,
+      .contact-info-card {
+        padding: 1rem;
+      }
+
+      .card-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .team-member-card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* =================================================================
+       MOBILE RESPONSIVE STYLES FOR HEADER/FOOTER
+       ================================================================= */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: var(--shadow-lg);
+        padding: var(--space-4);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        width: 100%;
+      }
+
+      .nav-menu a {
+        display: block;
+        padding: var(--space-4);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      /* Mobile dropdown styles */
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+        margin-left: var(--space-4);
+      }
+
+      .dropdown-content a {
+        padding: var(--space-3) var(--space-6);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .dropdown.open .dropdown-content {
+        max-height: 200px;
+        overflow: visible;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-content {
+        padding: var(--space-3) var(--space-4);
+      }
+
+      .logo {
+        font-size: var(--text-base);
+      }
+
+      .logo img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body class="contact">
 <header class="site-header">
-  <div class="container header-content">
+  <div class="header-content">
     <a href="index.html" class="logo">
-      <img class="img-contain" data-src="img/logos/RTS_Logo.png" src="img/logos/RTS_Logo.png" alt="Return to the Source" width="140" height="70">
+      <img src="img/logos/return-to-the-source.webp" alt="Return to the Source" width="40" height="40">
+      <span>Return to the Source</span>
     </a>
 
-    <nav aria-label="Primary">
+    <nav aria-label="Primary Navigation">
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
-
-        <li class="dropdown"><button class="dropbtn">About ▾</button>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">Editions ▾</button>
           <ul class="dropdown-content">
-            <li><a href="about.html">Mission & Strategy</a></li>
-            <li><a href="team.html">Leadership</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="editions/edition1.html">Edition 1</a></li>
+            <li><a href="editions/edition2.html">Edition 2</a></li>
+            <li><a href="editions/impact.html">Impact</a></li>
           </ul>
         </li>
-
-        <li><a href="edition1.html">Edition 1</a></li>
-        <li><a href="#partners">Partners</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-
-      <button class="mobile-toggle" aria-label="open menu" aria-expanded="false">
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -41,29 +846,43 @@
 </header>
 
 <main>
-  <section class="hero sub-hero">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p class="subtitle">Reach the architects of memory infrastructure, funding strategy, cinematic language or trauma-informed care.</p>
+  <!-- Hero Section -->
+  <section class="hero-mission">
+    <div class="container hero-content">
+      <div class="mission-badge">
+        <span class="badge-text">Get In Touch</span>
+      </div>
+      <h1 class="hero-title">Connect With Us</h1>
+      <p class="hero-subtitle">Reach the architects of memory infrastructure, funding strategy, cinematic language, and trauma-informed care.</p>
+      <p class="hero-description">
+        Whether you're a filmmaker seeking collaboration, a funder interested in transformative impact,
+        or a community member wanting to contribute to African narrative sovereignty—we want to hear from you.
+      </p>
     </div>
   </section>
 
-  <section class="section bg-light">
+  <!-- Contact Section -->
+  <section class="section">
     <div class="container">
       <div class="contact-grid">
-        <div class="contact-form-wrapper card">
-          <h2 class="text-primary">Send a Message</h2>
-          <p class="text-muted mb-2">Ready to transform African cinema? Let's start the conversation.</p>
-          
-          <form id="contact-form" action="https://formspree.io/f/your-id" method="POST">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <div class="card-header">
+            <h2>Send a Message</h2>
+            <p>Ready to transform African cinema? Let's start the conversation.</p>
+          </div>
 
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required>
+          <form id="contact-form" action="https://formspree.io/f/your-id" method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+              </div>
             </div>
 
             <div class="form-group">
@@ -84,59 +903,147 @@
               <textarea id="message" name="message" rows="6" placeholder="Tell us about your vision, project, or how you'd like to contribute to African narrative sovereignty..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="submit" class="btn btn-primary btn-large">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </form>
         </div>
 
-        <div class="contact-details">
-          <h2 class="text-primary mb-2">Connect Directly</h2>
-          <p class="text-muted mb-3">Reach the architects of memory infrastructure, funding strategy, cinematic language, or trauma-informed care.</p>
+        <!-- Contact Information -->
+        <div class="contact-info-card">
+          <div class="card-header">
+            <h2>Connect Directly</h2>
+            <p>Multiple ways to reach the right person for your needs.</p>
+          </div>
 
           <div class="contact-methods">
             <div class="method-card">
-              <div class="method-icon">✉</div>
+              <div class="method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div class="method-content">
                 <h4>General Inquiries</h4>
                 <a href="mailto:info@returntothesource.org">info@returntothesource.org</a>
-                <p class="text-muted">For partnerships, applications, and general questions</p>
+                <p>For partnerships, applications, and general questions</p>
               </div>
             </div>
 
             <div class="method-card">
-              <div class="method-icon">🎬</div>
+              <div class="method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23 7L16 12L23 17V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="2" y="5" width="15" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
               <div class="method-content">
                 <h4>Creative Partnerships</h4>
                 <a href="mailto:creative@returntothesource.org">creative@returntothesource.org</a>
-                <p class="text-muted">For filmmakers, artists, and cultural collaborations</p>
+                <p>For filmmakers, artists, and cultural collaborations</p>
               </div>
             </div>
 
             <div class="method-card">
-              <div class="method-icon">📍</div>
+              <div class="method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
               <div class="method-content">
-                <h4>Postal Address</h4>
+                <h4>Location</h4>
                 <address>
                   Return to the Source Film Lab<br>
-                  PO Box 23421<br>
                   Windhoek, Namibia
                 </address>
+                <p>Operating across Southern Africa</p>
               </div>
             </div>
 
             <div class="method-card">
-              <div class="method-icon">🕒</div>
+              <div class="method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div class="method-content">
                 <h4>Response Time</h4>
                 <p><strong>3–5 working days</strong></p>
-                <p class="text-muted">We read every message and respond thoughtfully</p>
+                <p>We read every message and respond thoughtfully</p>
               </div>
             </div>
           </div>
 
-          <div class="cta-box mt-3">
-            <h3 class="text-primary">Join Our Network</h3>
-            <p>Stay updated on future editions, partnerships, and the evolving landscape of African cinema.</p>
-            <a href="#newsletter" class="btn btn-outline">Subscribe to Updates</a>
+          <!-- Newsletter Signup -->
+          <div class="newsletter-card">
+            <h3>Stay Connected</h3>
+            <p>Join our network to receive updates on future editions, partnerships, and the evolving landscape of African cinema.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Your email address" aria-label="Email for newsletter">
+              <button type="button" class="btn btn-outline">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Contact Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet the Team</h2>
+        <p class="section-intro">Connect directly with the architects of our four-pillar approach.</p>
+      </div>
+
+      <div class="team-contact-grid">
+        <div class="team-member-card">
+          <div class="member-avatar">
+            <img src="img/team/mushaandja.webp" alt="Dr. Nashilongweshipwe Mushaandja" loading="lazy">
+          </div>
+          <div class="member-info">
+            <h4>Dr. Nashilongweshipwe Mushaandja</h4>
+            <p class="member-role">Theory & Research</p>
+            <a href="mailto:theory@returntothesource.org" class="member-contact">Contact for Research</a>
+          </div>
+        </div>
+
+        <div class="team-member-card">
+          <div class="member-avatar">
+            <img src="img/team/fibby.webp" alt="Fibby Kioria" loading="lazy">
+          </div>
+          <div class="member-info">
+            <h4>Fibby Kioria</h4>
+            <p class="member-role">Infrastructure & Strategy</p>
+            <a href="mailto:infrastructure@returntothesource.org" class="member-contact">Contact for Partnerships</a>
+          </div>
+        </div>
+
+        <div class="team-member-card">
+          <div class="member-avatar">
+            <img src="img/team/perivi.webp" alt="Perivi Katjavivi" loading="lazy">
+          </div>
+          <div class="member-info">
+            <h4>Perivi Katjavivi</h4>
+            <p class="member-role">Cinema & Production</p>
+            <a href="mailto:cinema@returntothesource.org" class="member-contact">Contact for Creative</a>
+          </div>
+        </div>
+
+        <div class="team-member-card">
+          <div class="member-avatar">
+            <img src="img/team/marcella.webp" alt="Marcella Katjijova" loading="lazy">
+          </div>
+          <div class="member-info">
+            <h4>Marcella Katjijova</h4>
+            <p class="member-role">Healing & Community</p>
+            <a href="mailto:healing@returntothesource.org" class="member-contact">Contact for Support</a>
           </div>
         </div>
       </div>
@@ -158,8 +1065,8 @@
         <ul>
           <li><a href="about.html">Mission & Values</a></li>
           <li><a href="team.html">Leadership Team</a></li>
-          <li><a href="edition1.html">Edition 1 Impact</a></li>
-          <li><a href="impact.html">Measuring Success</a></li>
+          <li><a href="editions/edition1.html">Edition 1 Impact</a></li>
+          <li><a href="editions/impact.html">Measuring Success</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
@@ -186,5 +1093,61 @@
   </div>
 </footer>
 <script src="js/bundle.js"></script>
+
+<script>
+  // Enhanced dropdown functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Dropdown menu functionality
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+      const dropbtn = dropdown.querySelector('.dropbtn');
+
+      dropbtn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Close other dropdowns
+        dropdowns.forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('open');
+          }
+        });
+
+        // Toggle current dropdown
+        dropdown.classList.toggle('open');
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('open');
+        });
+      }
+    });
+
+    // Close dropdowns on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('open');
+        });
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', function() {
+        const isExpanded = navMenu.classList.contains('active');
+        navMenu.classList.toggle('active');
+        mobileToggle.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+  });
+</script>
 </body>
 </html>

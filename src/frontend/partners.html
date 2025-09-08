@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Partners – Return to the Source</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Our valued partners who make the Return to the Source Film Lab possible through collaboration, funding, and shared vision for African cinema.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/pages/theme.unified.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+
+  <style>
+    /* Partners page specific styles */
+    .partners-hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 50%, #34495e 100%);
+      color: white;
+      padding: 6rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .partners-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('img/events/film_screening_closeup.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .partners-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .partner-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 1px solid #e9ecef;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .partner-logo {
+      height: 80px;
+      width: auto;
+      margin-bottom: 1.5rem;
+      object-fit: contain;
+    }
+
+    .partner-role {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .partner-description {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .partner-contribution {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #667eea;
+    }
+
+    .partner-contribution h4 {
+      color: #495057;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .collaboration-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 4rem 0;
+      margin: 4rem 0;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #667eea;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      background: white;
+      margin: 2rem 0;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      position: relative;
+      width: calc(50% - 2rem);
+    }
+
+    .timeline-item:nth-child(odd) {
+      margin-left: 0;
+      margin-right: calc(50% + 2rem);
+    }
+
+    .timeline-item:nth-child(even) {
+      margin-left: calc(50% + 2rem);
+      margin-right: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: #667eea;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin: 2rem 0;
+      border-left: 4px solid #28a745;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      color: #495057;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #667eea;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+      }
+
+      .timeline-item::before {
+        left: -30px !important;
+        right: auto !important;
+      }
+
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <img src="img/logos/return-to-the-source.webp" alt="Return to the Source" width="100" height="100">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="editions/edition1.html">Editions</a></li>
+          <li><a href="partners.html" class="active">Partners</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="partners-hero">
+    <div class="container">
+      <h1>Our Partners</h1>
+      <p class="hero-subtitle">The collaborative ecosystem that brings Return to the Source to life</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Partnership Overview -->
+    <section class="section">
+      <div class="text-center">
+        <h2>Strategic Collaborations</h2>
+        <p class="section-intro">
+          Return to the Source represents a unique convergence of cultural institutions, funding partners,
+          and creative organizations working together to advance African cinema and historical memory.
+        </p>
+      </div>
+
+      <div class="partners-grid">
+        <!-- Mastercard Foundation -->
+        <article class="partner-card">
+          <img src="img/partners/mastercard.webp" alt="Mastercard Foundation" class="partner-logo">
+          <span class="partner-role">Funding Partner</span>
+          <div class="partner-description">
+            The Mastercard Enablement Programme provides crucial funding and strategic support,
+            enabling the realization of our vision for transformative cultural programming.
+          </div>
+          <div class="partner-contribution">
+            <h4>Key Contributions</h4>
+            <ul>
+              <li>Core funding for the 5-day film lab program</li>
+              <li>Strategic partnership development</li>
+              <li>Capacity building initiatives</li>
+              <li>Regional network expansion</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Goethe-Institut Namibia -->
+        <article class="partner-card">
+          <img src="img/partners/Goethe-Institut.webp" alt="Goethe-Institut Namibia" class="partner-logo">
+          <span class="partner-role">Strategic Partner</span>
+          <div class="partner-description">
+            Goethe-Institut Namibia brings institutional expertise and cultural diplomacy experience,
+            facilitating meaningful dialogue between German and Namibian histories.
+          </div>
+          <div class="partner-contribution">
+            <h4>Key Contributions</h4>
+            <ul>
+              <li>Venue provision and logistical support</li>
+              <li>Cultural diplomacy facilitation</li>
+              <li>International network connections</li>
+              <li>Historical context expertise</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Old Location Films -->
+        <article class="partner-card">
+          <img src="img/logos/old-location-films.webp" alt="Old Location Films" class="partner-logo">
+          <span class="partner-role">Production Partner</span>
+          <div class="partner-description">
+            Old Location Films contributes essential production expertise and local knowledge,
+            ensuring authentic representation of Namibian narratives.
+          </div>
+          <div class="partner-contribution">
+            <h4>Key Contributions</h4>
+            <ul>
+              <li>Production coordination and expertise</li>
+              <li>Local crew and talent sourcing</li>
+              <li>Post-production facilities</li>
+              <li>Cultural consultation services</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Mucii Pictures -->
+        <article class="partner-card">
+          <img src="img/logos/mucii-pictures.webp" alt="Mucii Pictures" class="partner-logo">
+          <span class="partner-role">Lead Organization</span>
+          <div class="partner-description">
+            Mucii Pictures serves as the coordinating entity, bringing together diverse stakeholders
+            and ensuring the successful execution of our shared vision.
+          </div>
+          <div class="partner-contribution">
+            <h4>Key Contributions</h4>
+            <ul>
+              <li>Program coordination and management</li>
+              <li>Creative development and curation</li>
+              <li>International filmmaker recruitment</li>
+              <li>Fund management and compliance</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Collaboration Story -->
+    <section class="collaboration-section">
+      <div class="container">
+        <div class="text-center">
+          <h2>The Partnership Journey</h2>
+          <p class="section-intro">
+            From initial conversations to the successful execution of our first edition,
+            our partnerships have evolved through shared commitment and mutual respect.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Strategic Alignment</h3>
+            <p>Initial partnership discussions focused on aligning organizational missions with the Return to the Source vision of cultural healing through cinema.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Resource Integration</h3>
+            <p>Combining Mastercard's funding expertise, Goethe-Institut's cultural networks, Old Location Films' production capabilities, and Mucii Pictures' creative vision.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Community Engagement</h3>
+            <p>Deep collaboration with local elders, historians, and community leaders to ensure authentic representation and cultural sensitivity.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Successful Execution</h3>
+            <p>The inaugural edition brought together 12 filmmakers from across Africa, creating films that honor colonial history and cultural memory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="text-center">
+        <h2>Partnership Voices</h2>
+        <p class="section-intro">What our partners say about our collaborative journey</p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">
+            "The Return to the Source partnership represents a new model for cultural collaboration in Africa.
+            By bringing together funding, cultural institutions, and creative expertise, we're creating
+            sustainable pathways for African stories to reach global audiences."
+          </blockquote>
+          <cite class="testimonial-author">— Mastercard Foundation Representative</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">
+            "Working with Return to the Source has allowed us to facilitate meaningful dialogue between
+            German colonial history and contemporary Namibian narratives. This partnership demonstrates
+            the power of cultural diplomacy in healing historical wounds."
+          </blockquote>
+          <cite class="testimonial-author">— Goethe-Institut Namibia Director</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">
+            "The collaborative spirit of this partnership is truly remarkable. Each organization brings
+            unique strengths that, when combined, create something greater than the sum of its parts.
+            This is the future of African cultural production."
+          </blockquote>
+          <cite class="testimonial-author">— Old Location Films Producer</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section text-center">
+      <h2>Partner With Us</h2>
+      <p>Interested in joining our collaborative ecosystem? We welcome partnerships that advance African cinema and cultural healing.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary">Explore Partnership Opportunities</a>
+        <a href="resources/docs/RTS1 Film Lab HandBook Final_2.pdf" class="btn btn-outline" download>Download Partnership Handbook</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer__bottom">
+        <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Enhanced scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe partner cards and timeline items
+    document.querySelectorAll('.partner-card, .timeline-item, .testimonial-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

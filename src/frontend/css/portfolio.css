@@ -82,6 +82,53 @@
     --container-padding: clamp(1rem, 4vw, 2rem);
 }
 
+/* ===== FULL-PAGE BACKGROUND IMAGES ===== */
+body.portfolios.cinema {
+    background: url('../img/events/P1091997.webp') center/cover fixed no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+body.portfolios.theory {
+    background: url('../img/events/Ovaherero_women.webp') center/cover fixed no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+body.portfolios.infrastructure {
+    background: url('../img/events/red_army_horses.webp') center/cover fixed no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+body.portfolios.healing {
+    background: url('../img/events/Ovaherero_men.webp') center/cover fixed no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Background overlay for better text readability */
+body.portfolios::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    z-index: -1;
+}
+
 /* Reset & Base Styles */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -108,12 +155,21 @@ body {
 header {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-border-light);
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
     z-index: 1000;
     transition: all var(--transition-fast);
+    will-change: background, backdrop-filter, border-bottom;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
@@ -128,9 +184,16 @@ header {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--color-text-primary);
+    color: rgba(255, 255, 255, 0.95);
     font-weight: 600;
     flex-shrink: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    transition: color var(--transition-fast);
+}
+
+header.scrolled .logo {
+    color: var(--color-text-primary);
+    text-shadow: none;
 }
 
 .logo-container {
@@ -692,13 +755,13 @@ header {
 .pillar-tab {
     padding: var(--space-md) var(--space-xl);
     border-radius: 50px; /* Fully rounded pill shape */
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-weight: 600;
     font-size: var(--text-sm);
     transition: all var(--duration-normal) var(--ease-out);
-    background: var(--tab-bg);
-    border: none; /* Remove hard borders */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     white-space: nowrap;
     min-height: 48px;
     display: inline-flex;
@@ -709,12 +772,16 @@ header {
     font-family: var(--font-body);
     letter-spacing: 0.025em;
     text-transform: uppercase;
-    /* Add subtle gradient background */
-    background: linear-gradient(135deg,
-      rgba(248, 249, 250, 0.95) 0%,
-      rgba(248, 249, 250, 0.98) 100%);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+}
+
+header.scrolled .pillar-tab {
+    color: var(--text-secondary);
+    background: var(--tab-bg);
+    border: 1px solid var(--border-light);
+    text-shadow: none;
 }
 
 .pillar-tab:hover {
@@ -726,15 +793,21 @@ header {
 }
 
 .pillar-tab.active {
-     color: var(--clr-accent);
-     background: var(--tab-active-bg);
+     color: var(--color-primary);
+     background: rgba(255, 255, 255, 0.95);
      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Softer shadow */
      font-weight: 700;
      transform: translateY(-1px);
-     /* Add subtle accent glow */
+     border-color: var(--color-primary);
+     text-shadow: none;
+}
+
+header.scrolled .pillar-tab.active {
+     color: var(--color-primary);
+     background: var(--tab-active-bg);
      box-shadow:
        0 8px 24px rgba(0, 0, 0, 0.12),
-       0 0 0 1px rgba(var(--clr-accent-rgb), 0.2);
+       0 0 0 1px rgba(212, 98, 15, 0.2);
 }
 
 .pillar-tab.active::after {
@@ -882,59 +955,63 @@ main {
     border-color: var(--color-primary);
 }
 
-/* ===== PERFORMANCE-OPTIMIZED CARDS ===== */
+/* ===== ENHANCED PILLAR-STYLE CARDS (Inspired by About Page) ===== */
 .achievement-grid,
 .expertise-grid {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
    gap: var(--space-8);
    margin-top: var(--space-8);
 }
 
 .achievement-card,
 .expertise-card {
-    background: var(--clr-accent-light);
-    border-radius: var(--radius-2xl); /* More rounded corners */
+    background: var(--surface-primary);
+    border-radius: var(--radius-xl);
     padding: var(--space-8);
-    box-shadow: var(--shadow-lg); /* Softer shadow */
-    border: 2px solid var(--clr-accent); /* Add unified accent border */
-    transition:
-      transform var(--duration-fast) var(--ease-back),
-      box-shadow var(--duration-fast) var(--ease-out);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--duration-normal) var(--ease-back), box-shadow var(--duration-normal) var(--ease-out);
+    position: relative;
+    border: 1px solid var(--border-light);
     /* Performance optimization */
     will-change: transform;
-    /* Prevent content jumping during hover */
-    transform-origin: center bottom;
     /* Enhanced accessibility */
-    position: relative;
-    /* Add subtle inner glow for depth */
-    background: linear-gradient(135deg,
-      rgba(248, 241, 236, 0.95) 0%,
-      rgba(248, 241, 236, 0.98) 100%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.achievement-card::before,
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
 }
 
 .achievement-card:hover,
 .expertise-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-2xl); /* Softer, more diffused shadow */
-    /* Add unified accent glow */
-    box-shadow:
-      var(--shadow-2xl),
-      0 0 0 1px rgba(var(--clr-accent-rgb), 0.2);
-    border-color: var(--clr-accent-dark);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light);
+}
+
+.achievement-card:hover::before,
+.expertise-card:hover::before {
+    opacity: 1;
 }
 
 .achievement-card:focus-within,
 .expertise-card:focus-within {
-    outline: 2px solid var(--clr-accent);
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
 .expertise-card {
-    border-left: 4px solid var(--clr-accent);
-    /* Enhanced visual hierarchy */
+    border-left: 4px solid var(--color-primary);
     position: relative;
 }
 
@@ -945,7 +1022,7 @@ main {
     left: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(180deg, var(--clr-accent) 0%, var(--clr-accent-dark) 100%);
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     border-radius: 2px 0 0 2px;
 }
 
@@ -1712,5 +1789,23 @@ main {
     .pillar-links {
       flex-direction: column;
     }
+  }
+}
+
+/* ===== SCROLL-BASED HEADER EFFECTS ===== */
+.portfolio-loading {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Enhanced scroll-based header effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

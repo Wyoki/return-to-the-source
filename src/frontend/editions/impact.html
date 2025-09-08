@@ -197,7 +197,11 @@
       display: flex;
       align-items: center;
       position: relative;
-      background: linear-gradient(135deg, rgba(218, 165, 32, 0.15) 0%, rgba(255, 255, 255, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(218, 165, 32, 0.15) 0%, rgba(255, 255, 255, 0.95) 100%),
+                  url('../img/events/film_screening_closeup.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       overflow: hidden;
     }
 
@@ -942,28 +946,16 @@
   
   <header class="site-header" role="banner">
     <div class="container header-content">
-      <a href="#" class="logo">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%23DAA520'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='serif' font-size='16' font-weight='bold'%3ERS%3C/text%3E%3C/svg%3E" alt="Return to the Source" width="40" height="40">
-        <span>Return to the Source</span>
-      </a>
+    <a href="index.html" class="logo">
+      <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
+      <span>Return to the Source</span>
+    </a>
       <nav aria-label="Primary Navigation">
-        <ul class="nav-menu">
-          <li><a href="#">Home</a></li>
-          <li class="dropdown">
-            <button class="dropbtn">About ▾</button>
-            <ul class="dropdown-content">
-              <li><a href="#">Mission & Strategy</a></li>
-              <li><a href="#">Leadership</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </li>
-          <li class="nav-tabs">
-            <a href="#" class="nav-tab">Edition 1</a>
-            <a href="#" class="nav-tab">Edition 2</a>
-            <a href="#" class="nav-tab active">Impact</a>
-          </li>
-          <li><a href="#partners">Partners</a></li>
-        </ul>
+        <div class="nav-tabs">
+          <a href="edition1.html" class="nav-tab">Edition 1</a>
+          <a href="edition2.html" class="nav-tab">Edition 2</a>
+          <a href="impact.html" class="nav-tab active">Impact</a>
+        </div>
         <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -1113,8 +1105,8 @@
         <h2 id="cta-heading">Who Holds This Space?</h2>
         <p>Meet the four-pillar leadership team—Theory, Infrastructure, Cinema, Healing—converging on one goal: African narrative sovereignty.</p>
         <div class="btn-group">
-          <a href="#" class="btn btn-outline" aria-label="View Edition 1 details">← View Edition 1</a>
-          <a href="#" class="btn btn-primary" aria-label="Meet the team architects">Meet the Architects →</a>
+          <a href="edition1.html" class="btn btn-outline" aria-label="View Edition 1 details">← View Edition 1</a>
+          <a href="../team.html" class="btn btn-primary" aria-label="Meet the team architects">Meet the Architects →</a>
         </div>
       </div>
     </section>
@@ -1180,9 +1172,9 @@
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
         <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
         <div style="display: flex; gap: var(--space-4); font-size: var(--text-sm);">
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Use</a>
-          <a href="#accessibility">Accessibility</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Use</a>
+          <a href="../accessibility.html">Accessibility</a>
         </div>
       </div>
     </div>

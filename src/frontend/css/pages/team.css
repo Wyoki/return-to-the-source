@@ -32,12 +32,15 @@ body.portfolios {
 
 /* Team page specific overrides - make it unique as overview */
 body.team {
-    /* Team page uses a more sophisticated color scheme */
-    --primary: hsl(220 70% 45%); /* Deeper blue for overview */
-    --surface-primary: hsl(220 30% 98%);
-    --surface-secondary: hsl(220 25% 96%);
-    --text-primary: hsl(220 25% 15%);
-    --text-secondary: hsl(220 20% 40%);
+    /* Team page uses a more sophisticated color scheme with primary colors */
+    --primary: hsl(24 85% 35%); /* Use primary color for consistency */
+    --primary-light: hsl(24 85% 45%);
+    --primary-dark: hsl(24 85% 25%);
+    --surface-primary: hsl(24 15% 98%);
+    --surface-secondary: hsl(24 10% 96%);
+    --text-primary: hsl(24 25% 15%);
+    --text-secondary: hsl(24 20% 40%);
+    --accent: hsl(24 85% 45%);
 }
 
 /* Portfolio pages - uniform creative palette */
@@ -73,20 +76,20 @@ body.portfolios.healing {
 
 /* Team overview page specific enhancements */
 body.team.overview {
-    /* Unique gradient background for overview */
+    /* Unique gradient background for overview using primary colors */
     background: linear-gradient(135deg,
-        hsl(220 30% 98%) 0%,
-        hsl(220 25% 96%) 50%,
-        hsl(220 20% 94%) 100%);
+        hsl(24 15% 98%) 0%,
+        hsl(24 10% 96%) 50%,
+        hsl(24 5% 94%) 100%);
     min-height: 100vh;
 }
 
 /* Enhanced hero section for overview */
 body.team.overview .team-hero {
     background: linear-gradient(135deg,
-        hsl(220 70% 45%) 0%,
-        hsl(220 60% 55%) 50%,
-        hsl(220 50% 65%) 100%);
+        hsl(24 85% 35%) 0%,
+        hsl(24 85% 45%) 50%,
+        hsl(24 85% 55%) 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -108,8 +111,8 @@ body.team.overview .team-hero::before {
 /* Unique metrics styling for overview */
 body.team.overview .metrics {
     background: linear-gradient(135deg,
-        hsl(220 40% 95%) 0%,
-        hsl(220 35% 90%) 100%);
+        hsl(24 15% 95%) 0%,
+        hsl(24 10% 90%) 100%);
     border-radius: 0;
     margin: 0;
     padding: var(--team-spacing-3xl) 0;
@@ -126,8 +129,8 @@ body.team.overview .metric {
 /* Enhanced pillars section for overview */
 body.team.overview .pillars {
     background: linear-gradient(135deg,
-        hsl(220 25% 96%) 0%,
-        hsl(220 20% 94%) 100%);
+        hsl(24 10% 96%) 0%,
+        hsl(24 5% 94%) 100%);
     position: relative;
 }
 
@@ -197,8 +200,8 @@ body.team.overview .quote::after {
 /* Unique footer styling for overview */
 body.team.overview .footer {
     background: linear-gradient(135deg,
-        hsl(220 20% 15%) 0%,
-        hsl(220 25% 10%) 100%);
+        hsl(24 20% 15%) 0%,
+        hsl(24 25% 10%) 100%);
     border-top: none;
     position: relative;
 }
@@ -244,6 +247,27 @@ body.team.overview .footer::before {
     --team-spacing-xl: 2rem;
     --team-spacing-2xl: 3rem;
     --team-spacing-3xl: 4rem;
+
+    /* ===== SHARED STYLES BETWEEN TEAM AND PORTFOLIO PAGES ===== */
+    /* Common card styling */
+    --shared-card-radius: 1rem;
+    --shared-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shared-card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --shared-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Common section spacing */
+    --shared-section-padding: clamp(3rem, 8vw, 5rem);
+    --shared-container-max-width: 1200px;
+
+    /* Common typography */
+    --shared-heading-font: 'Playfair Display', serif;
+    --shared-body-font: 'Inter', sans-serif;
+
+    /* Common button styles */
+    --shared-btn-primary: var(--primary);
+    --shared-btn-secondary: transparent;
+    --shared-btn-radius: 0.5rem;
+    --shared-btn-padding: 0.75rem 1.5rem;
 }
 
 /* Hero Section Styles */
@@ -251,12 +275,32 @@ body.team.overview .footer::before {
     padding: var(--team-spacing-3xl) 0;
     text-align: center;
     position: relative;
-    background: linear-gradient(135deg, hsl(24 85% 25%) 0%, hsl(24 85% 45%) 100%);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%),
+                url('../img/events/Ovaherero_men.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(139, 69, 19, 0.8) 0%,
+        rgba(139, 69, 19, 0.6) 50%,
+        rgba(205, 133, 63, 0.8) 100%);
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
 .hero__title {
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
     margin-bottom: var(--team-spacing-lg);
@@ -279,10 +323,12 @@ body.team.overview .footer::before {
     margin: 0 auto;
 }
 
-/* Metrics Section */
+/* Metrics Section - Using shared styles */
 .metrics {
-    padding: var(--team-spacing-3xl) 0;
+    padding: var(--shared-section-padding) 0;
     background: var(--surface-secondary);
+    max-width: var(--shared-container-max-width);
+    margin: 0 auto;
 }
 
 .metrics__grid {
@@ -301,10 +347,10 @@ body.team.overview .footer::before {
 }
 
 .metric__num {
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: var(--clr-accent);
+    color: var(--primary);
     display: block;
     margin-bottom: var(--team-spacing-sm);
 }
@@ -317,9 +363,11 @@ body.team.overview .footer::before {
     font-weight: 600;
 }
 
-/* Pillars Section */
+/* Pillars Section - Using shared styles */
 .pillars {
-    padding: var(--team-spacing-3xl) 0;
+    padding: var(--shared-section-padding) 0;
+    max-width: var(--shared-container-max-width);
+    margin: 0 auto;
 }
 
 .pillars__grid {
@@ -330,10 +378,10 @@ body.team.overview .footer::before {
 
 .pillar {
     background: var(--surface-primary);
-    border-radius: var(--radius-xl);
+    border-radius: var(--shared-card-radius);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    box-shadow: var(--shared-card-shadow);
+    transition: var(--shared-transition);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -341,7 +389,7 @@ body.team.overview .footer::before {
 
 .pillar:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-2xl);
+    box-shadow: var(--shared-card-shadow-hover);
 }
 
 .pillar__img {
@@ -378,7 +426,7 @@ body.team.overview .footer::before {
 }
 
 .pillar__name {
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-size: var(--text-xl);
     font-weight: 600;
     margin: 0;
@@ -428,15 +476,15 @@ body.team.overview .footer::before {
     display: inline-flex;
     align-items: center;
     gap: var(--team-spacing-xs);
-    padding: var(--team-spacing-sm) var(--team-spacing-lg);
-    background: var(--clr-accent);
+    padding: var(--shared-btn-padding);
+    background: var(--shared-btn-primary);
     color: white;
-    border-radius: var(--radius-md);
+    border-radius: var(--shared-btn-radius);
     font-weight: 600;
     font-size: var(--text-sm);
     text-decoration: none;
-    transition: all var(--duration-fast) var(--ease-out);
-    border: 2px solid var(--clr-accent);
+    transition: var(--shared-transition);
+    border: 2px solid var(--shared-btn-primary);
     min-height: 44px;
 }
 
@@ -448,9 +496,9 @@ body.team.overview .footer::before {
 }
 
 .pillar__link--secondary {
-    background: transparent;
-    color: var(--clr-accent);
-    border-color: var(--clr-accent);
+    background: var(--shared-btn-secondary);
+    color: var(--shared-btn-primary);
+    border-color: var(--shared-btn-primary);
 }
 
 .pillar__link--secondary:hover {
@@ -462,11 +510,11 @@ body.team.overview .footer::before {
 .quote {
     margin: var(--team-spacing-2xl) 0;
     text-align: center;
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-size: clamp(1.3rem, 3vw, 1.8rem);
     font-weight: 300;
     font-style: italic;
-    color: var(--clr-accent);
+    color: var(--primary);
     position: relative;
     max-width: 800px;
     margin-left: auto;
@@ -479,8 +527,9 @@ body.team.overview .footer::before {
     font-size: 4rem;
     position: absolute;
     opacity: 0.15;
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-style: normal;
+    color: var(--primary);
 }
 
 .quote::before {
@@ -520,10 +569,10 @@ body.team.overview .footer::before {
 }
 
 .portfolio-title {
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
-    color: var(--clr-accent);
+    color: var(--primary);
     margin-bottom: var(--team-spacing-sm);
     line-height: 1.1;
 }
@@ -558,10 +607,10 @@ body.team.overview .footer::before {
 }
 
 .stat-number {
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: var(--clr-accent);
+    color: var(--primary);
     display: block;
     margin-bottom: var(--team-spacing-xs);
 }
@@ -591,7 +640,7 @@ body.team.overview .footer::before {
 .footer__title {
     font-weight: 600;
     margin-bottom: var(--team-spacing-xs);
-    color: var(--clr-accent);
+    color: var(--primary);
     font-size: 1.1rem;
 }
 
@@ -601,13 +650,13 @@ body.team.overview .footer::before {
 }
 
 .footer__content a {
-    color: var(--clr-accent);
+    color: var(--primary);
     text-decoration: none;
     transition: color var(--duration-fast) var(--ease-out);
 }
 
 .footer__content a:hover {
-    color: var(--clr-accent-dark);
+    color: var(--primary-light);
 }
 
 .footer__bottom {
@@ -925,11 +974,11 @@ body.team.overview .footer::before {
     font-weight: 700;
     color: var(--primary);
     text-decoration: none;
-    transition: color var(--duration-fast) var(--ease-out);
+    transition: var(--shared-transition);
 }
 
 .logo:hover {
-    color: var(--clr-accent-dark);
+    color: var(--primary-light);
 }
 
 .logo-container {
@@ -944,10 +993,10 @@ body.team.overview .footer::before {
 }
 
 .logo-main {
-    font-family: var(--font-display);
+    font-family: var(--shared-heading-font);
     font-weight: 700;
     font-size: 1.25rem;
-    color: var(--clr-accent);
+    color: var(--primary);
     line-height: 1.1;
 }
 

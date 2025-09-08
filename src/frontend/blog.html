@@ -154,21 +154,34 @@
 
 <body>
   <header class="site-header">
-    <div class="container header-content">
-      <a href="index.html" class="logo">
-        <img src="img/logos/RTS_Logo.png" alt="Return to the Source" width="140" height="70">
-      </a>
-      <nav aria-label="Primary">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="impact.html">Impact</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="header-content">
+    <a href="index.html" class="logo">
+      <img src="img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
+      <span>Return to the Source</span>
+    </a>
+
+      <nav aria-label="Primary Navigation">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Editions</button>
+          <ul class="dropdown-content">
+            <li><a href="editions/edition1.html">Edition 1</a></li>
+            <li><a href="editions/edition2.html">Edition 2</a></li>
+            <li><a href="editions/impact.html">Impact</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
 
   <main>
     <section class="blog-hero">
@@ -180,11 +193,11 @@
 
     <div class="container">
       <nav class="blog-categories">
-        <a href="#all" class="category-btn active">All Posts</a>
-        <a href="#filmmaking" class="category-btn">Filmmaking</a>
-        <a href="#memory" class="category-btn">Memory & History</a>
-        <a href="#community" class="category-btn">Community</a>
-        <a href="#impact" class="category-btn">Impact Stories</a>
+        <a href="blog.html" class="category-btn active">All Posts</a>
+        <a href="blog.html?category=filmmaking" class="category-btn">Filmmaking</a>
+        <a href="blog.html?category=memory" class="category-btn">Memory & History</a>
+        <a href="blog.html?category=community" class="category-btn">Community</a>
+        <a href="blog.html?category=impact" class="category-btn">Impact Stories</a>
       </nav>
 
       <!-- Featured Post -->
@@ -196,6 +209,37 @@
           <a href="blog/healing-through-film.html" class="read-more">Read the full story →</a>
         </div>
       </article>
+
+      <!-- Blog Posts Grid -->
+      <div class="blog-grid">
+        <!-- Oscar Journey Article -->
+        <article class="blog-post">
+          <img src="img/blog/under_the_hanging_tree.webp" alt="Oscar submission film still" class="post-image">
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="category">Impact Stories</span>
+              <time datetime="2024-11-15">November 15, 2024</time>
+            </div>
+            <h3 class="post-title">From Ovitoto to Oscar: Namibia's First Academy Award Submission</h3>
+            <p class="post-excerpt">The remarkable journey of "Under the Hanging Tree" from community workshop to historic Oscar submission, marking Namibia's debut on the international film awards stage.</p>
+            <a href="blog/oscars-journey.html" class="read-more">Read more →</a>
+          </div>
+        </article>
+
+        <!-- Continental Infrastructure Article -->
+        <article class="blog-post">
+          <img src="img/blog/green_green.webp" alt="Creative infrastructure development" class="post-image">
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="category">Infrastructure</span>
+              <time datetime="2024-10-28">October 28, 2024</time>
+            </div>
+            <h3 class="post-title">Building Continental Creative Infrastructure</h3>
+            <p class="post-excerpt">How Mucii Pictures and the East African Screen Collective are creating sustainable creative ecosystems across Africa, fostering collaboration and capacity building.</p>
+            <a href="blog/continental-infrastructure.html" class="read-more">Read more →</a>
+          </div>
+        </article>
+      </div>
 
       <!-- Newsletter Signup -->
       <section class="cta" style="margin-top: 4rem;">
@@ -221,7 +265,7 @@
         <ul>
           <li><a href="about.html">Mission & Values</a></li>
           <li><a href="team.html">Leadership Team</a></li>
-          <li><a href="impact.html">Measuring Success</a></li>
+          <li><a href="editions/impact.html">Measuring Success</a></li>
           <li><a href="blog.html">Stories & Insights</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -249,5 +293,61 @@
   </footer>
 
   <script src="js/bundle.js"></script>
+  
+  <script>
+    // Enhanced dropdown functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Dropdown menu functionality
+      const dropdowns = document.querySelectorAll('.dropdown');
+  
+      dropdowns.forEach(dropdown => {
+        const dropbtn = dropdown.querySelector('.dropbtn');
+  
+        dropbtn.addEventListener('click', function(e) {
+          e.preventDefault();
+  
+          // Close other dropdowns
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('open');
+            }
+          });
+  
+          // Toggle current dropdown
+          dropdown.classList.toggle('open');
+        });
+      });
+  
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+          dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('open');
+          });
+        }
+      });
+  
+      // Close dropdowns on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('open');
+          });
+        }
+      });
+  
+      // Mobile menu toggle
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+  
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', function() {
+          const isExpanded = navMenu.classList.contains('active');
+          navMenu.classList.toggle('active');
+          mobileToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+      }
+    });
+  </script>
 </body>
 </html>

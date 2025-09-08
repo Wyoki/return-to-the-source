@@ -2,40 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Edition 2: Diaspora & Resilience – Return to the Source</title>
+  <title>Edition 1 Impact – Return to the Source</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Edition 2 expands beyond filmmaking to become multidisciplinary, tracing the shared traditions and resilience of Ovaherero diaspora communities across Botswana, Namibia, and South Africa.">
+  <meta name="description" content="Explore the impact of Return to the Source's inaugural film lab in Namibia. Five days that reverberated across the continent with 12 filmmakers, 8 films, and lasting community transformation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
     /* Enhanced CSS with improved design tokens and accessibility */
     :root {
-      /* Color palette with improved contrast ratios */
-      --primary: #8B4513;
-      --primary-light: #A0522D;
-      --accent: #CD853F;
-      --accent-light: #DEB887;
+      /* Edition 1 specific color palette - maintaining golden theme */
+      --primary: #d4a934;
+      --primary-light: #e6c565;
+      --accent: #8b4513;
+      --accent-light: #a0522d;
       --accent-500: var(--accent);
-      
+
       /* Earth tones for cultural authenticity */
-      --hue-earth: 30;
+      --hue-earth: 35;
       --hue-forest: 120;
       --neutral-hsl: 0 0% 50%;
-      
+
       /* Text colors with WCAG AA compliance */
       --text-primary: #1a1a1a;
       --text-secondary: #4a4a4a;
       --text-inverse: #ffffff;
-      
+
       /* Surface colors with subtle gradients */
       --surface-primary: #ffffff;
       --surface-secondary: #fafafa;
       --surface-tertiary: #f5f5f5;
       --surface-elevated: #ffffff;
-      
+
       /* Border system */
       --border-light: #e5e5e5;
-      
+
       /* Enhanced spacing scale */
       --space-1: 0.25rem;
       --space-2: 0.5rem;
@@ -47,69 +49,68 @@
       --space-10: 2.5rem;
       --space-12: 3rem;
       --space-16: 4rem;
-      
+
       /* Typography scale */
       --text-xs: 0.75rem;
       --text-sm: 0.875rem;
       --text-base: 1rem;
       --text-lg: 1.125rem;
       --text-xl: 1.25rem;
-      --text-2xl: 1.5rem;
-      
+
       /* Font weights */
       --fw-medium: 500;
       --fw-semibold: 600;
       --fw-bold: 700;
       --fw-black: 900;
-      
+
       /* Line heights */
       --lh-tight: 1.25;
       --lh-relaxed: 1.6;
-      
+
       /* Border radius system */
       --radius-md: 0.5rem;
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --radius-full: 9999px;
-      
+
       /* Shadow system */
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
       --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
-      
+
       /* Animation system */
       --duration-normal: 250ms;
       --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
       --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
       --transition-fast: 150ms;
-      
+
       /* Enhanced spacing for hero and grids */
       --space-hero-padding: clamp(2rem, 8vh, 4rem);
       --grid-gap-responsive: clamp(1rem, 4vw, 2rem);
-      
+
       /* Font families */
       --font-display: 'Playfair Display', serif;
       --font-body: 'Inter', sans-serif;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: var(--font-body);
       line-height: var(--lh-relaxed);
       color: var(--text-primary);
       background: var(--surface-primary);
     }
-    
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 var(--space-4);
     }
-    
+
     .visually-hidden {
       position: absolute !important;
       width: 1px !important;
@@ -121,7 +122,7 @@
       white-space: nowrap !important;
       border: 0 !important;
     }
-    
+
     /* Skip link for accessibility */
     .skip-link {
       position: absolute;
@@ -134,11 +135,11 @@
       border-radius: 4px;
       z-index: 1000;
     }
-    
+
     .skip-link:focus {
       top: 6px;
     }
-    
+
     /* Enhanced header with better mobile responsiveness */
     .site-header {
       background: rgba(255, 255, 255, 0.95);
@@ -149,7 +150,7 @@
       z-index: 100;
       transition: background-color 200ms ease;
     }
-    
+
     .header-content {
       display: flex;
       align-items: center;
@@ -158,7 +159,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    
+
     .logo {
       display: flex;
       align-items: center;
@@ -168,25 +169,25 @@
       font-weight: var(--fw-bold);
       font-size: var(--text-lg);
     }
-    
+
     .logo img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
     }
-    
+
     /* Enhanced navigation with better accessibility */
     nav[aria-label="Primary Navigation"] {
       position: relative;
     }
-    
+
     .nav-menu {
       display: flex;
       list-style: none;
       align-items: center;
       gap: var(--space-6);
     }
-    
+
     .nav-menu a {
       color: var(--text-secondary);
       text-decoration: none;
@@ -196,23 +197,23 @@
       border-radius: var(--radius-md);
       position: relative;
     }
-    
+
     .nav-menu a:hover,
     .nav-menu a:focus {
       color: var(--primary);
       background: var(--surface-secondary);
     }
-    
+
     .nav-menu a:focus {
       outline: 2px solid var(--primary);
       outline-offset: 2px;
     }
-    
+
     /* Enhanced dropdown with better UX */
     .dropdown {
       position: relative;
     }
-    
+
     .dropbtn {
       background: none;
       border: none;
@@ -223,13 +224,13 @@
       border-radius: var(--radius-md);
       transition: all var(--transition-fast) var(--ease-out);
     }
-    
+
     .dropbtn:hover,
     .dropbtn:focus {
       color: var(--primary);
       background: var(--surface-secondary);
     }
-    
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -245,13 +246,13 @@
       padding: var(--space-2);
       margin-top: var(--space-1);
     }
-    
+
     .dropdown:hover .dropdown-content,
     .dropdown:focus-within .dropdown-content {
       display: block;
       animation: fadeInScale 200ms var(--ease-out) forwards;
     }
-    
+
     @keyframes fadeInScale {
       from {
         opacity: 0;
@@ -262,25 +263,25 @@
         transform: translateY(0) scale(1);
       }
     }
-    
+
     .dropdown-content a {
       display: block;
       padding: var(--space-3);
       border-radius: var(--radius-md);
       transition: background-color var(--transition-fast) var(--ease-out);
     }
-    
+
     .dropdown-content a:hover {
       background: var(--surface-secondary);
     }
-    
+
     /* Enhanced navigation tabs */
     .nav-tabs {
       display: flex;
       gap: var(--space-1);
       align-items: center;
     }
-    
+
     .nav-tab {
       padding: var(--space-2) var(--space-4);
       border-radius: var(--radius-md) var(--radius-md) 0 0;
@@ -295,25 +296,25 @@
       position: relative;
       white-space: nowrap;
     }
-    
+
     .nav-tab:hover {
       color: var(--accent);
       background: var(--surface-primary);
       transform: translateY(-1px);
     }
-    
+
     .nav-tab.active {
       color: var(--accent);
       background: var(--surface-primary);
       border-bottom: 2px solid var(--accent);
       font-weight: var(--fw-semibold);
     }
-    
+
     .nav-tab:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
-    
+
     /* Mobile toggle - hidden for now, would need JavaScript */
     .mobile-toggle {
       display: none;
@@ -324,26 +325,30 @@
       gap: 3px;
       padding: var(--space-2);
     }
-    
+
     .mobile-toggle span {
       width: 20px;
       height: 2px;
       background: var(--text-primary);
       transition: all 200ms ease;
     }
-    
+
     /* Enhanced hero section */
     .editions-hero {
       background:
         linear-gradient(
           135deg,
-          hsl(30 45% 8% / 0.85) 0%,
-          hsl(30 35% 15% / 0.65) 35%,
+          hsl(35 45% 8% / 0.85) 0%,
+          hsl(35 35% 15% / 0.65) 35%,
           hsl(120 40% 10% / 0.9) 100%
         ),
         radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.3)),
-        linear-gradient(45deg, #8B4513, #A0522D);
-      
+        linear-gradient(45deg, #d4a934, #e6c565),
+        url('../img/events/edition_1.webp');
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: var(--text-inverse);
       position: relative;
       min-height: clamp(50vh, 60vh, 80vh);
@@ -352,7 +357,7 @@
       padding-block: var(--space-hero-padding);
       overflow: hidden;
     }
-    
+
     .editions-hero::before {
       content: '';
       position: absolute;
@@ -363,13 +368,13 @@
       pointer-events: none;
       will-change: opacity;
     }
-    
+
     .editions-hero .container {
       position: relative;
       z-index: 1;
       text-align: center;
     }
-    
+
     .edition-title {
       font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
       font-family: var(--font-display);
@@ -381,7 +386,7 @@
       font-feature-settings: "kern" 1, "liga" 1;
       margin-left: -0.05em;
     }
-    
+
     .edition-meta {
       font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
       font-weight: var(--fw-medium);
@@ -389,12 +394,12 @@
       max-width: 600px;
       margin: 0 auto;
     }
-    
+
     /* Enhanced edition grid with better responsive behavior */
     .edition-grid {
       padding: var(--space-8) 0;
     }
-    
+
     .edition-grid .container > h2 {
       text-align: center;
       font-size: clamp(var(--text-2xl), 4vw, 3rem);
@@ -402,13 +407,13 @@
       margin-bottom: var(--space-8);
       color: var(--text-primary);
     }
-    
+
     .edition-grid .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--grid-gap-responsive);
     }
-    
+
     .edition-card {
       background: var(--surface-elevated);
       border-radius: var(--radius-xl);
@@ -418,13 +423,13 @@
       display: flex;
       flex-direction: column;
       padding: var(--space-6);
-      transition: 
-        transform var(--duration-normal) var(--ease-back), 
+      transition:
+        transform var(--duration-normal) var(--ease-back),
         box-shadow var(--duration-normal) var(--ease-out);
       contain: layout style paint;
       position: relative;
     }
-    
+
     .edition-card::before {
       content: '';
       position: absolute;
@@ -437,30 +442,30 @@
       transition: transform var(--duration-normal) var(--ease-out);
       transform-origin: left;
     }
-    
+
     .edition-card:hover,
     .edition-card:focus-within {
       transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
       border-color: var(--primary-light);
     }
-    
+
     .edition-card:hover::before {
       transform: scaleX(1);
     }
-    
+
     .edition-card:focus-within {
       outline: 2px solid var(--primary);
       outline-offset: 2px;
     }
-    
+
     .edition-card-content {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
     }
-    
+
     .edition-card-title {
       font-size: var(--text-xl);
       font-weight: var(--fw-bold);
@@ -469,14 +474,14 @@
       line-height: var(--lh-tight);
       margin-bottom: var(--space-3);
     }
-    
+
     .edition-card-description {
       color: var(--text-primary);
       line-height: var(--lh-relaxed);
       font-size: var(--text-base);
       flex-grow: 1;
     }
-    
+
     /* Enhanced section styling */
     .section {
       padding: var(--space-16) 0;
@@ -486,7 +491,7 @@
         var(--surface-secondary) 100%
       );
     }
-    
+
     .section-title {
       font-size: clamp(var(--text-2xl), 4vw, 3rem);
       font-family: var(--font-display);
@@ -495,7 +500,7 @@
       text-align: center;
       color: var(--text-primary);
     }
-    
+
     .section-intro {
       font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
       color: var(--text-secondary);
@@ -504,11 +509,11 @@
       text-align: center;
       line-height: var(--lh-relaxed);
     }
-    
+
     .text-center {
       text-align: center;
     }
-    
+
     /* Enhanced button system */
     .btn-group {
       display: flex;
@@ -516,7 +521,7 @@
       justify-content: center;
       flex-wrap: wrap;
     }
-    
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -533,7 +538,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .btn::before {
       content: '';
       position: absolute;
@@ -544,60 +549,60 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
       transition: left 600ms ease;
     }
-    
+
     .btn:hover::before {
       left: 100%;
     }
-    
+
     .btn-primary {
       background: var(--primary);
       color: white;
       border-color: var(--primary);
     }
-    
+
     .btn-primary:hover {
       background: var(--primary-light);
       border-color: var(--primary-light);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+      box-shadow: 0 4px 12px rgba(212, 169, 52, 0.3);
     }
-    
+
     .btn-outline {
       background: transparent;
       color: var(--primary);
       border-color: var(--primary);
     }
-    
+
     .btn-outline:hover {
       background: var(--primary);
       color: white;
       transform: translateY(-2px);
     }
-    
+
     /* Enhanced footer */
     .site-footer {
       background: linear-gradient(
         135deg,
         var(--text-primary) 0%,
-        hsl(30 20% 15%) 100%
+        hsl(35 20% 15%) 100%
       );
       color: var(--text-inverse);
       padding: var(--space-16) 0 var(--space-8);
     }
-    
+
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 var(--space-4);
     }
-    
+
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: var(--space-8);
       margin-bottom: var(--space-8);
     }
-    
+
     .footer-section h3 {
       font-family: var(--font-display);
       font-size: var(--text-xl);
@@ -605,38 +610,38 @@
       margin-bottom: var(--space-4);
       color: var(--accent-light);
     }
-    
+
     .footer-section p {
       opacity: 0.9;
       line-height: var(--lh-relaxed);
       margin-bottom: var(--space-4);
     }
-    
+
     .footer-section ul {
       list-style: none;
     }
-    
+
     .footer-section ul li {
       margin-bottom: var(--space-2);
     }
-    
+
     .footer-section a {
       color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
       transition: color var(--transition-fast) var(--ease-out);
     }
-    
+
     .footer-section a:hover {
       color: var(--accent-light);
     }
-    
+
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding-top: var(--space-6);
       text-align: center;
       opacity: 0.7;
     }
-    
+
     /* Accessibility enhancements */
     @media (prefers-reduced-motion: reduce) {
       *,
@@ -646,61 +651,61 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
-      
+
       .edition-card:hover,
       .btn:hover {
         transform: none;
       }
     }
-    
+
     @media (prefers-contrast: high) {
       .edition-card,
       .btn {
         border: 2px solid var(--text-primary);
       }
     }
-    
+
     /* Enhanced mobile responsiveness */
     @media (max-width: 768px) {
       .header-content {
         padding: var(--space-3);
       }
-      
+
       .nav-menu {
         gap: var(--space-3);
         font-size: var(--text-sm);
       }
-      
+
       .edition-grid .container {
         grid-template-columns: 1fr;
         gap: var(--space-4);
       }
-      
+
       .edition-card {
         padding: var(--space-4);
       }
-      
+
       .nav-tabs {
         flex-wrap: wrap;
         gap: var(--space-1);
       }
-      
+
       .nav-tab {
         padding: var(--space-1) var(--space-3);
         font-size: var(--text-xs);
       }
-      
+
       .btn-group {
         flex-direction: column;
         align-items: center;
       }
-      
+
       .btn {
         width: 100%;
         max-width: 300px;
         justify-content: center;
       }
-      
+
       .dropdown-content {
         position: static;
         display: block;
@@ -708,29 +713,29 @@
         background: transparent;
         margin-top: var(--space-2);
       }
-      
+
       .mobile-toggle {
         display: flex;
       }
-      
+
       @media (max-width: 600px) {
         .nav-menu {
           display: none;
         }
       }
     }
-    
+
     /* Performance optimizations */
     .edition-card,
     .btn {
       will-change: transform;
     }
-    
+
     img {
       height: auto;
       max-width: 100%;
     }
-    
+
     /* Loading states */
     .loading-skeleton {
       background: linear-gradient(
@@ -743,12 +748,12 @@
       animation: shimmer 1.8s infinite ease-in-out;
       border-radius: var(--radius-md);
     }
-    
+
     @keyframes shimmer {
       0% { background-position: -200% 0; }
       100% { background-position: 200% 0; }
     }
-    
+
     /* Enhanced card implementations from impact.html */
     .metric-card,
     .lever-card {
@@ -894,112 +899,83 @@
   </style>
 </head>
 
-<body class="edition2">
+<body class="edition1">
 <a href="#main-content" class="skip-link">Skip to main content</a>
-
 <header class="site-header">
-   <div class="header-content">
-     <a href="#" class="logo">
-       <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%238B4513'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-family='serif' font-size='16' font-weight='bold'%3ERS%3C/text%3E%3C/svg%3E" alt="Return to the Source" width="40" height="40">
-       <span>Return to the Source</span>
-     </a>
-     <nav aria-label="Primary Navigation">
-       <ul class="nav-menu">
-         <li><a href="#">Home</a></li>
-         <li class="dropdown">
-           <button class="dropbtn">About ▾</button>
-           <ul class="dropdown-content">
-             <li><a href="#">Mission & Strategy</a></li>
-             <li><a href="#">Leadership</a></li>
-             <li><a href="#">Contact</a></li>
-           </ul>
-         </li>
-         <li class="nav-tabs">
-           <a href="#" class="nav-tab">Edition 1</a>
-           <a href="#" class="nav-tab active">Edition 2</a>
-           <a href="#" class="nav-tab">Impact</a>
-         </li>
-         <li><a href="#partners">Partners</a></li>
-       </ul>
-       <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-         <span></span><span></span><span></span>
-       </button>
-     </nav>
+   <div class="container">
+     <div class="header-content">
+      <a href="../index.html" class="logo">
+      <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
+      <span>Return to the Source</span>
+    </a>
+       <nav aria-label="Primary Navigation">
+         <ul class="nav-menu">
+           <li class="nav-tabs">
+             <a href="edition1.html" class="nav-tab active">Edition 1</a>
+             <a href="edition2.html" class="nav-tab">Edition 2</a>
+             <a href="impact.html" class="nav-tab">Impact</a>
+           </li>
+           <li><a href="#partners">Partners</a></li>
+         </ul>
+         <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+           <span></span><span></span><span></span>
+         </button>
+       </nav>
+     </div>
    </div>
 </header>
 
 <main id="main-content">
-  <section class="editions-hero">
+  <section class="editions-hero" role="banner">
     <div class="container">
-      <h1 class="edition-title">Edition 2: Diaspora & Resilience</h1>
-      <p class="edition-meta">Multidisciplinary exploration across Botswana, Namibia & South Africa</p>
+      <h1 class="edition-title">Edition 1 Impact Report</h1>
+      <p class="edition-meta">Five days in Namibia, reverberating across the continent.</p>
     </div>
   </section>
 
-  <section class="edition-grid" aria-labelledby="edition2-features">
+  <section class="edition-grid" aria-labelledby="edition1-highlights">
     <div class="container">
-      <h2 id="edition2-features" class="visually-hidden">Edition 2 Key Features</h2>
+      <h2 id="edition1-highlights" class="visually-hidden">Edition 1 Key Highlights</h2>
       
       <article class="edition-card">
         <div class="edition-card-content">
-          <h3 class="edition-card-title">Multidisciplinary Expansion</h3>
-          <p class="edition-card-description">Beyond filmmaking—embracing film, performance, digital media, and visual arts to capture the full spectrum of Ovaherero diaspora experiences and resilience.</p>
+          <h3 class="edition-card-title">12 filmmakers</h3>
+          <p class="edition-card-description">From Tanzania, Ethiopia, Kenya & Namibia; 50% women, 75% first-time lab attendees. Zero pitch decks, three collective short films.</p>
         </div>
       </article>
 
       <article class="edition-card">
         <div class="edition-card-content">
-          <h3 class="edition-card-title">Three-Country Focus</h3>
-          <p class="edition-card-description">Botswana, Namibia, and South Africa unite to explore shared Ovaherero heritage, tracing diaspora communities from the 1904-1908 genocide to present-day resilience.</p>
+          <h3 class="edition-card-title">1 embedded therapist</h3>
+          <p class="edition-card-description">facilitated 7 debrief circles and 3 one-on-one sessions. Post-lab survey: 100% of participants said "psychological support was essential to my creative process".</p>
         </div>
       </article>
 
       <article class="edition-card">
         <div class="edition-card-content">
-          <h3 class="edition-card-title">Transnational Heritage</h3>
-          <p class="edition-card-description">The legacy of the Ovaherero genocide transcends borders—survivors dispersed across Southern Africa, carrying trauma, memory, and cultural resilience into exile.</p>
+          <h3 class="edition-card-title">3 genocide sites</h3>
+          <p class="edition-card-description">(Ovitoto mission station, Hanging Tree, Okahandja cemetery) reclaimed as living sets—permission granted by local authorities and traditional leaders.</p>
         </div>
       </article>
 
       <article class="edition-card">
         <div class="edition-card-content">
-          <h3 class="edition-card-title">Routes of Exile & Return</h3>
-          <p class="edition-card-description">Exploring how Ovaherero families maintained kinship networks across borders, from oral genealogy to modern digital reconnections through WhatsApp and diaspora gatherings.</p>
+          <h3 class="edition-card-title">Community dividend</h3>
+          <p class="edition-card-description">N$18,000 in local procurement (food, transport, accommodation) and 4 paid trainee positions for Ovitoto youth.</p>
         </div>
       </article>
 
       <article class="edition-card">
         <div class="edition-card-content">
-          <h3 class="edition-card-title">Land, Memory & Healing</h3>
-          <p class="edition-card-description">Sacred sites like Okandjira's battlefields and the Omumborombonga tree remain living archives—repositories of trauma and symbols of cultural survival across generations.</p>
+          <h3 class="edition-card-title">Institutional inversion</h3>
+          <p class="edition-card-description">Goethe-Institut Namibia president attended sessions on German colonial activity—listening, not lecturing—modelling reparative cultural diplomacy.</p>
         </div>
       </article>
 
       <article class="edition-card">
         <div class="edition-card-content">
-          <h3 class="edition-card-title">Women's Voices & Intergenerational Memory</h3>
-          <p class="edition-card-description">Uncovering women's roles in resistance and survival, from battlefield contributions to matriarchal transmission of memory through storytelling, songs, and cultural preservation.</p>
-        </div>
-      </article>
-
-      <article class="edition-card">
-        <div class="edition-card-content">
-          <h3 class="edition-card-title">Community Co-Creation</h3>
-          <p class="edition-card-description">9 emerging creatives from Botswana, Namibia, and South Africa collaborate with elders, historians, and cultural practitioners in Okandjira's ancestral landscape.</p>
-        </div>
-      </article>
-
-      <article class="edition-card">
-        <div class="edition-card-content">
-          <h3 class="edition-card-title">Cross-Border Dialogue</h3>
-          <p class="edition-card-description">Regional screenings and discussions in Gaborone, Windhoek, and Pretoria bring diaspora communities together to share stories and strengthen transnational bonds.</p>
-        </div>
-      </article>
-
-      <article class="edition-card">
-        <div class="edition-card-content">
-          <h3 class="edition-card-title">Living Heritage Festival</h3>
-          <p class="edition-card-description">Multi-day celebration in Okandjira featuring co-created works, traditional ceremonies, live performances, and facilitated dialogues honoring Ovaherero resilience.</p>
+          <h3 class="edition-card-title">Continental ripple</h3>
+          <p class="edition-card-description">Alumni have since secured 5 development grants totalling €67,000, all citing RTS footage as proof-of-concept. Cape Verde edition already oversubscribed 3:1.</p>
         </div>
       </article>
     </div>
@@ -1007,151 +983,89 @@
 
   <section class="section">
     <div class="container text-center">
-      <h2 class="section-title">The Ovaherero Diaspora Journey</h2>
-      <p class="section-intro">From the 1904-1908 genocide to present-day transnational communities—exploring resilience, memory, and cultural survival across Southern Africa.</p>
+      <h2 class="section-title">Building on Our Foundation</h2>
+      <p class="section-intro">Edition 2 expands our work in Namibia, becoming multidisciplinary and tracing Ovaherero diaspora resilience across Botswana, Namibia, and South Africa.</p>
       <div class="btn-group">
-        <a href="#impact" class="btn btn-primary" role="button">
-          <span>View Impact Metrics</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <a href="edition2.html" class="btn btn-primary" aria-describedby="edition2-desc">
+          Explore Edition 2 →
+          <span id="edition2-desc" class="visually-hidden">Learn more about our expanded multidisciplinary approach</span>
         </a>
-        <a href="#edition1" class="btn btn-outline" role="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 7L7 17M7 17H17M7 17V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>View Edition 1</span>
+        <a href="impact.html" class="btn btn-outline" aria-describedby="metrics-desc">
+          View Impact Metrics
+          <span id="metrics-desc" class="visually-hidden">See detailed statistics and outcomes from our programs</span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Enhanced testimonials section -->
-  <section class="testimonials-section" style="background: var(--surface-secondary); padding: var(--space-16) 0;">
-    <div class="container">
-      <h2 class="section-title">Voices from the Diaspora</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);">
-        <blockquote style="background: var(--surface-elevated); padding: var(--space-6); border-radius: var(--radius-xl); border-left: 4px solid var(--accent); position: relative;">
-          <p style="font-style: italic; font-size: var(--text-lg); line-height: var(--lh-relaxed); margin-bottom: var(--space-4); color: var(--text-primary);">
-            "This project has allowed us to reconnect with our scattered family members across borders, healing wounds that have persisted for generations."
-          </p>
-          <cite style="font-weight: var(--fw-semibold); color: var(--primary); font-size: var(--text-sm);">
-            — Community Elder, Botswana
-          </cite>
-        </blockquote>
-        
-        <blockquote style="background: var(--surface-elevated); padding: var(--space-6); border-radius: var(--radius-xl); border-left: 4px solid var(--primary); position: relative;">
-          <p style="font-style: italic; font-size: var(--text-lg); line-height: var(--lh-relaxed); margin-bottom: var(--space-4); color: var(--text-primary);">
-            "Through multimedia storytelling, we're preserving our ancestors' memories for future generations in ways they could never have imagined."
-          </p>
-          <cite style="font-weight: var(--fw-semibold); color: var(--primary); font-size: var(--text-sm);">
-            — Cultural Practitioner, Namibia
-          </cite>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive timeline preview -->
-  <section class="timeline-section" style="padding: var(--space-16) 0; background: var(--surface-primary);">
-    <div class="container">
-      <h2 class="section-title">Journey Through Time</h2>
-      <div style="max-width: 800px; margin: var(--space-8) auto 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; position: relative; padding: var(--space-4) 0;">
-          <!-- Timeline line -->
-          <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--accent-light); z-index: 1;"></div>
-          
-          <!-- Timeline points -->
-          <div style="background: var(--primary); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: var(--fw-bold); position: relative; z-index: 2; cursor: pointer; transition: transform 200ms ease;" title="1904-1908 Genocide">
-            1904
-          </div>
-          <div style="background: var(--accent); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: var(--fw-bold); position: relative; z-index: 2; cursor: pointer; transition: transform 200ms ease;" title="Diaspora Dispersal">
-            1920s
-          </div>
-          <div style="background: var(--primary-light); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: var(--fw-bold); position: relative; z-index: 2; cursor: pointer; transition: transform 200ms ease;" title="Cultural Revival">
-            1990s
-          </div>
-          <div style="background: var(--accent-light); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: var(--fw-bold); position: relative; z-index: 2; cursor: pointer; transition: transform 200ms ease;" title="Digital Reconnection">
-            2020s
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: var(--space-6);">
-          <p style="color: var(--text-secondary); font-size: var(--text-base);">
-            Click timeline points to explore different periods of the Ovaherero diaspora journey
-          </p>
-        </div>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer" id="partners">
-   <div class="footer-content">
-     <div class="footer-grid">
-       <div class="footer-section">
-         <h3>Return to the Source</h3>
-         <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema and multimedia arts.</p>
-         <div style="margin-top: var(--space-4);">
-           <a href="#" style="display: inline-block; margin-right: var(--space-3); padding: var(--space-2); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); transition: background 200ms ease;" title="Facebook">
-             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-             </svg>
-           </a>
-           <a href="#" style="display: inline-block; margin-right: var(--space-3); padding: var(--space-2); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); transition: background 200ms ease;" title="Twitter">
-             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-               <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-             </svg>
-           </a>
-           <a href="#" style="display: inline-block; padding: var(--space-2); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); transition: background 200ms ease;" title="Instagram">
-             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-             </svg>
-           </a>
-         </div>
-       </div>
-       <div class="footer-section">
-         <h3>Navigate</h3>
-         <ul>
-           <li><a href="#about">Mission & Vision</a></li>
-           <li><a href="#team">Leadership Team</a></li>
-           <li><a href="#edition1">Edition 1: Origins</a></li>
-           <li><a href="#edition2">Edition 2: Diaspora</a></li>
-           <li><a href="#impact">Impact & Metrics</a></li>
-           <li><a href="#contact">Get Involved</a></li>
-         </ul>
-       </div>
-       <div class="footer-section">
-         <h3>Connect & Support</h3>
-         <div style="margin-bottom: var(--space-4);">
-           <a href="mailto:info@returntothesource.org" style="display: block; margin-bottom: var(--space-2);">
-             info@returntothesource.org
-           </a>
-           <a href="tel:+27123456789" style="display: block; margin-bottom: var(--space-2);">
-             +27 (0) 12 345 6789
-           </a>
-         </div>
-         <div>
-           <h4 style="font-size: var(--text-base); margin-bottom: var(--space-3); color: var(--accent-light);">Newsletter</h4>
-           <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3);">
-             <input type="email" placeholder="Your email" style="flex: 1; padding: var(--space-2) var(--space-3); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); color: white; font-size: var(--text-sm);">
-             <button style="padding: var(--space-2) var(--space-4); background: var(--accent); color: white; border: none; border-radius: var(--radius-md); cursor: pointer; font-weight: var(--fw-semibold); font-size: var(--text-sm); transition: background 200ms ease;">Subscribe</button>
-           </div>
-           <p style="font-size: var(--text-xs); opacity: 0.7;">Get updates on our latest projects and community events.</p>
-         </div>
-       </div>
-     </div>
-   </div>
-   <div class="footer-bottom">
-     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
-       <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
-       <div style="display: flex; gap: var(--space-4); font-size: var(--text-sm);">
-         <a href="#privacy">Privacy Policy</a>
-         <a href="#terms">Terms of Use</a>
-         <a href="#accessibility">Accessibility</a>
-       </div>
-     </div>
-   </div>
-</footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Return to the Source</h3>
+          <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema and multimedia arts.</p>
+          <div style="margin-top: var(--space-4);">
+            <a href="#" style="display: inline-block; margin-right: var(--space-3); padding: var(--space-2); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); transition: background 200ms ease;" title="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" style="display: inline-block; margin-right: var(--space-3); padding: var(--space-2); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); transition: background 200ms ease;" title="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            <a href="#" style="display: inline-block; padding: var(--space-2); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); transition: background 200ms ease;" title="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#about">Mission & Vision</a></li>
+            <li><a href="#team">Leadership Team</a></li>
+            <li><a href="#edition1">Edition 1: Origins</a></li>
+            <li><a href="#edition2">Edition 2: Diaspora</a></li>
+            <li><a href="#impact">Impact & Metrics</a></li>
+            <li><a href="#contact">Get Involved</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect & Support</h3>
+          <div style="margin-bottom: var(--space-4);">
+            <a href="mailto:info@returntothesource.org" style="display: block; margin-bottom: var(--space-2);">
+              info@returntothesource.org
+            </a>
+            <a href="tel:+27123456789" style="display: block; margin-bottom: var(--space-2);">
+              +27 (0) 12 345 6789
+            </a>
+          </div>
+          <div>
+            <h4 style="font-size: var(--text-base); margin-bottom: var(--space-3); color: var(--accent-light);">Newsletter</h4>
+            <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3);">
+              <input type="email" placeholder="Your email" style="flex: 1; padding: var(--space-2) var(--space-3); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); color: white; font-size: var(--text-sm);">
+              <button style="padding: var(--space-2) var(--space-4); background: var(--accent); color: white; border: none; border-radius: var(--radius-md); cursor: pointer; font-weight: var(--fw-semibold); font-size: var(--text-sm); transition: background 200ms ease;">Subscribe</button>
+            </div>
+            <p style="font-size: var(--text-xs); opacity: 0.7;">Get updates on our latest projects and community events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+        <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
+        <div style="display: flex; gap: var(--space-4); font-size: var(--text-sm);">
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Use</a>
+          <a href="../accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 <script>
 // Enhanced accessibility and interaction
@@ -1176,44 +1090,16 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('mouseenter', () => {
       card.style.setProperty('--hover-scale', '1');
     });
-    
+
     card.addEventListener('mouseleave', () => {
       card.style.setProperty('--hover-scale', '0');
-    });
-  });
-
-  // Timeline interaction
-  const timelinePoints = document.querySelectorAll('[style*="border-radius: 50%"]');
-  timelinePoints.forEach(point => {
-    point.addEventListener('click', function() {
-      // Remove active state from all points
-      timelinePoints.forEach(p => {
-        p.style.transform = 'scale(1)';
-        p.style.boxShadow = 'none';
-      });
-      
-      // Add active state to clicked point
-      this.style.transform = 'scale(1.1)';
-      this.style.boxShadow = '0 0 0 4px rgba(139, 69, 19, 0.3)';
-    });
-    
-    point.addEventListener('mouseenter', function() {
-      if (!this.style.transform.includes('scale(1.1)')) {
-        this.style.transform = 'scale(1.05)';
-      }
-    });
-    
-    point.addEventListener('mouseleave', function() {
-      if (!this.style.boxShadow.includes('rgba(139, 69, 19, 0.3)')) {
-        this.style.transform = 'scale(1)';
-      }
     });
   });
 
   // Newsletter subscription
   const newsletter = document.querySelector('input[type="email"]');
   const subscribeBtn = document.querySelector('button');
-  
+
   if (newsletter && subscribeBtn) {
     subscribeBtn.addEventListener('click', function() {
       const email = newsletter.value;
@@ -1221,7 +1107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.textContent = 'Subscribed!';
         this.style.background = 'var(--accent-light)';
         newsletter.value = '';
-        
+
         setTimeout(() => {
           this.textContent = 'Subscribe';
           this.style.background = 'var(--accent)';
@@ -1292,12 +1178,6 @@ input[type="email"]:focus {
 
 input[type="email"]::placeholder {
   color: rgba(255,255,255,0.7);
-}
-
-/* Timeline hover effects */
-div[title]:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
 }
 
 /* Social media icons hover */
