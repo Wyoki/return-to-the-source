@@ -518,23 +518,25 @@
     });
   });
   
-  // Performance optimization: Preload critical images
-  function preloadCriticalImages() {
-    const criticalImages = [
-      'img/events/P1091768.webp' // Used as hero background
-    ];
+  // Performance optimization: Preload critical images (only when using production server)
+  if (window.location.port === '8080') {
+    function preloadCriticalImages() {
+      const criticalImages = [
+        'img/events/P1091768.webp' // Used as hero background
+      ];
 
-    criticalImages.forEach(src => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = src;
-      document.head.appendChild(link);
-    });
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+    }
+
+    // Call preload function only on production server
+    preloadCriticalImages();
   }
-
-  // Call preload function
-  preloadCriticalImages();
 
   // Enhanced dropdown functionality
   document.addEventListener('DOMContentLoaded', function() {
