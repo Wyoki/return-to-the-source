@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return to the Source Film Lab - Rooted in Story, Focused Through Craft</title>
+    <meta name="description" content="Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema. Edition 1 achievements showcase Edition 2 readiness.">
+    
+    <style>
+        :root {
+            --primary-bg: #FAFAFA;
+            --text-dark: #222222;
+            --accent-green: #2D5A3D;
+            --light-green: #E8F4EA;
+            --border-light: #E0E0E0;
+            --shadow: rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            background: var(--primary-bg);
+            color: var(--text-dark);
+        }
+
+        /* Top notification bar */
+        .reviewer-note {
+            background: var(--accent-green);
+            color: white;
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 32px;
+            z-index: 999;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "🎬";
+            background: var(--light-green);
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-green) 0%, white 100%);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -20%;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%232D5A3D" opacity="0.1"/><circle cx="50" cy="50" r="1.5" fill="%232D5A3D" opacity="0.1"/><circle cx="80" cy="30" r="1" fill="%232D5A3D" opacity="0.1"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .hero-visual {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-visual::before {
+            content: '🌳';
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .hero-visual::after {
+            content: '🎥';
+            font-size: 3rem;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            opacity: 0.7;
+        }
+
+        /* Impact Highlights */
+        .impact-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .impact-card {
+            background: var(--light-green);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow);
+        }
+
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-green);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .impact-scale {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 4rem 0;
+            background: var(--primary-bg);
+        }
+
+        .team-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+        }
+
+        .member-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-photo {
+            width: 80px;
+            height: 80px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 3px solid var(--accent-green);
+        }
+
+        .member-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .member-role {
+            color: var(--accent-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .member-bio {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .member-achievements {
+            margin-bottom: 1.5rem;
+        }
+
+        .achievement-item {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .achievement-item::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .external-link {
+            padding: 0.5rem 1rem;
+            background: var(--light-green);
+            border: none;
+            border-radius: 8px;
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .external-link:hover {
+            background: var(--accent-green);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Featured Story */
+        .featured-story {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .story-image {
+            background: var(--light-green);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        .story-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .story-excerpt {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .read-more-btn {
+            padding: 1rem 2rem;
+            background: var(--accent-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 90, 61, 0.3);
+        }
+
+        /* Implementation Note */
+        .implementation-note {
+            background: #FFF9E6;
+            border: 2px solid #FFE066;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .implementation-note h3 {
+            color: #B8860B;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .implementation-note p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--light-green);
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--light-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tree and Camera Symbolic Elements */
+        .branch-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-green) 20%, var(--accent-green) 80%, transparent 100%);
+            margin: 3rem auto;
+            max-width: 200px;
+            position: relative;
+        }
+
+        .branch-divider::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Reviewer Notification Bar -->
+    <div class="reviewer-note">
+        Implementing partner for Edition 2 funding. This showcase demonstrates our specialized capabilities and Edition 1 success.
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Return to the Source</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#overview">Project Overview</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#edition1">Edition 1</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Return to the Source</h1>
+                <div class="hero-tagline">Rooted in Story, Focused Through Craft</div>
+                <p class="hero-description">
+                    A transformative Pan-African Film Lab that uses cinema as a tool for historical reckoning, 
+                    memory preservation, and community healing. Our Edition 1 success demonstrates proven 
+                    methodology ready for Edition 2 expansion.
+                </p>
+            </div>
+            <div class="hero-visual fade-in">
+                <h3>Archives Beyond Paper</h3>
+                <p>Body • Song • Dance • Place • Memory</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Highlights Section -->
+    <section class="impact-section" id="overview">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Edition 1 Impact Highlights</h2>
+                <p class="section-subtitle">
+                    Measurable outcomes from our inaugural lab demonstrate readiness for Edition 2 scaling
+                </p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card fade-in">
+                    <span class="impact-number">12</span>
+                    <div class="impact-label">Pan-African Fellows Trained</div>
+                    <div class="impact-scale">Scales to 25 fellows in Edition 2</div>
+                </div>
+
+                <div class="impact-card fade-in">
+                    <span class="impact-number">8</span>
+                    <div class="impact-label">Collaborative Films Completed</div>
+                    <div class="impact-scale">Archive-based methodology proven</div>
+                </div>
+
+                <div class="impact-card fade-in">
+                    <span class="impact-number">4</span>
+                    <div class="impact-label">Countries Represented</div>
+                    <div class="impact-scale">Expanding to 6 countries Edition 2</div>
+                </div>
+
+                <div class="impact-card fade-in">
+                    <span class="impact-number">15</span>
+                    <div class="impact-label">Community Workshops Delivered</div>
+                    <div class="impact-scale">Local capacity building model</div>
+                </div>
+
+                <div class="impact-card fade-in">
+                    <span class="impact-number">3</span>
+                    <div class="impact-label">Elder Historians Engaged</div>
+                    <div class="impact-scale">Intergenerational knowledge transfer</div>
+                </div>
+
+                <div class="impact-card fade-in">
+                    <span class="impact-number">100%</span>
+                    <div class="impact-label">Alumni Continued Creating</div>
+                    <div class="impact-scale">Sustainable impact demonstrated</div>
+                </div>
+            </div>
+
+            <div class="implementation-note fade-in">
+                <h3>Implementation Partner Status</h3>
+                <p>Return to the Source serves as implementing partner, delivering specialized film lab methodology and trauma-informed cultural preservation expertise. Our Edition 1 success validates our capacity for Edition 2 expansion.</p>
+                <p><strong>Role:</strong> Specialized capability deployment in historical narrative cinema and community-centered creative development.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="branch-divider"></div>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Four Pillars Leadership Team</h2>
+                <p class="section-subtitle">
+                    Gender-balanced expertise spanning decolonial theory, strategic production, 
+                    visionary filmmaking, and trauma-informed healing
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Team Member 1 - Male -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-photo">🎓</div>
+                        <div class="member-info">
+                            <h3>Dr. Nashilongweshipwe Mushaandja</h3>
+                            <div class="member-role">Theoretical Architect & Cultural Methodologist</div>
+                        </div>
+                    </div>
+                    <p class="member-bio">
+                        Distinguished scholar-artist whose groundbreaking theoretical frameworks transform 
+                        indigenous knowledge systems into sophisticated decolonial methodologies.
+                    </p>
+                    <div class="member-achievements">
+                        <div class="achievement-item">Lecturer, Drama & Theatre Arts, University of Namibia</div>
+                        <div class="achievement-item">Developer of "Oudano" decolonial methodology</div>
+                        <div class="achievement-item">Zürcher Kantonalbank Award Winner 2021</div>
+                    </div>
+                    <div class="external-links">
+                        <a href="#" class="external-link">Academic Portfolio</a>
+                        <a href="#" class="external-link">Performance Works</a>
+                        <a href="#" class="external-link">LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 - Female -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-photo">🎬</div>
+                        <div class="member-info">
+                            <h3>Fibby Kioria</h3>
+                            <div class="member-role">Strategic Producer & Capacity Development Architect</div>
+                        </div>
+                    </div>
+                    <p class="member-bio">
+                        Visionary producer and cultural strategist who systematically empowers African 
+                        narrative sovereignty through innovative infrastructure development.
+                    </p>
+                    <div class="member-achievements">
+                        <div class="achievement-item">Founder & CEO, Mucii Pictures</div>
+                        <div class="achievement-item">Co-founder, East African Screen Collective</div>
+                        <div class="achievement-item">€227,000 DW Akademie Fund Manager</div>
+                    </div>
+                    <div class="external-links">
+                        <a href="#" class="external-link">Mucii Pictures</a>
+                        <a href="#" class="external-link">EASC Platform</a>
+                        <a href="#" class="external-link">LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 - Male -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-photo">🎥</div>
+                        <div class="member-info">
+                            <h3>Perivi Katjavivi</h3>
+                            <div class="member-role">Visionary Filmmaker & Historical Narrative Specialist</div>
+                        </div>
+                    </div>
+                    <p class="member-bio">
+                        Pioneering filmmaker whose innovative exploration of African identity positions him 
+                        at the forefront of African narrative sovereignty and authentic storytelling.
+                    </p>
+                    <div class="member-achievements">
+                        <div class="achievement-item">Director, "Under the Hanging Tree" (Namibia's first Oscar submission)</div>
+                        <div class="achievement-item">Founder, Old Location Films</div>
+                        <div class="achievement-item">Two AMAA Awards Winner 2023</div>
+                    </div>
+                    <div class="external-links">
+                        <a href="#" class="external-link">IMDb Profile</a>
+                        <a href="#" class="external-link">Old Location Films</a>
+                        <a href="#" class="external-link">Film Portfolio</a>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 - Female -->
+                <div class="team-member fade-in">
+                    <div class="member-header">
+                        <div class="member-photo">🌿</div>
+                        <div class="member-info">
+                            <h3>Marcella Katjijova</h3>
+                            <div class="member-role">Healing Practitioner & Intergenerational Trauma Specialist</div>
+                        </div>
+                    </div>
+                    <p class="member-bio">
+                        Registered Psychological Counselor whose groundbreaking work in healing intergenerational 
+                        trauma provides essential therapeutic infrastructure for cultural reclamation.
+                    </p>
+                    <div class="member-achievements">
+                        <div class="achievement-item">Head of Trauma & Recovery, Ovaherero Genocide Foundation</div>
+                        <div class="achievement-item">Global Cultural Assembly Reference Group Member</div>
+                        <div class="achievement-item">Published researcher in trauma therapy</div>
+                    </div>
+                    <div class="external-links">
+                        <a href="#" class="external-link">YouTube Channel</a>
+                        <a href="#" class="external-link">Research Publications</a>
+                        <a href="#" class="external-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="branch-divider"></div>
+
+    <!-- Featured Story Section -->
+    <section class="featured-story" id="edition1">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-image">📽️<br>🌍</div>
+                <div class="story-text fade-in">
+                    <h2>Edition 1 Preview: Transforming Trauma into Creative Power</h2>
+                    <p class="story-excerpt">
+                        Our inaugural lab in Ovitoto, Namibia, brought together filmmakers from four African countries 
+                        to engage with sites of colonial history through innovative archive methodologies. Participants 
+                        worked directly with elder historians, exploring how landscape itself serves as archive, 
+                        and creating collaborative films that honor memory while building contemporary creative capacity. 
+                        The integration of trauma-informed care with artistic excellence proved that healing and 
+                        high-quality creative work can be achieved simultaneously.
+                    </p>
+                    <a href="#" class="read-more-btn">View Full Edition 1 Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Return to the Source</h3>
+                <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#overview">Project Overview</a></p>
+                <p><a href="#team">Our Team</a></p>
+                <p><a href="#edition1">Edition 1 Results</a></p>
+                <p><a href="#">Download Handbook</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>For Reviewers</h3>
+                <p><a href="#">Implementation Role Statement</a></p>
+                <p><a href="#">Edition 2 Proposal Overview</a></p>
+                <p><a href="#">Contact for Due Diligence</a></p>
+                <p><a href="#">Press Kit Materials</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Partners</h3>
+                <p>Museums Association of Namibia (Lead Applicant)</p>
+                <p>Goethe-Institut Namibia</p>
+                <p>Mastercard Foundation</p>
+                <p>Berlinale Film Festival</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Return to the Source Film Lab. Rooted in Story, Focused Through Craft.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.1s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements that should fade in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Track external link clicks for analytics
+        document.querySelectorAll('.external-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Analytics tracking would go here
+                console.log('External link clicked:', this.textContent, this.href);
+            });
+        });
+
+        // Dynamic team member display to ensure gender alternation
+        function ensureGenderParity() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            const maleSymbols = ['🎓', '🎥'];
+            const femaleSymbols = ['🎬', '🌿'];
+            
+            teamMembers.forEach((member, index) => {
+                const photo = member.querySelector('.member-photo');
+                if (index % 2 === 0) {
+                    // Even positions: use appropriate symbols
+                    photo.textContent = maleSymbols[Math.floor(index/2)] || '👨‍💼';
+                } else {
+                    // Odd positions: use appropriate symbols
+                    photo.textContent = femaleSymbols[Math.floor(index/2)] || '👩‍💼';
+                }
+            });
+        }
+
+        // Initialize gender parity display
+        document.addEventListener('DOMContentLoaded', ensureGenderParity);
+
+        // Responsive navigation toggle (for mobile - would need hamburger menu)
+        function toggleMobileNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Performance optimization: Lazy load images and content
+        if ('IntersectionObserver' in window) {
+            const lazyLoadObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Load content when it comes into view
+                        const element = entry.target;
+                        if (element.dataset.src) {
+                            element.src = element.dataset.src;
+                            element.removeAttribute('data-src');
+                        }
+                        lazyLoadObserver.unobserve(element);
+                    }
+                });
+            });
+
+            // Observe elements with data-src attributes
+            document.querySelectorAll('[data-src]').forEach(el => {
+                lazyLoadObserver.observe(el);
+            });
+        }
+
+        // Add smooth hover effects for impact cards
+        document.querySelectorAll('.impact-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Testimonial functionality (placeholder for future implementation)
+        function initTestimonialCarousel() {
+            // This would handle rotating testimonials from Edition 1 graduates
+            console.log('Testimonial carousel initialized');
+        }
+
+        // Contact form handling (placeholder)
+        function handleContactForm(event) {
+            event.preventDefault();
+            console.log('Contact form submitted - would integrate with backend');
+        }
+
+        // Analytics tracking for key interactions
+        function trackInteraction(action, element) {
+            // This would send data to analytics service
+            console.log('Tracking:', action, element);
+        }
+
+        // Initialize all interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            initTestimonialCarousel();
+            
+            // Track downloads and external links
+            document.querySelectorAll('a[href^="http"], a[download]').forEach(link => {
+                link.addEventListener('click', function() {
+                    trackInteraction('external_link', this.href || this.download);
+                });
+            });
+            
+            // Track section visits
+            const sections = document.querySelectorAll('section[id]');
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        trackInteraction('section_view', entry.target.id);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                // Ensure focus indicators are visible
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+        });
+    </script>
+
+    <style>
+        /* Additional styles for enhanced functionality */
+        .keyboard-navigation *:focus {
+            outline: 2px solid var(--accent-green);
+            outline-offset: 2px;
+        }
+
+        /* Loading states */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Print styles for reports */
+        @media print {
+            .reviewer-note, header, footer {
+                display: none;
+            }
+            
+            .hero {
+                page-break-after: always;
+            }
+            
+            .team-member {
+                page-break-inside: avoid;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-bg: #FFFFFF;
+                --text-dark: #000000;
+                --accent-green: #004225;
+            }
+            
+            .impact-card, .team-member {
+                border: 2px solid var(--text-dark);
+            }
+        }
+
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-bg: #1a1a1a;
+                --text-dark: #e0e0e0;
+                --accent-green: #4a8c6a;
+                --light-green: #2a4a34;
+            }
+            
+            header, .impact-section, .featured-story {
+                background: #222222;
+            }
+            
+            .team-member, .impact-card {
+                background: #2a2a2a;
+                border: 1px solid #404040;
+            }
+        }
+
+        /* Additional responsive breakpoints */
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .impact-number {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .hero-content, .footer-content {
+                max-width: 1400px;
+            }
+        }
+    </style>

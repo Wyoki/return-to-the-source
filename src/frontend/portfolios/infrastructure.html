@@ -11,23 +11,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../css/pages/theme.unified.css">
+  <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/portfolio.css">
 </head>
 
 <body class="portfolios infrastructure">
 
   <!-- Header -->
-  <header>
-    <div class="container nav">
+  <header class="site-header">
+    <div class="header-content">
    <a href="../index.html" class="logo">
       <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="100" height="100">
     </a>
-      <nav class="pillar-tabs">
-        <a href="theory.html" class="pillar-tab">Dr. Mushaandja (Theory)</a>
-        <a href="infrastructure.html" class="pillar-tab active">Fibby Kioria (Infrastructure)</a>
-        <a href="cinema.html" class="pillar-tab">Perivi Katjavivi (Cinema)</a>
-        <a href="healing.html" class="pillar-tab">Marcella Katjijova (Healing)</a>
-        <a href="../team.html" class="pillar-tab">← Team Overview</a>
+      <nav class="nav-menu">
+        <a href="theory.html" class="nav-link">Dr. Mushaandja (Theory)</a>
+        <a href="infrastructure.html" class="nav-link active">Fibby Kioria (Infrastructure)</a>
+        <a href="cinema.html" class="nav-link">Perivi Katjavivi (Cinema)</a>
+        <a href="healing.html" class="nav-link">Marcella Katjijova (Healing)</a>
+        <a href="../team.html" class="nav-link">← Team Overview</a>
       </nav>
     </div>
   </header>
@@ -36,9 +37,16 @@
   <section class="hero">
     <div class="container">
       <div class="hero__content">
-        <p class="hero__role">The Continental Creative Infrastructure Architect & Strategic Capacity Builder</p>
+        <div class="hero__profile">
+          <img src="../img/team/fibby.webp" alt="Fibby Kioria" class="hero__image" loading="eager">
+          <div class="hero__branding">
+            <img src="../img/logos/mucii-logo.webp" alt="Mucii Pictures" class="hero__logo" loading="eager">
+            <span class="hero__company">Founder & CEO</span>
+          </div>
+        </div>
+        <p class="hero__role">DW Akademie Continental Authority & Southern African Creative Infrastructure Architect</p>
         <h1 class="hero__name">Fibby Kioria</h1>
-        <blockquote class="hero__quote">"Infrastructure is my love-language to continental African stories."</blockquote>
+        <blockquote class="hero__quote">"Building sustainable creative capacity across Southern Africa through strategic partnerships and continental networks."</blockquote>
       </div>
     </div>
   </section>
@@ -49,6 +57,13 @@
   <div class="page-layout">
     <!-- Sidebar -->
     <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-branding">
+          <img src="../img/logos/mucii-logo.webp" alt="Mucii Pictures" class="sidebar-logo" loading="lazy">
+          <p class="sidebar-tagline">Mucii Pictures</p>
+        </div>
+      </div>
+
       <div class="sidebar-section">
         <h3 class="sidebar-heading">Southern African Partnerships</h3>
         <ul class="sidebar-list">
@@ -96,90 +111,189 @@
       <section class="section">
         <div class="innovation-card fade-in">
           <h2 class="innovation-title">Core Innovation</h2>
-          <p>Building deep Southern African relationships that honor cultural sovereignty and community wisdom. Through the Return to the Source Film Lab, Fibby creates authentic partnerships with local elders, traditional leaders, and diaspora communities, ensuring that African stories are told with cultural integrity and historical accuracy. The focus is on relationship-building that transcends borders and generations.</p>
+          <p>As DW Akademie's Continental Authority for Eastern Africa and Founder & CEO of Mucii Pictures, Fibby Kioria has managed €227,000 in international funding with zero audit queries, demonstrating exceptional financial stewardship and program management excellence. Her work spans Southern Africa, establishing sustainable creative infrastructure through strategic partnerships with Goethe-Institut Namibia, Mastercard Foundation, and University of Namibia. Through Mucii Pictures, she has developed over 30 short films and web series, creating replicable models for creative capacity building across the continent.</p>
+        </div>
+
+        <!-- Innovation Metrics -->
+        <div class="metrics-section fade-in">
+          <h3 style="text-align: center; margin-bottom: var(--space-xl); color: var(--color-primary); font-family: var(--font-display); font-size: var(--text-xl);">Innovation Impact</h3>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-number">€227k</span>
+              <span class="metric-label">DW Akademie Funding Managed</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">30+</span>
+              <span class="metric-label">Films & Series Produced</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">6</span>
+              <span class="metric-label">Countries Across Africa</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">15+</span>
+              <span class="metric-label">Years Creative Leadership</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Key Achievements -->
-  <section class="section section--alt">
-    <div class="container">
-      <header class="section__header">
-        <h2 class="section__title">Key Achievements</h2>
-        <p class="section__subtitle">Building authentic Southern African relationships and cultural partnerships</p>
-      </header>
+      <section class="section section--alt">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title">Key Achievements</h2>
+            <p class="section__subtitle">Building authentic Southern African relationships and cultural partnerships</p>
+          </header>
 
-      <div class="achievement-grid">
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Return to the Source Film Lab</h3>
-          <p class="achievement-description">Founded and led the groundbreaking 5-day film lab in Namibia, bringing together 12 filmmakers from across Africa with local elders and historians to create films that honor colonial history and cultural memory</p>
-        </article>
+          <div class="pillars-container">
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">01</span>
+              <div class="pillar-content">
+                <h3>DW Akademie Continental Authority</h3>
+                <p class="pillar-description">As DW Akademie's designated Continental Authority for Eastern Africa, managed €227,000 in funding with zero audit queries, overseeing film development programs across Ethiopia, Tanzania, Uganda, Kenya, Rwanda, and Ghana</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">€227k managed, 6 countries, zero audit queries</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Community Consent Protocols</h3>
-          <p class="achievement-description">Established ethical frameworks for working with indigenous communities, ensuring cultural sovereignty and proper representation of Southern African heritage in film and media</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">02</span>
+              <div class="pillar-content">
+                <h3>Mucii Pictures Creative Leadership</h3>
+                <p class="pillar-description">As Founder & CEO of Mucii Pictures, produced over 30 short films and web series through systematic film laboratory programs across Eastern and Southern Africa, establishing replicable models for creative capacity building</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">30+ films produced, continental creative infrastructure</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Heritage Documentation Networks</h3>
-          <p class="achievement-description">Built extensive networks with traditional leaders, elders, and cultural practitioners across Namibia, Botswana, and South Africa for authentic storytelling partnerships</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">03</span>
+              <div class="pillar-content">
+                <h3>African Film Festivals Platform</h3>
+                <p class="pillar-description">Co-founded the African Film Festivals Platform in 2025, creating the first centralized directory for African film festivals, curators, and practitioners, addressing fundamental information gaps in continental creative networks</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">Centralized directory for 100+ African film festivals</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Cross-Border Diaspora Connections</h3>
-          <p class="achievement-description">Facilitated connections between Ovaherero communities across Southern Africa, strengthening cultural bonds and shared narratives of resilience and memory</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">04</span>
+              <div class="pillar-content">
+                <h3>Durban FilmMart Leadership</h3>
+                <p class="pillar-description">Lead facilitator for Durban International Film Festival's 2025 residency program, designing comprehensive creative development for 8 festival directors across South Africa, combining technical training with strategic network building</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">8 festival directors trained, Southern African networks strengthened</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Institutional Relationship Building</h3>
-          <p class="achievement-description">Developed deep partnerships with Goethe-Institut Namibia, Mastercard Foundation, and University of Namibia, creating sustainable frameworks for cultural collaboration</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">05</span>
+              <div class="pillar-content">
+                <h3>Continental Board Leadership</h3>
+                <p class="pillar-description">Board member of Goethe Zentrum Uganda, Ladima Foundation Nigeria, and I Am Nativ Uganda, providing strategic oversight for cultural institutions across Eastern and Southern Africa</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">Strategic leadership across 3 African countries</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Cultural Preservation Advocacy</h3>
-          <p class="achievement-description">Advocated for the preservation of sacred sites and oral histories, working with communities to protect cultural heritage while enabling contemporary artistic expression</p>
-        </article>
-      </div>
-    </div>
-  </section>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">06</span>
+              <div class="pillar-content">
+                <h3>International Festival Networks</h3>
+                <p class="pillar-description">Selection committee member for Hot Docs Canada, Chicken & Egg Films USA, and Locarno Open Doors Switzerland, curating African content for global audiences while maintaining continental representation</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">African films selected for international festivals</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Break Section -->
+      <section class="section" style="background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%); padding: var(--space-3xl) 0; margin: var(--space-3xl) 0;">
+        <div class="container" style="text-align: center;">
+          <blockquote style="font-family: var(--font-display); font-size: var(--text-xl); font-style: italic; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; position: relative; padding: 0 var(--space-lg);">
+            "Infrastructure is my love-language to continental African stories."
+          </blockquote>
+          <cite style="display: block; margin-top: var(--space-lg); color: var(--color-primary); font-weight: 600;">— Fibby Kioria</cite>
+        </div>
+      </section>
 
   <!-- Areas of Expertise -->
   <section class="section">
     <div class="container">
       <header class="section__header">
         <h2 class="section__title">Areas of Expertise</h2>
-        <p class="section__subtitle">Building authentic relationships and cultural partnerships in Southern Africa</p>
+        <p class="section__subtitle">Demonstrating continental authority in creative infrastructure development and strategic capacity building across Africa</p>
       </header>
 
-      <div class="expertise-grid">
-        <div class="expertise-card fade-in">
-          <h3 class="expertise-title">Community Relationship Building</h3>
-          <ul class="expertise-list">
-            <li>Elder and traditional leader engagement</li>
-            <li>Cultural protocol development</li>
-            <li>Community consent frameworks</li>
-            <li>Intergenerational knowledge transfer</li>
-          </ul>
-        </div>
+      <div class="pillars-container">
+        <article class="pillar-card fade-in">
+          <span class="pillar-number">01</span>
+          <div class="pillar-content">
+            <h3>International Program Management</h3>
+            <p class="pillar-description">Managing complex international funding programs with exceptional financial stewardship and zero audit queries.</p>
+            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+              <li>DW Akademie €227k fund management</li>
+              <li>Cross-border program coordination</li>
+              <li>International partnership development</li>
+              <li>Financial compliance and reporting</li>
+            </ul>
+            <div class="pillar-impact">
+              <span class="impact-label">Expertise Level:</span>
+              <span class="impact-text">Zero audit queries, €227k successfully managed</span>
+            </div>
+          </div>
+        </article>
 
-        <div class="expertise-card fade-in">
-          <h3 class="expertise-title">Cultural Partnership Facilitation</h3>
-          <ul class="expertise-list">
-            <li>Cross-border diaspora connections</li>
-            <li>Institutional relationship management</li>
-            <li>Heritage preservation advocacy</li>
-            <li>Collaborative storytelling frameworks</li>
-          </ul>
-        </div>
+        <article class="pillar-card fade-in">
+          <span class="pillar-number">02</span>
+          <div class="pillar-content">
+            <h3>Continental Creative Infrastructure</h3>
+            <p class="pillar-description">Building sustainable creative ecosystems through strategic partnerships and replicable capacity building models.</p>
+            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+              <li>Mucii Pictures creative leadership</li>
+              <li>Continental network development</li>
+              <li>Creative capacity building programs</li>
+              <li>Cross-cultural collaboration frameworks</li>
+            </ul>
+            <div class="pillar-impact">
+              <span class="impact-label">Expertise Level:</span>
+              <span class="impact-text">30+ films produced, continental infrastructure built</span>
+            </div>
+          </div>
+        </article>
 
-        <div class="expertise-card fade-in">
-          <h3 class="expertise-title">Southern African Network Development</h3>
-          <ul class="expertise-list">
-            <li>Regional cultural exchange programs</li>
-            <li>Indigenous knowledge systems integration</li>
-            <li>Transnational community solidarity</li>
-            <li>Cultural sovereignty frameworks</li>
-          </ul>
-        </div>
+        <article class="pillar-card fade-in">
+          <span class="pillar-number">03</span>
+          <div class="pillar-content">
+            <h3>International Festival Networks</h3>
+            <p class="pillar-description">Curating African content for global audiences through international selection committees and festival partnerships.</p>
+            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+              <li>Hot Docs Canada selection committee</li>
+              <li>Chicken & Egg Films USA curation</li>
+              <li>Locarno Open Doors Switzerland</li>
+              <li>African Film Festivals Platform co-founder</li>
+            </ul>
+            <div class="pillar-impact">
+              <span class="impact-label">Expertise Level:</span>
+              <span class="impact-text">International curation and selection expertise</span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>

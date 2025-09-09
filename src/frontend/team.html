@@ -15,6 +15,7 @@
 
   <!-- Unified design system -->
   <link rel="stylesheet" href="css/pages/theme.unified.css">
+  <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/pages/team.css">
 </head>
 
@@ -34,14 +35,7 @@
        <li><a href="index.html">Home</a></li>
        <li><a href="about.html">About</a></li>
        <li><a href="team.html" class="active">Team</a></li>
-       <li class="dropdown">
-         <button class="dropbtn">Editions ▾</button>
-         <ul class="dropdown-content">
-           <li><a href="editions/edition1.html">Edition 1</a></li>
-           <li><a href="editions/edition2.html">Edition 2</a></li>
-           <li><a href="editions/impact.html">Impact</a></li>
-         </ul>
-       </li>
+       <li><a href="editions/edition1.html">Editions</a></li>
        <li><a href="blog.html">Blog</a></li>
        <li><a href="contact.html">Contact</a></li>
      </ul>
@@ -77,7 +71,7 @@
             <span class="metric__label">Filmmakers / Lab</span>
           </div>
           <div class="metric">
-            <span class="metric__num">50%</span>
+            <span class="metric__num">50% </span>
             <span class="metric__label">Gender Parity</span>
           </div>
           <div class="metric">
@@ -94,7 +88,7 @@
         <div class="pillars__grid">
 
           <!-- Pillar 1: THEORY -->
-          <article class="pillar">
+          <article class="pillar pillar-theory">
             <img class="pillar__img" src="img/team/mushaandja.webp" alt="Dr. Nashilongweshipwe Mushaandja performing">
             <div class="pillar__body flow">
               <header class="pillar__header">
@@ -103,13 +97,13 @@
               </header>
               <p class="pillar__role">Theoretical Architect & Cultural Methodologist</p>
               <div class="pillar__tags">
-                <span>Performance Studies</span>
-                <span>Decolonial Archives</span>
-                <span>Oudano Praxis</span>
+                <span class="keyword-tag">Performance Studies</span>
+                <span class="keyword-tag">Decolonial Archives</span>
+                <span class="keyword-tag">Oudano Praxis</span>
               </div>
-              <p class="pillar__bio">PhD (UCT) • Creator of <em>Oudano</em> • Zürcher Kantonalbank Award winner. Transforms archives into living, embodied experiences.</p>
+              <p class="pillar__bio">PhD (<span class="keyword-highlight">UCT</span>) • Creator of <em class="keyword-highlight">Oudano</em> • <span class="keyword-highlight">Zürcher Kantonalbank Award</span> winner. Transforms <span class="keyword-highlight">archives</span> into living, embodied experiences.</p>
               <div class="pillar__links">
-                <a href="https://www.youtube.com/@returntothesource" class="pillar__link" target="_blank" rel="noopener" aria-label="YouTube Channel">
+                <a href="https://www.youtube.com/watch?v=heVcEQ2bEXo" class="pillar__link" target="_blank" rel="noopener" aria-label="YouTube Channel">
                   ▶ YouTube
                 </a>
                 <a href="portfolios/theory.html" class="pillar__link pillar__link--secondary">View Portfolio</a>
@@ -118,22 +112,22 @@
           </article>
 
           <!-- Pillar 2: INFRASTRUCTURE -->
-          <article class="pillar">
+          <article class="pillar pillar-infrastructure">
             <img class="pillar__img" src="img/team/fibby.webp" alt="Fibby Kioria">
             <div class="pillar__body flow">
               <header class="pillar__header">
-                <img class="pillar__logo" src="img/logos/mucii-pictures.webp" alt="Mucii Pictures logo">
+                <img class="pillar__logo" src="img/logos/mucii-logo.webp" alt="Mucii Pictures logo">
                 <h2 class="pillar__name">Fibby Kioria</h2>
               </header>
               <p class="pillar__role">Strategic Producer & Continental Network Architect</p>
               <div class="pillar__tags">
-                <span>€227k DW Akademie Fund</span>
-                <span>African Film Festivals Platform</span>
-                <span>EAccelerate</span>
+                <span class="keyword-tag">€227k DW Akademie Fund</span>
+                <span class="keyword-tag">African Film Festivals Platform</span>
+                <span class="keyword-tag">EAccelerate</span>
               </div>
-              <p class="pillar__bio">Founder & CEO Mucii Pictures • Co-founder East African Screen Collective • Board member Goethe Zentrum Uganda, Ladima Foundation.</p>
+              <p class="pillar__bio">Founder & CEO <span class="keyword-highlight">Mucii Pictures</span> • Co-founder <span class="keyword-highlight">East African Screen Collective</span> • Board member <span class="keyword-highlight">Goethe Zentrum Uganda</span>, <span class="keyword-highlight">Ladima Foundation</span>.</p>
               <div class="pillar__links">
-                <a href="https://www.linkedin.com/in/fibby-kioria" class="pillar__link" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+                <a href="https://ke.linkedin.com/in/fibbykioria101" class="pillar__link" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
                   ⟐ LinkedIn
                 </a>
                 <a href="portfolios/infrastructure.html" class="pillar__link pillar__link--secondary">View Portfolio</a>
@@ -142,7 +136,7 @@
           </article>
 
           <!-- Pillar 3: CINEMA -->
-          <article class="pillar">
+          <article class="pillar pillar-cinema">
             <img class="pillar__img" src="img/team/perivi.webp" alt="Perivi Katjavivi on set">
             <div class="pillar__body flow">
               <header class="pillar__header">
@@ -151,11 +145,11 @@
               </header>
               <p class="pillar__role">Visionary Filmmaker & Historical-Narrative Specialist</p>
               <div class="pillar__tags">
-                <span>Namibia's 1st Oscar Entry</span>
-                <span>AMAA Winner</span>
-                <span>Berlinale Alum</span>
+                <span class="keyword-tag">Namibia's 1st Oscar Entry</span>
+                <span class="keyword-tag">AMAA Winner</span>
+                <span class="keyword-tag">Berlinale Alum</span>
               </div>
-              <p class="pillar__bio">Director <strong>Under the Hanging Tree</strong> — Namibia's first Oscar submission. PhD candidate UWC. Uses cinema to exorcise historical trauma.</p>
+              <p class="pillar__bio">Director <strong class="keyword-highlight">Under the Hanging Tree</strong> — <span class="keyword-highlight">Namibia's first Oscar submission</span>. PhD candidate <span class="keyword-highlight">UWC</span>. Uses <span class="keyword-highlight">cinema</span> to exorcise <span class="keyword-highlight">historical trauma</span>.</p>
               <div class="pillar__links">
                 <a href="https://www.imdb.com/name/nm3821223/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_perivi" class="pillar__link" target="_blank" rel="noopener" aria-label="IMDb Profile">
                   ▶ IMDb
@@ -166,7 +160,7 @@
           </article>
 
           <!-- Pillar 4: HEALING -->
-          <article class="pillar">
+          <article class="pillar pillar-healing">
             <img class="pillar__img" src="img/team/marcella.webp" alt="Marcella Katjijova">
             <div class="pillar__body flow">
               <header class="pillar__header">
@@ -175,11 +169,11 @@
               </header>
               <p class="pillar__role">Healing Architect & Trauma-Informed Guide</p>
               <div class="pillar__tags">
-                <span>Registered Counsellor</span>
-                <span>OGF Head of Trauma</span>
-                <span>Humboldt Forum</span>
+                <span class="keyword-tag">Registered Counsellor</span>
+                <span class="keyword-tag">OGF Head of Trauma</span>
+                <span class="keyword-tag">Humboldt Forum</span>
               </div>
-              <p class="pillar__bio">Descendant Ovaherero genocide survivors • Published trauma researcher • Designed RTS zero-incident psychological safety protocol.</p>
+              <p class="pillar__bio">Descendant <span class="keyword-highlight">Ovaherero genocide survivors</span> • Published <span class="keyword-highlight">trauma researcher</span> • Designed <span class="keyword-highlight">RTS zero-incident psychological safety protocol</span>.</p>
               <div class="pillar__links">
                 <a href="https://www.facebook.com/marcella.katjijova" class="pillar__link" target="_blank" rel="noopener" aria-label="Facebook Profile">
                   □ Facebook
@@ -189,11 +183,14 @@
             </div>
           </article>
 
+        <!-- Quote Section -->
+        <div class="quote-container">
+          <blockquote class="quote">
+            We return to the source not to remain there, but to gather strength for the continental journey forward.
+          </blockquote>
         </div>
 
-        <blockquote class="quote">
-          We return to the source not to remain there, but to gather strength for the continental journey forward.
-        </blockquote>
+        </div>
       </div>
     </section>
 
@@ -221,7 +218,7 @@
               <span class="stat-label">Community Impact</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">30+</span>
+              <span class="stat-number">10+</span>
               <span class="stat-label">Films Produced</span>
             </div>
           </div>
@@ -248,7 +245,7 @@
              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
            </svg>
          </a>
-         <a href="https://instagram.com/returntothesource" title="Instagram" target="_blank" rel="noopener">
+         <a href="https://www.instagram.com/returntothesource_filmlab/" title="Instagram" target="_blank" rel="noopener">
            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
            </svg>

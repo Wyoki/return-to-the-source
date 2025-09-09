@@ -654,7 +654,7 @@ NAVIGATION TABS – Unified tabbed interface
 }
 
 .operational-levers h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: var(--text-3xl);
   font-weight: var(--fw-bold);
   text-align: center;
@@ -782,7 +782,7 @@ NAVIGATION TABS – Unified tabbed interface
 }
 
 .cta h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: var(--text-3xl);
   font-weight: var(--fw-bold);
   margin-bottom: var(--space-4);

@@ -1,13 +1,13 @@
 /**
  * Image Conversion Script
  * Converts JPG, JPEG, and PNG images to WebP format
- * 
+ *
  * Usage: node convert-images.js
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 // Check if cwebp is installed
 try {

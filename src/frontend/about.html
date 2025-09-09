@@ -7,308 +7,15 @@
   <meta name="description" content="Learn about Return to the Source's revolutionary approach to African film education, combining trauma-informed care, decolonial methodologies, and community-led partnerships.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/pages/theme.unified.css">
+  <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/pages/about.css">
-  <style>
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .mission-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      margin-bottom: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .badge-text {
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 2rem;
-    }
-
-    .highlight-solution {
-      color: var(--primary);
-      position: relative;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      line-height: 1.5;
-      margin-bottom: 3rem;
-      opacity: 0.95;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-metrics {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin-top: 3rem;
-    }
-
-    .metric-item {
-      text-align: center;
-    }
-
-    .metric-number {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .metric-label {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      opacity: 0.8;
-    }
-
-    .framework-introduction {
-      padding: 5rem 0;
-      background: white;
-    }
-
-    .framework-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
-
-    .framework-header h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-    }
-
-    .framework-subtitle {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .transformation-visual {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 2rem;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .old-model, .new-model {
-      background: var(--surface-secondary);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-    }
-
-    .old-model {
-      border-left: 4px solid var(--error);
-    }
-
-    .new-model {
-      border-left: 4px solid var(--success);
-    }
-
-    .old-model h3, .new-model h3 {
-      font-weight: 600;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .problem-list, .solution-list {
-      list-style: none;
-    }
-
-    .problem-list li, .solution-list li {
-      padding: 0.5rem 0;
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .problem-list li::before {
-      content: '✕';
-      position: absolute;
-      left: 0;
-      color: var(--error);
-      font-weight: bold;
-    }
-
-    .solution-list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--success);
-      font-weight: bold;
-    }
-
-    .transformation-arrow {
-      font-size: 2rem;
-      color: #6c757d;
-      text-align: center;
-    }
-
-    .values-pillars {
-      padding: 5rem 0;
-      background: var(--light-gray);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
-
-    .section-header h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-    }
-
-    .section-subtitle {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .pillars-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .pillar-card {
-      background: var(--surface-primary);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      box-shadow: var(--shadow-md);
-      transition: transform 0.3s ease;
-      position: relative;
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .pillar-number {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    .pillar-content h3 {
-      font-size: 1.3rem;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-    }
-
-    .pillar-description {
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .pillar-impact {
-      font-size: 0.9rem;
-    }
-
-    .impact-label {
-      color: var(--primary);
-      font-weight: 600;
-      margin-right: 0.5rem;
-    }
-
-    .impact-text {
-      color: var(--text-primary);
-    }
-
-    @media (max-width: 768px) {
-      .hero-metrics {
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .transformation-visual {
-        grid-template-columns: 1fr;
-      }
-
-      .transformation-arrow {
-        transform: rotate(90deg);
-      }
-
-      .pillars-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .pillar-card {
-        padding: 1.5rem;
-      }
-
-      .section-intro {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-title {
-        font-size: clamp(2rem, 8vw, 3rem);
-      }
-
-      .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-      }
-
-      .hero-metrics {
-        gap: 1.5rem;
-      }
-
-      .metric-number {
-        font-size: 2rem;
-      }
-
-      .section-header h2 {
-        font-size: 2rem;
-      }
-
-      .framework-header h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
 </head>
 
 <body class="about">
 <header class="site-header">
   <div class="header-content">
     <a href="index.html" class="logo">
-      <img src="img/logos/return-to-the-source.webp" alt="Return to the Source" width="40" height="40">
+      <img src="img/logos/return-to-the-source.webp" alt="Return to the Source" width="40" height="40" loading="eager">
       <span>Return to the Source</span>
     </a>
 
@@ -317,14 +24,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="team.html">Team</a></li>
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Editions</button>
-          <ul class="dropdown-content">
-            <li><a href="editions/edition1.html">Edition 1</a></li>
-            <li><a href="editions/edition2.html">Edition 2</a></li>
-            <li><a href="editions/impact.html">Impact</a></li>
-          </ul>
-        </li>
+        <li><a href="editions/edition1.html">Editions</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -550,7 +250,7 @@
         <p><em>"Rooted in Story, Focused Through Craft"</em></p>
         <div class="social-links">
           <a href="https://facebook.com/returntothesource" title="Facebook" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" loading="lazy">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
@@ -559,7 +259,7 @@
               <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
             </svg>
           </a>
-          <a href="https://instagram.com/returntothesource" title="Instagram" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/returntothesource_filmlab/" title="Instagram" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
@@ -679,120 +379,6 @@
   });
 </script>
 
-<style>
-/* Enhanced styling for the merged content */
-.section-intro {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-  max-width: 600px;
-}
-
-.values-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.value-card {
-  background: var(--surface-secondary);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  border-left: 4px solid var(--error);
-  transition: transform 0.2s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-2px);
-}
-
-.value-card h3 {
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.strategy-container {
-  display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.lever {
-  background: var(--surface-primary);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 2rem;
-  transition: box-shadow 0.2s ease;
-}
-
-.lever:hover {
-  box-shadow: var(--shadow-lg);
-}
-
-.lever-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.lever-tag {
-  background: var(--primary-50);
-  color: var(--primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.metric {
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
-  color: white;
-}
-
-.metric h4 {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.metric p {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.impact-metrics {
-  background: var(--surface-secondary);
-  padding: 4rem 0;
-}
-
-@media (max-width: 768px) {
-  .lever-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  
-  .values-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .metrics-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
 
 </body>
 </html>

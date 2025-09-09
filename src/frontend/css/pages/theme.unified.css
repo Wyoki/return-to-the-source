@@ -69,7 +69,7 @@ button, input, select, textarea {
   /* Primary Color Scale - More comprehensive */
   --primary-50: hsl(var(--hue-primary) 55% 95%);
   --primary-100: hsl(var(--hue-primary) 55% 85%);
-  --primary-500: hsl(var(--hue-primary) 55% 45%);
+  --primary-500: hsl(var(--hue-primary) 55% 29%);
   --primary-600: hsl(var(--hue-primary) 55% 35%);
   --primary-700: hsl(var(--hue-primary) 55% 25%);
   --primary-900: hsl(var(--hue-primary) 55% 15%);
@@ -1026,7 +1026,7 @@ body:has(.hero-section) .hero-section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.08) 0%, rgba(255, 255, 255, 0.7) 100%);
   z-index: 1;
 }
 

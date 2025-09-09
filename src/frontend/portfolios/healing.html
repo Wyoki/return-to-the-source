@@ -11,23 +11,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../css/pages/theme.unified.css">
+  <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/portfolio.css">
 </head>
 
 <body class="portfolios healing">
 
   <!-- Header -->
-  <header>
-    <div class="container nav">
+  <header class="site-header">
+    <div class="header-content">
    <a href="../index.html" class="logo">
       <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
     </a>
-      <nav class="pillar-tabs">
-        <a href="theory.html" class="pillar-tab">Dr. Mushaandja (Theory)</a>
-        <a href="infrastructure.html" class="pillar-tab">Fibby Kioria (Infrastructure)</a>
-        <a href="cinema.html" class="pillar-tab">Perivi Katjavivi (Cinema)</a>
-        <a href="healing.html" class="pillar-tab active">Marcella Katjijova (Healing)</a>
-        <a href="../team.html" class="pillar-tab">← Team Overview</a>
+      <nav class="nav-menu">
+        <a href="theory.html" class="nav-link">Dr. Mushaandja (Theory)</a>
+        <a href="infrastructure.html" class="nav-link">Fibby Kioria (Infrastructure)</a>
+        <a href="cinema.html" class="nav-link">Perivi Katjavivi (Cinema)</a>
+        <a href="healing.html" class="nav-link active">Marcella Katjijova (Healing)</a>
+        <a href="../team.html" class="nav-link">← Team Overview</a>
       </nav>
     </div>
   </header>
@@ -36,6 +37,13 @@
   <section class="hero">
     <div class="container">
       <div class="hero__content">
+        <div class="hero__profile">
+          <img src="../img/team/marcella.webp" alt="Marcella Katjivivo" class="hero__image" loading="eager">
+          <div class="hero__branding">
+            <img src="../img/logos/ovaherero-genocide-foundation.webp" alt="Ovaherero Genocide Foundation" class="hero__logo" loading="eager">
+            <span class="hero__company">Ovaherero Genocide Foundation</span>
+          </div>
+        </div>
         <p class="hero__role">Healing & Community Practitioner</p>
         <h1 class="hero__name">Marcella Katjivivo</h1>
         <blockquote class="hero__quote">"Our healing practices are rooted in ancestral wisdom and community care."</blockquote>
@@ -48,6 +56,13 @@
   <div class="page-layout">
     <!-- Sidebar -->
     <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-branding">
+          <img src="../img/logos/ovaherero-genocide-foundation.webp" alt="Ovaherero Genocide Foundation" class="sidebar-logo" loading="lazy">
+          <p class="sidebar-tagline">Ovaherero Genocide Foundation</p>
+        </div>
+      </div>
+
       <div class="sidebar-section">
         <h3 class="sidebar-heading">Specializations</h3>
         <ul class="sidebar-list">
@@ -97,49 +112,124 @@
           <h2 class="innovation-title">Core Innovation</h2>
           <p>Integrating indigenous healing practices with contemporary community care to address historical trauma and foster collective wellbeing. Through a unique blend of traditional wisdom and modern therapeutic approaches, Marcella creates safe spaces for communities to process historical trauma while reconnecting with ancestral healing practices.</p>
         </div>
+
+        <!-- Innovation Metrics -->
+        <div class="metrics-section fade-in">
+          <h3 style="text-align: center; margin-bottom: var(--space-xl); color: var(--color-primary); font-family: var(--font-display); font-size: var(--text-xl);">Innovation Impact</h3>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-number">2019</span>
+              <span class="metric-label">Healing Circles Founded</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">200+</span>
+              <span class="metric-label">Community Members</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">15+</span>
+              <span class="metric-label">Workshops Developed</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">6</span>
+              <span class="metric-label">Publications</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Key Achievements -->
       <section class="section section--alt">
-    <div class="container">
-      <header class="section__header">
-        <h2 class="section__title">Key Achievements</h2>
-        <p class="section__subtitle">Leading initiatives in community healing and cultural preservation</p>
-      </header>
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title">Key Achievements</h2>
+            <p class="section__subtitle">Leading initiatives in community healing and cultural preservation</p>
+          </header>
 
-      <div class="achievement-grid">
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Community Impact</h3>
-          <p class="achievement-description">Established healing circles and support networks reaching over 200 community members</p>
-        </article>
+          <div class="pillars-container">
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">01</span>
+              <div class="pillar-content">
+                <h3>Community Impact</h3>
+                <p class="pillar-description">Established healing circles and support networks reaching over 200 community members</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">200+ community members reached</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Knowledge Preservation</h3>
-          <p class="achievement-description">Documented and preserved traditional healing practices through oral history interviews</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">02</span>
+              <div class="pillar-content">
+                <h3>Knowledge Preservation</h3>
+                <p class="pillar-description">Documented and preserved traditional healing practices through oral history interviews</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">Oral histories documented and preserved</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Youth Engagement</h3>
-          <p class="achievement-description">Created mentorship programs connecting youth with traditional knowledge keepers</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">03</span>
+              <div class="pillar-content">
+                <h3>Youth Engagement</h3>
+                <p class="pillar-description">Created mentorship programs connecting youth with traditional knowledge keepers</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">Youth connected with knowledge keepers</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Cultural Advocacy</h3>
-          <p class="achievement-description">Led initiatives for the recognition of indigenous healing practices in contemporary healthcare</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">04</span>
+              <div class="pillar-content">
+                <h3>Cultural Advocacy</h3>
+                <p class="pillar-description">Led initiatives for the recognition of indigenous healing practices in contemporary healthcare</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">Indigenous practices recognized in healthcare</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Educational Impact</h3>
-          <p class="achievement-description">Developed workshops on intergenerational trauma healing and cultural reconnection</p>
-        </article>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">05</span>
+              <div class="pillar-content">
+                <h3>Educational Impact</h3>
+                <p class="pillar-description">Developed workshops on intergenerational trauma healing and cultural reconnection</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">Workshops on trauma healing developed</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="achievement-card fade-in">
-          <h3 class="achievement-title">Research Contribution</h3>
-          <p class="achievement-description">Lead researcher on "Duty-related Stressors and Coping in First Responders" published in APA's Psychological Trauma journal, introducing indigenous healing frameworks to trauma care.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+            <article class="pillar-card fade-in">
+              <span class="pillar-number">06</span>
+              <div class="pillar-content">
+                <h3>Research Contribution</h3>
+                <p class="pillar-description">Lead researcher on "Duty-related Stressors and Coping in First Responders" published in APA's Psychological Trauma journal, introducing indigenous healing frameworks to trauma care.</p>
+                <div class="pillar-impact">
+                  <span class="impact-label">Impact:</span>
+                  <span class="impact-text">Published in APA journal</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Break Section -->
+      <section class="section" style="background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%); padding: var(--space-3xl) 0; margin: var(--space-3xl) 0;">
+        <div class="container" style="text-align: center;">
+          <blockquote style="font-family: var(--font-display); font-size: var(--text-xl); font-style: italic; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; position: relative; padding: 0 var(--space-lg);">
+            "Our healing practices are rooted in ancestral wisdom and community care."
+          </blockquote>
+          <cite style="display: block; margin-top: var(--space-lg); color: var(--color-primary); font-weight: 600;">— Marcella Katjivivo</cite>
+        </div>
+      </section>
 
   <!-- Areas of Expertise -->
   <section class="section">
@@ -149,42 +239,66 @@
         <p class="section__subtitle">Healing practices and community development</p>
       </header>
 
-      <div class="expertise-grid">
-        <div class="expertise-card fade-in">
-          <h3 class="expertise-title">Traditional Healing</h3>
-          <ul class="expertise-list">
-            <li>Indigenous healing methodologies</li>
-            <li>Ancestral knowledge systems integration</li>
-            <li>Sacred ritual facilitation</li>
-            <li>Traditional medicine protocols</li>
-            <li>Cultural ceremony design</li>
-            <li>Spiritual counseling practices</li>
-          </ul>
-        </div>
+      <div class="pillars-container">
+        <article class="pillar-card fade-in">
+          <span class="pillar-number">01</span>
+          <div class="pillar-content">
+            <h3>Traditional Healing</h3>
+            <p class="pillar-description">Leading indigenous healing methodologies and ancestral knowledge systems integration.</p>
+            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+              <li>Indigenous healing methodologies</li>
+              <li>Ancestral knowledge systems integration</li>
+              <li>Sacred ritual facilitation</li>
+              <li>Traditional medicine protocols</li>
+              <li>Cultural ceremony design</li>
+              <li>Spiritual counseling practices</li>
+            </ul>
+            <div class="pillar-impact">
+              <span class="impact-label">Expertise Level:</span>
+              <span class="impact-text">Deep ancestral knowledge with 10+ years practice</span>
+            </div>
+          </div>
+        </article>
 
-        <div class="expertise-card fade-in">
-          <h3 class="expertise-title">Community Development</h3>
-          <ul class="expertise-list">
-            <li>Healing circle facilitation</li>
-            <li>Intergenerational dialogue design</li>
-            <li>Cultural education curriculum</li>
-            <li>Community organizing strategies</li>
-            <li>Youth mentorship programs</li>
-            <li>Elder wisdom preservation</li>
-          </ul>
-        </div>
+        <article class="pillar-card fade-in">
+          <span class="pillar-number">02</span>
+          <div class="pillar-content">
+            <h3>Community Development</h3>
+            <p class="pillar-description">Facilitating healing circles and designing intergenerational dialogue for community wellbeing.</p>
+            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+              <li>Healing circle facilitation</li>
+              <li>Intergenerational dialogue design</li>
+              <li>Cultural education curriculum</li>
+              <li>Community organizing strategies</li>
+              <li>Youth mentorship programs</li>
+              <li>Elder wisdom preservation</li>
+            </ul>
+            <div class="pillar-impact">
+              <span class="impact-label">Expertise Level:</span>
+              <span class="impact-text">Community-led initiatives with proven impact</span>
+            </div>
+          </div>
+        </article>
 
-        <div class="expertise-card fade-in">
-          <h3 class="expertise-title">Trauma Healing</h3>
-          <ul class="expertise-list">
-            <li>Historical trauma resolution</li>
-            <li>Collective healing methodologies</li>
-            <li>Grief support facilitation</li>
-            <li>Restorative justice practices</li>
-            <li>Trauma-informed care</li>
-            <li>Cultural safety protocols</li>
-          </ul>
-        </div>
+        <article class="pillar-card fade-in">
+          <span class="pillar-number">03</span>
+          <div class="pillar-content">
+            <h3>Trauma Healing</h3>
+            <p class="pillar-description">Specializing in historical trauma resolution and collective healing methodologies.</p>
+            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+              <li>Historical trauma resolution</li>
+              <li>Collective healing methodologies</li>
+              <li>Grief support facilitation</li>
+              <li>Restorative justice practices</li>
+              <li>Trauma-informed care</li>
+              <li>Cultural safety protocols</li>
+            </ul>
+            <div class="pillar-impact">
+              <span class="impact-label">Expertise Level:</span>
+              <span class="impact-text">Published research with clinical applications</span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>

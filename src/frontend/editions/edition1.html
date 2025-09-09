@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="../css/pages/theme.unified.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+
   <style>
     /* Enhanced CSS with improved design tokens and accessibility */
     :root {
@@ -579,16 +581,6 @@
       transform: translateY(-2px);
     }
 
-    /* Enhanced footer */
-    .site-footer {
-      background: linear-gradient(
-        135deg,
-        var(--text-primary) 0%,
-        hsl(35 20% 15%) 100%
-      );
-      color: var(--text-inverse);
-      padding: var(--space-16) 0 var(--space-8);
-    }
 
     .footer-content {
       max-width: 1200px;
@@ -872,6 +864,399 @@
       font-weight: var(--fw-semibold);
     }
 
+    /* Partnership categories */
+    .partnership-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--grid-gap-responsive);
+      margin: var(--space-12) 0;
+    }
+
+    .category-card {
+      background: var(--surface-elevated);
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--duration-normal) var(--ease-back);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transition: transform var(--duration-normal) var(--ease-out);
+      transform-origin: left;
+    }
+
+    .category-card:hover,
+    .category-card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+    }
+
+    .category-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .category-card h3 {
+      color: var(--primary);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      font-family: var(--font-display);
+    }
+
+    .category-card p {
+      color: var(--text-secondary);
+      font-size: var(--text-base);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Partners grid */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--grid-gap-responsive);
+      margin: var(--space-12) 0;
+    }
+
+    .partner-card {
+      background: var(--surface-elevated);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: all var(--duration-normal) var(--ease-back);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .partner-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transition: transform var(--duration-normal) var(--ease-out);
+      transform-origin: left;
+    }
+
+    .partner-card:hover,
+    .partner-card:focus-within {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+    }
+
+    .partner-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .partner-logo {
+      height: 80px;
+      width: auto;
+      margin-bottom: var(--space-6);
+      object-fit: contain;
+      align-self: center;
+    }
+
+    .partner-role {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-semibold);
+      display: inline-block;
+      margin-bottom: var(--space-4);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      align-self: center;
+    }
+
+    .partner-description {
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-6);
+      flex-grow: 1;
+      font-size: var(--text-base);
+    }
+
+    .partner-contribution {
+      background: var(--surface-secondary);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+      margin-top: auto;
+    }
+
+    .partner-contribution h4 {
+      color: var(--text-primary);
+      margin-bottom: var(--space-3);
+      font-size: var(--text-lg);
+      font-weight: var(--fw-bold);
+      font-family: var(--font-display);
+    }
+
+    .partner-contribution ul {
+      margin: 0;
+      padding-left: var(--space-6);
+    }
+
+    .partner-contribution li {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-2);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Collaboration section */
+    .collaboration-section {
+      background: linear-gradient(135deg, var(--surface-secondary) 0%, var(--surface-tertiary) 100%);
+      padding: var(--space-16) 0;
+      margin: var(--space-16) 0;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      background: var(--surface-primary);
+      margin: var(--space-6) 0;
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      width: calc(50% - var(--space-4));
+      border: 1px solid var(--border-light);
+    }
+
+    .timeline-item:nth-child(odd) {
+      margin-left: 0;
+      margin-right: calc(50% + var(--space-4));
+    }
+
+    .timeline-item:nth-child(even) {
+      margin-left: calc(50% + var(--space-4));
+      margin-right: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      border: 3px solid var(--surface-primary);
+      border-radius: 50%;
+      transform: translateY(-50%);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: calc(-12px - 3px);
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: calc(-12px - 3px);
+    }
+
+    .timeline-item h3 {
+      color: var(--primary);
+      margin-bottom: var(--space-3);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      font-family: var(--font-display);
+    }
+
+    .timeline-item p {
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      margin: 0;
+    }
+
+    /* Testimonial cards */
+    .testimonial-card {
+      background: var(--surface-primary);
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      margin: var(--space-6) 0;
+      border-left: 4px solid var(--accent);
+      border: 1px solid var(--border-light);
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-lg);
+    }
+
+    .testimonial-author {
+      font-weight: var(--fw-bold);
+      color: var(--primary);
+      font-size: var(--text-base);
+    }
+
+    /* Sponsors and impact grids */
+    .sponsors-grid,
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--grid-gap-responsive);
+      margin: var(--space-12) 0;
+    }
+
+    .sponsor-card,
+    .impact-card {
+      background: var(--surface-elevated);
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: all var(--duration-normal) var(--ease-back);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sponsor-card::before,
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transition: transform var(--duration-normal) var(--ease-out);
+      transform-origin: left;
+    }
+
+    .sponsor-card:hover,
+    .impact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+    }
+
+    .sponsor-card:hover::before,
+    .impact-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .sponsor-card h4,
+    .impact-card h4 {
+      color: var(--primary);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      font-family: var(--font-display);
+    }
+
+    .sponsor-card p,
+    .impact-card p {
+      color: var(--text-secondary);
+      font-size: var(--text-base);
+      line-height: var(--lh-relaxed);
+    }
+
+    .impact-number {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--fw-black);
+      color: var(--primary);
+      margin-bottom: var(--space-4);
+      display: block;
+      line-height: 1;
+    }
+
+    /* Call to action section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--surface-secondary) 0%, var(--surface-tertiary) 100%);
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(var(--text-2xl), 4vw, 3rem);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-6);
+      color: var(--text-primary);
+    }
+
+    .cta-section p {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto var(--space-8);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Mobile responsiveness for new sections */
+    @media (max-width: 768px) {
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: var(--space-6);
+      }
+
+      .timeline-item {
+        width: calc(100% - var(--space-12));
+        margin-left: var(--space-12) !important;
+        margin-right: 0 !important;
+      }
+
+      .timeline-item::before {
+        left: calc(-12px - 3px) !important;
+        right: auto !important;
+      }
+
+      .sponsors-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partnership-categories {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Print styles */
     @media print {
       .site-header,
@@ -889,7 +1274,11 @@
 
       .edition-card,
       .metric-card,
-      .lever-card {
+      .lever-card,
+      .partner-card,
+      .category-card,
+      .sponsor-card,
+      .impact-card {
         box-shadow: none;
         border: 1px solid var(--border-light);
         break-inside: avoid;
@@ -914,8 +1303,9 @@
              <a href="edition1.html" class="nav-tab active">Edition 1</a>
              <a href="edition2.html" class="nav-tab">Edition 2</a>
              <a href="impact.html" class="nav-tab">Impact</a>
+             <a href="programs.html" class="nav-tab">Programs</a>
+             <a href="filmmakers.html" class="nav-tab">Filmmakers</a>
            </li>
-           <li><a href="#partners">Partners</a></li>
          </ul>
          <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
            <span></span><span></span><span></span>
@@ -994,8 +1384,307 @@
           View Impact Metrics
           <span id="metrics-desc" class="visually-hidden">See detailed statistics and outcomes from our programs</span>
         </a>
+        <a href="../resources/docs/RTS1 Film Lab HandBook Final_2.pdf" class="btn btn-outline" target="_blank" aria-describedby="handbook-desc">
+          📄 Download Handbook
+          <span id="handbook-desc" class="visually-hidden">Download the complete Edition 1 Film Lab Handbook PDF</span>
+        </a>
       </div>
     </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Strategic Collaborations</h2>
+      <p class="section-intro">
+        Return to the Source represents a unique convergence of cultural institutions, funding partners,
+        and creative organizations working together to advance African cinema and historical memory.
+      </p>
+    </div>
+
+    <!-- Partnership Categories -->
+    <div class="partnership-categories">
+      <div class="category-card">
+        <h3>🏛️ Institutional Partners</h3>
+        <p>Cultural institutions providing expertise, venues, and diplomatic connections</p>
+      </div>
+      <div class="category-card">
+        <h3>💰 Funding Partners</h3>
+        <p>Organizations providing financial support and strategic investment</p>
+      </div>
+      <div class="category-card">
+        <h3>🎬 Production Partners</h3>
+        <p>Creative organizations contributing production expertise and resources</p>
+      </div>
+      <div class="category-card">
+        <h3>🌍 Community Partners</h3>
+        <p>Local organizations ensuring cultural authenticity and community engagement</p>
+      </div>
+    </div>
+
+    <div class="partners-grid">
+      <!-- Mastercard Foundation -->
+      <article class="partner-card">
+        <img src="../img/partners/mastercard.webp" alt="Mastercard Foundation" class="partner-logo" loading="lazy">
+        <span class="partner-role">Funding Partner</span>
+        <div class="partner-description">
+          The Mastercard Enablement Programme provides crucial funding and strategic support,
+          enabling the realization of our vision for transformative cultural programming.
+        </div>
+        <div class="partner-contribution">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Core funding for the 5-day film lab program</li>
+            <li>Strategic partnership development</li>
+            <li>Capacity building initiatives</li>
+            <li>Regional network expansion</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Goethe-Institut Namibia -->
+      <article class="partner-card">
+        <img src="../img/partners/Goethe-Institut.webp" alt="Goethe-Institut Namibia" class="partner-logo" loading="lazy">
+        <span class="partner-role">Strategic Partner</span>
+        <div class="partner-description">
+          Goethe-Institut Namibia brings institutional expertise and cultural diplomacy experience,
+          facilitating meaningful dialogue between German and Namibian histories.
+        </div>
+        <div class="partner-contribution">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Venue provision and logistical support</li>
+            <li>Cultural diplomacy facilitation</li>
+            <li>International network connections</li>
+            <li>Historical context expertise</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Old Location Films -->
+      <article class="partner-card">
+        <img src="../img/logos/old-location-films.webp" alt="Old Location Films" class="partner-logo" loading="lazy">
+        <span class="partner-role">Production Partner</span>
+        <div class="partner-description">
+          Old Location Films contributes essential production expertise and local knowledge,
+          ensuring authentic representation of Namibian narratives.
+        </div>
+        <div class="partner-contribution">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Production coordination and expertise</li>
+            <li>Local crew and talent sourcing</li>
+            <li>Post-production facilities</li>
+            <li>Cultural consultation services</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Mucii Pictures -->
+      <article class="partner-card">
+        <img src="../img/logos/mucii-logo.webp" alt="Mucii Pictures" class="partner-logo" loading="lazy">
+        <span class="partner-role">Lead Organization</span>
+        <div class="partner-description">
+          Mucii Pictures serves as the coordinating entity, bringing together diverse stakeholders
+          and ensuring the successful execution of our shared vision.
+        </div>
+        <div class="partner-contribution">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Program coordination and management</li>
+            <li>Creative development and curation</li>
+            <li>International filmmaker recruitment</li>
+            <li>Fund management and compliance</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Namibia Film Commission -->
+      <article class="partner-card">
+        <img src="../img/partners/Namibia-Film-Commission-960x640.webp" alt="Namibia Film Commission" class="partner-logo" loading="lazy">
+        <span class="partner-role">National Support Partner</span>
+        <div class="partner-description">
+          The Namibia Film Commission provides essential regulatory support and industry expertise,
+          facilitating the smooth execution of film production activities in Namibia.
+        </div>
+        <div class="partner-contribution">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Regulatory guidance and permits</li>
+            <li>Industry networking and connections</li>
+            <li>Local production support</li>
+            <li>Market development insights</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Berlinale Film Festival -->
+      <article class="partner-card">
+        <img src="../img/partners/berlinale-talents.webp" alt="Berlinale Film Festival" class="partner-logo" loading="lazy">
+        <span class="partner-role">International Festival Partner</span>
+        <div class="partner-description">
+          Berlinale provides prestigious international recognition and networking opportunities,
+          connecting our work with global film industry leaders and audiences.
+        </div>
+        <div class="partner-contribution">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>International exposure and promotion</li>
+            <li>Festival networking opportunities</li>
+            <li>Industry credibility and recognition</li>
+            <li>Global distribution channels</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <!-- Collaboration Story -->
+    <section class="collaboration-section">
+      <div class="container">
+        <div class="text-center">
+          <h2>The Partnership Journey</h2>
+          <p class="section-intro">
+            From initial conversations to the successful execution of our first edition,
+            our partnerships have evolved through shared commitment and mutual respect.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Strategic Alignment</h3>
+            <p>Initial partnership discussions focused on aligning organizational missions with the Return to the Source vision of cultural healing through cinema.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Resource Integration</h3>
+            <p>Combining Mastercard's funding expertise, Goethe-Institut's cultural networks, Old Location Films' production capabilities, and Mucii Pictures' creative vision.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Community Engagement</h3>
+            <p>Deep collaboration with local elders, historians, and community leaders to ensure authentic representation and cultural sensitivity.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Successful Execution</h3>
+            <p>The inaugural edition brought together 12 filmmakers from across Africa, creating films that honor colonial history and cultural memory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="text-center">
+        <h2>Partnership Voices</h2>
+        <p class="section-intro">What our partners say about our collaborative journey</p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">
+            "The Return to the Source partnership represents a new model for cultural collaboration in Africa.
+            By bringing together funding, cultural institutions, and creative expertise, we're creating
+            sustainable pathways for African stories to reach global audiences."
+          </blockquote>
+          <cite class="testimonial-author">— Mastercard Foundation Representative</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">
+            "Working with Return to the Source has allowed us to facilitate meaningful dialogue between
+            German colonial history and contemporary Namibian narratives. This partnership demonstrates
+            the power of cultural diplomacy in healing historical wounds."
+          </blockquote>
+          <cite class="testimonial-author">— Goethe-Institut Namibia Director</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">
+            "The collaborative spirit of this partnership is truly remarkable. Each organization brings
+            unique strengths that, when combined, create something greater than the sum of its parts.
+            This is the future of African cultural production."
+          </blockquote>
+          <cite class="testimonial-author">— Old Location Films Producer</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="text-center">
+          <h2>Our Sponsors & Supporters</h2>
+          <p class="section-intro">
+            Additional organizations and individuals who have contributed to our mission through various forms of support.
+          </p>
+        </div>
+
+        <div class="sponsors-grid">
+          <div class="sponsor-card">
+            <h4>Community Supporters</h4>
+            <p>Local communities and elders who have shared their wisdom and stories</p>
+          </div>
+          <div class="sponsor-card">
+            <h4>Individual Donors</h4>
+            <p>Private individuals who believe in our vision for cultural healing</p>
+          </div>
+          <div class="sponsor-card">
+            <h4>Academic Partners</h4>
+            <p>Universities and research institutions supporting our academic initiatives</p>
+          </div>
+          <div class="sponsor-card">
+            <h4>Media Partners</h4>
+            <p>Publications and media outlets amplifying our stories</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partnership Impact -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2>Partnership Impact</h2>
+          <p class="section-intro">
+            The collective impact of our partnerships extends far beyond individual contributions.
+          </p>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="impact-number">12</div>
+            <h4>Filmmakers Trained</h4>
+            <p>Emerging African filmmakers equipped with new skills and perspectives</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-number">10+</div>
+            <h4>Films Produced</h4>
+            <p>Documentary and narrative films addressing colonial history and healing</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-number">4,800+</div>
+            <h4>Community Impact</h4>
+            <p>People reached through screenings, workshops, and community engagement</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-number">€227k</div>
+            <h4>Economic Impact</h4>
+            <p>Funding that supported local economies and creative industries</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section text-center">
+      <h2>Partner With Us</h2>
+      <p>Interested in joining our collaborative ecosystem? We welcome partnerships that advance African cinema and cultural healing.</p>
+      <div class="btn-group">
+        <a href="../contact.html" class="btn btn-primary">Explore Partnership Opportunities</a>
+        <a href="../resources/docs/RTS1 Film Lab HandBook Final_2.pdf" class="btn btn-outline" download>Download Partnership Handbook</a>
+      </div>
+    </section>
   </section>
 </main>
 

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Filmmakers & Program – Return to the Source</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet the filmmakers, facilitators, and program details from Return to the Source's Pan-African Film Lab & Residency in Namibia.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/navigation.css">
+
+  <style>
+    /* Enhanced CSS with improved design tokens and accessibility */
+    :root {
+      /* Primary color palette */
+      --primary: #d4a934;
+      --primary-light: #e6c565;
+      --accent: #8b4513;
+      --accent-light: #a0522d;
+
+      /* Text colors with WCAG AA compliance */
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-inverse: #ffffff;
+
+      /* Surface colors */
+      --surface-primary: #ffffff;
+      --surface-secondary: #fafafa;
+      --surface-tertiary: #f5f5f5;
+      --surface-elevated: #ffffff;
+
+      /* Border system */
+      --border-light: #e5e5e5;
+
+      /* Enhanced spacing scale */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+
+      /* Typography scale */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+
+      /* Font weights */
+      --fw-medium: 500;
+      --fw-semibold: 600;
+      --fw-bold: 700;
+      --fw-black: 900;
+
+      /* Line heights */
+      --lh-tight: 1.25;
+      --lh-relaxed: 1.6;
+
+      /* Border radius system */
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
+
+      /* Shadow system */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+
+      /* Animation system */
+      --duration-normal: 250ms;
+      --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 150ms;
+
+      /* Font families */
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: var(--lh-relaxed);
+      color: var(--text-primary);
+      background: var(--surface-primary);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--primary);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+
+    /* Enhanced header */
+    .site-header {
+      background: rgba(255, 255, 255, 0.95);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: var(--fw-bold);
+      font-size: var(--text-lg);
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    /* Navigation */
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: var(--space-6);
+    }
+
+    .nav-menu a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: var(--fw-medium);
+      transition: color var(--transition-fast);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:focus {
+      color: var(--primary);
+      background: var(--surface-secondary);
+    }
+
+    /* Hero section */
+    .filmmakers-hero {
+      background: linear-gradient(135deg, hsl(35 45% 8% / 0.85) 0%, hsl(35 35% 15% / 0.65) 35%, hsl(120 40% 10% / 0.9) 100%),
+                  radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.3)),
+                  linear-gradient(45deg, #d4a934, #e6c565);
+      color: var(--text-inverse);
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+
+    .filmmakers-hero .container {
+      max-width: 800px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
+      font-family: var(--font-display);
+      font-weight: var(--fw-black);
+      margin-bottom: var(--space-4);
+      line-height: 0.95;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Welcome section */
+    .welcome-section {
+      padding: var(--space-16) 0;
+      background: var(--surface-secondary);
+    }
+
+    .welcome-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .welcome-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-6);
+      color: var(--text-primary);
+    }
+
+    .welcome-text {
+      font-size: var(--text-lg);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-8);
+      color: var(--text-secondary);
+    }
+
+    .organizers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-8);
+      margin-top: var(--space-8);
+    }
+
+    .organizer-card {
+      background: var(--surface-primary);
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .organizer-name {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      color: var(--primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .organizer-role {
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .organizer-bio {
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Filmmakers grid */
+    .filmmakers-section {
+      padding: var(--space-16) 0;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(var(--text-2xl), 4vw, 3rem);
+      font-weight: var(--fw-bold);
+      text-align: center;
+      margin-bottom: var(--space-12);
+      color: var(--text-primary);
+    }
+
+    .filmmakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .filmmaker-card {
+      background: var(--surface-elevated);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: transform var(--duration-normal), box-shadow var(--duration-normal);
+    }
+
+    .filmmaker-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .filmmaker-content {
+      padding: var(--space-6);
+    }
+
+    .filmmaker-name {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      color: var(--primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .filmmaker-location {
+      font-weight: var(--fw-semibold);
+      color: var(--accent);
+      margin-bottom: var(--space-3);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .filmmaker-bio {
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      font-size: var(--text-base);
+    }
+
+    .filmmaker-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: var(--space-4);
+      border: 4px solid var(--surface-primary);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--duration-normal);
+    }
+
+    .filmmaker-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .filmmaker-photo-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--surface-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-4);
+      border: 4px solid var(--surface-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Facilitators section */
+    .facilitators-section {
+      padding: var(--space-16) 0;
+      background: var(--surface-secondary);
+    }
+
+    .facilitators-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .facilitator-card {
+      background: var(--surface-primary);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .facilitator-name {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--fw-bold);
+      color: var(--primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .facilitator-role {
+      font-weight: var(--fw-semibold);
+      color: var(--accent);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-base);
+    }
+
+    .facilitator-bio {
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+      font-size: var(--text-base);
+    }
+
+    /* Program section */
+    .program-section {
+      padding: var(--space-16) 0;
+    }
+
+    .program-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-12);
+    }
+
+    .program-intro p {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: var(--lh-relaxed);
+    }
+
+    .program-days {
+      display: grid;
+      gap: var(--space-8);
+    }
+
+    .day-card {
+      background: var(--surface-elevated);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .day-number {
+      background: var(--primary);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: var(--fw-bold);
+      font-size: var(--text-lg);
+      margin-right: var(--space-6);
+    }
+
+    .day-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      color: var(--text-primary);
+    }
+
+    .day-schedule {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .schedule-item {
+      padding: var(--space-4);
+      background: var(--surface-secondary);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+    }
+
+    .schedule-time {
+      font-weight: var(--fw-semibold);
+      color: var(--primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .schedule-activity {
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .schedule-details {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(135deg, var(--text-primary) 0%, hsl(35 20% 15%) 100%);
+      color: var(--text-inverse);
+      padding: var(--space-16) 0 var(--space-8);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+
+    .footer-section h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-4);
+      color: var(--accent-light);
+    }
+
+    .footer-section p {
+      opacity: 0.9;
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-4);
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-section a:hover {
+      color: var(--accent-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: var(--space-6);
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .filmmakers-grid,
+      .facilitators-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .organizers {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+      }
+
+      .day-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .day-number {
+        margin-right: 0;
+        margin-bottom: var(--space-4);
+      }
+
+      .filmmaker-photo,
+      .filmmaker-photo-placeholder {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .filmmaker-card:hover,
+      .facilitator-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="../index.html" class="logo">
+        <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="40" height="40">
+        <span>Return to the Source</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+         <ul class="nav-menu">
+           <li class="nav-tabs">
+             <a href="edition1.html" class="nav-tab active">Edition 1</a>
+             <a href="edition2.html" class="nav-tab">Edition 2</a>
+             <a href="impact.html" class="nav-tab">Impact</a>
+             <a href="programs.html" class="nav-tab">Programs</a>
+             <a href="filmmakers.html" class="nav-tab">Filmmakers</a>
+           </li>
+         </ul>
+         <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+           <span></span><span></span><span></span>
+         </button>
+       </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="filmmakers-hero">
+      <div class="container">
+        <h1 class="hero-title">Filmmakers & Program</h1>
+        <p class="hero-subtitle">Meet the creative minds and program details from our Pan-African Film Lab & Residency in Namibia</p>
+      </div>
+    </section>
+
+    <section class="welcome-section">
+      <div class="container">
+        <div class="welcome-content">
+          <h2 class="welcome-title">Welcome to Return to the Source</h2>
+          <div class="welcome-text">
+            <p>It is with great pleasure that we welcome you to this groundbreaking initiative designed to connect history, cinema, and community through the powerful medium of film. Over the next five days, we will embark on a journey that delves deep into Namibia's rich yet traumatic past, exploring its colonial history and its enduring impact on contemporary life.</p>
+            <p>This workshop is not so much about learning the technical aspects of filmmaking as it is about using film as a tool to exorcise trauma, to reclaim embodied histories, and to confront colonial ghosts that still linger in our societies.</p>
+          </div>
+
+          <div class="organizers">
+            <div class="organizer-card">
+              <h3 class="organizer-name">Perivi Katjavivi</h3>
+              <p class="organizer-role">Co-Founder & Lead Facilitator</p>
+              <p class="organizer-bio">A distinguished Namibian filmmaker whose films have premiered at major festivals including Berlinale, Rotterdam, and Busan. His recent feature "Under the Hanging Tree" was Namibia's first Academy Awards submission.</p>
+            </div>
+
+            <div class="organizer-card">
+              <h3 class="organizer-name">Fibby Kioria</h3>
+              <p class="organizer-role">Co-Founder & Program Director</p>
+              <p class="organizer-bio">An accomplished producer with over thirty short films and founder of Mucii Pictures. She has extensive experience in Pan-African training initiatives and serves as a founding member of the East African Screen Collective.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="filmmakers-section">
+      <div class="container">
+        <h2 class="section-title">Meet the Filmmakers</h2>
+
+        <div class="filmmakers-grid">
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/cece mlay.webp" alt="Profile photo of Cece Mlay">
+              <h3 class="filmmaker-name">Cece Mlay</h3>
+              <p class="filmmaker-location">Tanzania</p>
+              <p class="filmmaker-bio">Filmmaker currently at Kijiweni Productions working as Assistant Director and Creative Supervisor. Her award-winning work includes "Vuta N'kuvute" and "Apostles of Cinema," exploring social, political, and historical issues. Her directorial feature debut "The Empty Grave" is currently in development.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/hiwot admasu.webp" alt="Profile photo of Hiwot Admasu">
+              <h3 class="filmmaker-name">Hiwot Admasu</h3>
+              <p class="filmmaker-location">Ethiopia</p>
+              <p class="filmmaker-bio">Ethiopian filmmaker who has made several short films since 2015. She draws inspiration from Ethiopian Orthodox Church traditions and studied electrical engineering before discovering her passion for film.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/saitaboo.webp" alt="Profile photo of Saitabao Kaiyare">
+              <h3 class="filmmaker-name">Saitabao Kaiyare</h3>
+              <p class="filmmaker-location">Kenya</p>
+              <p class="filmmaker-bio">Filmmaker with a decade of experience in Africa and Europe. His short films, documentaries, and TV shows have garnered critical acclaim at international festivals. He lectures at Pwani University and is co-founder of Baruu Collective.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/shili munyama.webp" alt="Profile photo of Shili Munyama">
+              <h3 class="filmmaker-name">Shili Munyama</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">Visual artist, creative director, and filmmaker based in Windhoek. Leads Creative South, a production company creating work that captures African youth culture. His debut feature "Wrong Generation" is set for release in 2024.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/esther buekes.webp" alt="Profile photo of Esther Buekes">
+              <h3 class="filmmaker-name">Esther Buekes</h3>
+              <p class="filmmaker-location">South Africa</p>
+              <p class="filmmaker-bio">Video content producer with 12 years of experience across Africa. Her short film "Miss Understood" explores mental health and has been recognized at various festivals. She is also the current chairperson of the Namibia Film Commission.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/lindiwe ngwenya.webp" alt="Profile photo of Lindiwe Ngwenya">
+              <h3 class="filmmaker-name">Lindiwe Ngwenya</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">Beginner filmmaker pursuing honors in Media Studies at University of Namibia. Her experience includes video projects and podcasts, with a keen interest in exploring Namibian history for diverse audiences.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/tekla naango.webp" alt="Profile photo of Tekla Naango">
+              <h3 class="filmmaker-name">Tekla Naango</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">Visionary filmmaker from Opuwo, Kunene Region. Uses film to preserve cultural heritage and tell stories that transcend boundaries. Blends tradition and modernity to create compelling narratives that resonate universally.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/hilma sheehama.webp" alt="Profile photo of Hilma Sheehama">
+              <h3 class="filmmaker-name">Hilma Sheehama</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">Writer, director, and award-winning production designer with 10 years of experience. Holds a diploma in Television Production and a scholarship from the Multichoice Talent Factory. Won Best Production Design at the Botswana Film Festival.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/veripuami nandee.jpg" alt="Profile photo of Veripuami Nandee">
+              <h3 class="filmmaker-name">Veripuami Nandee</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">Poet and journalist, winner of the 2023 Bank Windhoek Doek Literary Award. Her poetry collection "The Loneliness of Shadows" was a Top 6 Finalist in The Kinsman's Quarterly Diaspora Award. Published in various African literary magazines.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/Annina van Neel.webp" alt="Profile photo of Annina Van Neel">
+              <h3 class="filmmaker-name">Annina Van Neel</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">Founder of The Tiekie Box Project and environmental activist. Her documentary "A Story of Bones" chronicles her work excavating African burial grounds on Saint Helena Island. Uses film to engage descendant communities on heritage and memory.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/kalundu leslie.webp" alt="Profile photo of Kalundu Leslie">
+              <h3 class="filmmaker-name">Kalundu Leslie</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">Second-year media student at University of Namibia pursuing a career in film and broadcast. Has written several film scripts and established his own production company. Committed to bringing his vision to life in Namibia's media landscape.</p>
+            </div>
+          </article>
+
+          <article class="filmmaker-card">
+            <div class="filmmaker-content">
+              <img class="filmmaker-photo" src="../img/filmmakers/justin hango.webp" alt="Profile photo of Justin Hango">
+              <h3 class="filmmaker-name">Justin Hango</h3>
+              <p class="filmmaker-location">Namibia</p>
+              <p class="filmmaker-bio">BA in Motion Picture & Live Performance from Stella Adler Los Angeles. Producer, director, and actor at Illusions of Grandeur Namibia. Brings marketing and brand building expertise to the film industry.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="facilitators-section">
+      <div class="container">
+        <h2 class="section-title">Meet the Facilitators</h2>
+
+        <div class="facilitators-grid">
+          <article class="facilitator-card">
+            <h3 class="facilitator-name">Dr. Nashilongweshipwe Mushaandja</h3>
+            <p class="facilitator-role">Performance Scholar & Cultural Worker</p>
+            <p class="facilitator-bio">Resident cultural worker, educator, and writer at Owela Live Arts Collective Trust since 2014. As a performance artist, his practice focuses on African performance archives and public cultures of social movements. Holds a PhD in Performance Studies from the University of Cape Town and teaches at the University of Namibia.</p>
+          </article>
+
+          <article class="facilitator-card">
+            <h3 class="facilitator-name">Khalid Shamis</h3>
+            <p class="facilitator-role">Documentary Director & Editor</p>
+            <p class="facilitator-bio">Documentary director, producer, and editor with a preference for editing. Doctoral fellow at the Centre for Humanities Research at the University of the Western Cape and director of Rough Cut Lab Africa, the only lab dedicated to supporting story construction for African documentaries on the continent.</p>
+          </article>
+
+          <article class="facilitator-card">
+            <h3 class="facilitator-name">Perivi Katjavivi</h3>
+            <p class="facilitator-role">Lead Facilitator & Filmmaker</p>
+            <p class="facilitator-bio">Distinguished Namibian filmmaker whose films have premiered at major festivals including Berlinale, Rotterdam, and Busan. His recent feature "Under the Hanging Tree" was Namibia's first Academy Awards submission. Currently pursuing a PhD in History at the University of the Western Cape, researching colonial memory sites.</p>
+          </article>
+
+          <article class="facilitator-card">
+            <h3 class="facilitator-name">Fibby Kioria</h3>
+            <p class="facilitator-role">Program Director & Producer</p>
+            <p class="facilitator-bio">Accomplished producer with over thirty short films and founder of Mucii Pictures. In 2018, she co-founded Manyatta Screenings, an online and outdoor short film festival in Kenya. Founding member of the East African Screen Collective advocating for narrative sovereignty in screen-based sectors.</p>
+          </article>
+
+          <article class="facilitator-card">
+            <h3 class="facilitator-name">Merapi Gottlieb Kazombiaze</h3>
+            <p class="facilitator-role">Community Historian & Educator</p>
+            <p class="facilitator-bio">Herero historian and teacher from Okandjira, Namibia, dedicated to preserving the memory of the Herero Genocide. Raised by his grandmother, a survivor of the 1904 German colonial massacres. Has taught in his community for 38 years and maintains connections with Germany through friends and family.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-section">
+      <div class="container">
+        <h2 class="section-title">Program Overview</h2>
+
+        <div class="program-intro">
+          <p>The residency unfolded over five days, each with a distinct focus but tied together by the core methodology of working with history as a living archive. The program combined historical site visits, oral testimony, masterclasses, outdoor screenings, and collaborative filmmaking.</p>
+        </div>
+
+        <div class="program-days">
+          <article class="day-card">
+            <div class="day-header">
+              <div class="day-number">1</div>
+              <h3 class="day-title">Introduction & Memory Sites</h3>
+            </div>
+            <div class="day-schedule">
+              <div class="schedule-item">
+                <div class="schedule-time">8:00 AM - 9:00 AM</div>
+                <div class="schedule-activity">Breakfast</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">9:00 AM - 10:00 AM</div>
+                <div class="schedule-activity">Welcome Address and Introductions</div>
+                <div class="schedule-details">Led by Perivi Katjavivi with special note on familial connection to Ovitoto</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">10:00 AM - 1:00 PM</div>
+                <div class="schedule-activity">Site Visit: Historical Exploration at Ovitoto</div>
+                <div class="schedule-details">Guided by local historians and elders, facilitated by Gottlieb Kazombiaze</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">2:00 PM - 3:00 PM</div>
+                <div class="schedule-activity">Incorporating Archives into Film and Research</div>
+                <div class="schedule-details">Facilitated by Dr. Nashilongweshipwe Mushaandja</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">7:00 PM - 9:30 PM</div>
+                <div class="schedule-activity">Outdoor Screening: "A Story of Bones"</div>
+                <div class="schedule-details">Documentary by Joseph Curran & Dominic Aubrey de Verde, followed by Q&A with Annina Van Neel</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-header">
+              <div class="day-number">2</div>
+              <h3 class="day-title">African Cinema and Historical Contexts</h3>
+            </div>
+            <div class="day-schedule">
+              <div class="schedule-item">
+                <div class="schedule-time">9:00 AM - 10:30 AM</div>
+                <div class="schedule-activity">Introduction to African Film Genres and Alternative Epistemologies</div>
+                <div class="schedule-details">Led by Perivi Katjavivi</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">10:30 AM - 11:30 AM</div>
+                <div class="schedule-activity">Masterclass: Film Screening "If Objects Could Speak"</div>
+                <div class="schedule-details">By Saitabao Kaiyare, followed by discussion on independent filmmaking</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">2:00 PM - 3:30 PM</div>
+                <div class="schedule-activity">Masterclass: Field Recording Sound for Film</div>
+                <div class="schedule-details">Participants guided in recording sound from trauma sites</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">7:00 PM - 8:30 PM</div>
+                <div class="schedule-activity">Outdoor Screening: "Under the Hanging Tree"</div>
+                <div class="schedule-details">By Perivi Katjavivi</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-header">
+              <div class="day-number">3</div>
+              <h3 class="day-title">Shooting with the Local Community</h3>
+            </div>
+            <div class="day-schedule">
+              <div class="schedule-item">
+                <div class="schedule-time">9:00 AM - 1:00 PM</div>
+                <div class="schedule-activity">Filming Session: Location and Landscape Exploration</div>
+                <div class="schedule-details">Students film sites of colonial atrocities, facilitated by Perivi Katjavivi</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">3:00 PM - 4:00 PM</div>
+                <div class="schedule-activity">Special Address: Contested Memories</div>
+                <div class="schedule-details">German debates on remembering colonial history, speaker: Ms. Lentz</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">4:00 PM - 6:00 PM</div>
+                <div class="schedule-activity">Continued Filming Session</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">7:00 PM - 9:30 PM</div>
+                <div class="schedule-activity">Outdoor Screening: "Das Leere Grab"</div>
+                <div class="schedule-details">By Cece Mlay with filmmaker in attendance</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-header">
+              <div class="day-number">4</div>
+              <h3 class="day-title">Theoretical Discussions</h3>
+            </div>
+            <div class="day-schedule">
+              <div class="schedule-item">
+                <div class="schedule-time">9:30 AM - 11:00 AM</div>
+                <div class="schedule-activity">Interactive Panel: "Custodians of Memory?"</div>
+                <div class="schedule-details">Featuring Dr. Mushaandja, Ms. Lentz, and Gottlieb Kazombiaze</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">1:00 PM - 4:00 PM</div>
+                <div class="schedule-activity">Group Filming Activity</div>
+                <div class="schedule-details">Participants work on short films with local community members</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">4:30 PM - 6:00 PM</div>
+                <div class="schedule-activity">Editing Session</div>
+                <div class="schedule-details">Post-production facilitated by Khalid Shamis</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-header">
+              <div class="day-number">5</div>
+              <h3 class="day-title">Screenings and Reflections</h3>
+            </div>
+            <div class="day-schedule">
+              <div class="schedule-item">
+                <div class="schedule-time">9:00 AM - 1:00 PM</div>
+                <div class="schedule-activity">Final Editing Session</div>
+                <div class="schedule-details">Facilitated by Perivi Katjavivi</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">2:00 PM - 4:00 PM</div>
+                <div class="schedule-activity">Final Film Project Presentations</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">5:00 PM</div>
+                <div class="schedule-activity">Closing Remarks and Departures</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Return to the Source</h3>
+          <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema and multimedia arts.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Programs</h3>
+          <ul>
+            <li><a href="editions/edition1.html">Edition 1: Origins</a></li>
+            <li><a href="editions/edition2.html">Edition 2: Diaspora</a></li>
+            <li><a href="editions/impact.html">Impact & Metrics</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

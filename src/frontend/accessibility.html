@@ -6,97 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Accessibility Statement for Return to the Source Film Lab. Our commitment to making our website and programs accessible to everyone.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/pages/theme.unified.css">
+  <link rel="stylesheet" href="css/navigation.css">
   <style>
     /* =================================================================
        ACCESSIBILITY STATEMENT STYLES - Consistent with main design system
        ================================================================= */
 
-    /* CSS Custom Properties - Same as main site */
-    :root {
-      /* Typography */
-      --font-display: 'Playfair Display', serif;
-      --font-body: 'Inter', sans-serif;
-
-      /* Font Weights */
-      --fw-light: 300;
-      --fw-regular: 400;
-      --fw-medium: 500;
-      --fw-semibold: 600;
-      --fw-bold: 700;
-      --fw-black: 900;
-
-      /* Font Sizes */
-      --text-xs: 0.75rem;
-      --text-sm: 0.875rem;
-      --text-base: 1rem;
-      --text-lg: 1.125rem;
-      --text-xl: 1.25rem;
-      --text-2xl: 1.5rem;
-      --text-3xl: 1.875rem;
-      --text-4xl: 2.25rem;
-
-      /* Line Heights */
-      --lh-tight: 1.2;
-      --lh-normal: 1.5;
-      --lh-relaxed: 1.75;
-
-      /* Colors - African-inspired palette */
-      --primary: #8B4513;
-      --primary-dark: #5D2F0A;
-      --primary-light: #CD853F;
-      --accent-gold: #DAA520;
-      --accent-copper: #B87333;
-      --accent-earth: #8B7355;
-
-      --surface-primary: #FFFFFF;
-      --surface-secondary: #FEFEFE;
-      --surface-elevated: #F8F9FA;
-      --surface-inverse: #1A1A1A;
-
-      --text-primary: #1A1A1A;
-      --text-secondary: #4A5568;
-      --text-tertiary: #718096;
-      --text-inverse: #FFFFFF;
-
-      --border-subtle: rgba(0, 0, 0, 0.08);
-      --border-strong: rgba(0, 0, 0, 0.16);
-
-      /* Spacing Scale */
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-
-      /* Border Radius */
-      --radius-sm: 0.375rem;
-      --radius-md: 0.5rem;
-      --radius-lg: 0.75rem;
-      --radius-xl: 1rem;
-      --radius-2xl: 1.5rem;
-
-      /* Shadows */
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
-      --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
-
-      /* Transitions */
-      --transition-fast: 0.15s;
-      --transition-base: 0.3s;
-      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-      /* Layout */
-      --container-max: 1200px;
-      --content-max: 65ch;
-    }
 
     /* Reset and Base Styles */
     * {
@@ -213,7 +129,7 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: var(--accent-gold);
+      background: var(--primary-600);
       border-radius: 1px;
     }
 
@@ -239,9 +155,9 @@
        ================================================================= */
     .accessibility-hero {
       background: linear-gradient(135deg,
-        rgba(139, 69, 19, 0.85) 0%,
-        rgba(139, 69, 19, 0.75) 50%,
-        rgba(205, 133, 63, 0.85) 100%),
+        hsl(var(--hue-primary) 55% 29% / 0.85) 0%,
+        hsl(var(--hue-primary) 55% 29% / 0.75) 50%,
+        hsl(var(--hue-primary) 55% 65% / 0.85) 100%),
         url('img/events/P1091768.webp');
       background-size: cover;
       background-position: center;
@@ -274,7 +190,7 @@
       margin-bottom: var(--space-4);
       background: linear-gradient(135deg,
         var(--text-inverse) 0%,
-        var(--accent-gold) 100%);
+        var(--primary-600) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -305,7 +221,7 @@
       color: var(--primary);
       margin-bottom: var(--space-6);
       padding-bottom: var(--space-3);
-      border-bottom: 2px solid var(--accent-gold);
+      border-bottom: 2px solid var(--primary-600);
     }
 
     .accessibility-section h3 {
@@ -410,7 +326,7 @@
       font-size: var(--text-lg);
       font-weight: var(--fw-bold);
       margin-bottom: var(--space-4);
-      color: var(--accent-gold);
+      color: var(--primary-600);
     }
 
     .footer-section ul {
@@ -428,7 +344,7 @@
     }
 
     .footer-section a:hover {
-      color: var(--accent-gold);
+      color: var(--primary-600);
     }
 
     .footer-bottom {

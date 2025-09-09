@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Edition 2 expands beyond filmmaking to become multidisciplinary, tracing the shared traditions and resilience of Ovaherero diaspora communities across Botswana, Namibia, and South Africa.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="../css/pages/theme.unified.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/pages/editions.css">
+
   <style>
     /* Enhanced CSS with improved design tokens and accessibility */
     :root {
@@ -175,162 +178,6 @@
       border-radius: 50%;
     }
     
-    /* Enhanced navigation with better accessibility */
-    nav[aria-label="Primary Navigation"] {
-      position: relative;
-    }
-    
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      align-items: center;
-      gap: var(--space-6);
-    }
-    
-    .nav-menu a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: var(--fw-medium);
-      transition: color var(--transition-fast) var(--ease-out);
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      position: relative;
-    }
-    
-    .nav-menu a:hover,
-    .nav-menu a:focus {
-      color: var(--primary);
-      background: var(--surface-secondary);
-    }
-    
-    .nav-menu a:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
-    }
-    
-    /* Enhanced dropdown with better UX */
-    .dropdown {
-      position: relative;
-    }
-    
-    .dropbtn {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-weight: var(--fw-medium);
-      cursor: pointer;
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      transition: all var(--transition-fast) var(--ease-out);
-    }
-    
-    .dropbtn:hover,
-    .dropbtn:focus {
-      color: var(--primary);
-      background: var(--surface-secondary);
-    }
-    
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background: var(--surface-elevated);
-      min-width: 200px;
-      box-shadow: var(--shadow-lg);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-light);
-      z-index: 1;
-      top: 100%;
-      left: 0;
-      list-style: none;
-      padding: var(--space-2);
-      margin-top: var(--space-1);
-    }
-    
-    .dropdown:hover .dropdown-content,
-    .dropdown:focus-within .dropdown-content {
-      display: block;
-      animation: fadeInScale 200ms var(--ease-out) forwards;
-    }
-    
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: translateY(-8px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-    
-    .dropdown-content a {
-      display: block;
-      padding: var(--space-3);
-      border-radius: var(--radius-md);
-      transition: background-color var(--transition-fast) var(--ease-out);
-    }
-    
-    .dropdown-content a:hover {
-      background: var(--surface-secondary);
-    }
-    
-    /* Enhanced navigation tabs */
-    .nav-tabs {
-      display: flex;
-      gap: var(--space-1);
-      align-items: center;
-    }
-    
-    .nav-tab {
-      padding: var(--space-2) var(--space-4);
-      border-radius: var(--radius-md) var(--radius-md) 0 0;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: var(--fw-medium);
-      font-size: var(--text-sm);
-      transition: all var(--transition-fast) var(--ease-out);
-      background: var(--surface-secondary);
-      border: 1px solid var(--border-light);
-      border-bottom: none;
-      position: relative;
-      white-space: nowrap;
-    }
-    
-    .nav-tab:hover {
-      color: var(--accent);
-      background: var(--surface-primary);
-      transform: translateY(-1px);
-    }
-    
-    .nav-tab.active {
-      color: var(--accent);
-      background: var(--surface-primary);
-      border-bottom: 2px solid var(--accent);
-      font-weight: var(--fw-semibold);
-    }
-    
-    .nav-tab:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-    
-    /* Mobile toggle - hidden for now, would need JavaScript */
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 3px;
-      padding: var(--space-2);
-    }
-    
-    .mobile-toggle span {
-      width: 20px;
-      height: 2px;
-      background: var(--text-primary);
-      transition: all 200ms ease;
-    }
     
     /* Enhanced hero section */
     .editions-hero {
@@ -578,16 +425,6 @@
       transform: translateY(-2px);
     }
     
-    /* Enhanced footer */
-    .site-footer {
-      background: linear-gradient(
-        135deg,
-        var(--text-primary) 0%,
-        hsl(30 20% 15%) 100%
-      );
-      color: var(--text-inverse);
-      padding: var(--space-16) 0 var(--space-8);
-    }
     
     .footer-content {
       max-width: 1200px;
