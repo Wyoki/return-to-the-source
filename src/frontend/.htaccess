@@ -1,9 +1,0 @@
-# Set correct MIME type for JavaScript modules
-<IfModule mod_mime.c>
-  AddType application/javascript .js
-</IfModule>
-
-# Enable CORS for local development
-<IfModule mod_headers.c>
-  Header set Access-Control-Allow-Origin "*"
-</IfModule>

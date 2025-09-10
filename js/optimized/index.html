@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Return to the Source - A Pan-African Film Lab treating history as material, landscape as archive and healing as protocol">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preload" href="/css/critical.css" as="style">
+    <link rel="preload" href="/fonts/Inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Return to the Source",
+        "description": "A Pan-African Film Lab treating history as material, landscape as archive and healing as protocol",
+        "url": "https://returntothesource.org",
+        "logo": "/img/logos/RTS_Logo.png",
+        "sameAs": [
+            "https://www.instagram.com/returntothesource_filmlab/",
+            "https://twitter.com/rtsfilmlab"
+        ]
+    }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Critical path CSS inlined for performance */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+        
+        :root {
+            /* Strategic Color Palette */
+            --primary-white: #ffffff;
+            --secondary-white: #f7f7f7;
+            --strategic-green: #2a9d8f;
+            --light-green: #40b5a7;
+            --strategic-brown: #774936;
+            --light-brown: #8b5a45;
+            --text-dark: #1a1a1a;
+            --text-light: #555555;
+            --accent-gold: #e9c46a;
+            --spacing-base: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 4rem;
+            --border-radius: 8px;
+            --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--background);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-base);
+        }
+
+        /* Add more critical CSS as needed */
+    </style>
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/pages/home.css" media="print" onload="this.media='all'">
+    
+    <title>Return to the Source – Pan-African Film Lab</title>
+</head>
+<body>
+    <header class="site-header" data-sticky="true">
+        <div class="container header-content">
+            <a href="/" class="logo" aria-label="Return to the Source">
+                <picture>
+                    <source srcset="/img/logos/RTS_Logo.webp" type="image/webp">
+                    <img src="/img/logos/RTS_Logo.png" alt="Return to the Source" width="140" height="70" 
+                         loading="eager" decoding="async" class="img-contain">
+                </picture>
+            </a>
+            
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li class="dropdown">
+                        <button class="dropbtn" aria-expanded="false">About ▾</button>
+                        <ul class="dropdown-content">
+                            <li><a href="/about">Our Story</a></li>
+                            <li><a href="/team">Leadership</a></li>
+                            <li><a href="/methodology">Methodology</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/edition1">Edition 1</a></li>
+                    <li><a href="/partners">Partners</a></li>
+                    <li><a href="/contact" class="cta-button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Strategic Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-content">
+                <h1 id="hero-title" class="fade-in">Return to the Source</h1>
+                <p class="hero-subtitle slide-in">A Pan-African Film Lab treating history as material, landscape as archive and healing as protocol.</p>
+                <div class="hero-cta">
+                    <a href="/about" class="btn btn-primary">Discover Our Mission</a>
+                    <a href="/edition1" class="btn btn-secondary">View Edition 1</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Pillars Preview -->
+        <section class="strategic-pillars" aria-labelledby="pillars-title">
+            <div class="container">
+                <h2 id="pillars-title" class="section-title">Our Four Pillars</h2>
+                <div class="pillars-grid">
+                    <article class="pillar-card theory">
+                        <div class="pillar-icon">🎓</div>
+                        <h3>Theory</h3>
+                        <p>Grounding cinema in African philosophical thought and historical consciousness.</p>
+                    </article>
+                    <article class="pillar-card infrastructure">
+                        <div class="pillar-icon">🏗️</div>
+                        <h3>Infrastructure</h3>
+                        <p>Building sustainable systems for Pan-African film production and distribution.</p>
+                    </article>
+                    <article class="pillar-card cinema">
+                        <div class="pillar-icon">🎥</div>
+                        <h3>Cinema</h3>
+                        <p>Developing authentic African visual languages and storytelling methods.</p>
+                    </article>
+                    <article class="pillar-card healing">
+                        <div class="pillar-icon">🌱</div>
+                        <h3>Healing</h3>
+                        <p>Integrating trauma-informed care into our filmmaking practice.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Metrics -->
+        <section class="impact-metrics" aria-labelledby="impact-title">
+            <div class="container">
+                <h2 id="impact-title" class="section-title">Our Impact</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-number">12</span>
+                        <span class="metric-label">Filmmakers per Edition</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">50%</span>
+                        <span class="metric-label">Gender Parity</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">€70K</span>
+                        <span class="metric-label">Production Support</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">4</span>
+                        <span class="metric-label">Core Pillars</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="featured-projects" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <picture>
+                            <source srcset="/img/content/projects/project1.webp" type="image/webp">
+                            <img src="/img/content/projects/project1.jpg" alt="Project 1" loading="lazy" decoding="async">
+                        </picture>
+                        <div class="project-content">
+                            <h3>Memory as Material</h3>
+                            <p>Exploring historical archives through contemporary lens.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <picture>
+                            <source srcset="/img/content/projects/project2.webp" type="image/webp">
+                            <img src="/img/content/projects/project2.jpg" alt="Project 2" loading="lazy" decoding="async">
+                        </picture>
+                        <div class="project-content">
+                            <h3>Landscape as Archive</h3>
+                            <p>Documentary series on geographical storytelling.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Showcase -->
+        <section class="partners-showcase" aria-labelledby="partners-title">
+            <div class="container">
+                <h2 id="partners-title" class="section-title">Our Partners</h2>
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <picture>
+                            <source srcset="/img/logos/partners/berlinale-talents.webp" type="image/webp">
+                            <img src="/img/logos/partners/berlinale-talents.png" alt="Berlinale Talents" 
+                                 loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="partner-logo">
+                        <picture>
+                            <source srcset="/img/logos/partners/goethe-institut.webp" type="image/webp">
+                            <img src="/img/logos/partners/goethe-institut.png" alt="Goethe Institut" 
+                                 loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <!-- Add more partner logos as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Join Our Next Edition</h2>
+                <p>Be part of the next generation of Pan-African storytellers.</p>
+                <a href="/contact" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        /* Additional Critical Styles for Preview Sections */
+        .hero {
+            background: var(--primary-white);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            color: var(--strategic-brown);
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-base);
+        }
+
+        .hero-subtitle {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .strategic-pillars {
+            background: var(--secondary-white);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .pillar-card {
+            background: var(--primary-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .pillar-card.theory { border-top: 4px solid var(--strategic-green); }
+        .pillar-card.infrastructure { border-top: 4px solid var(--strategic-brown); }
+        .pillar-card.cinema { border-top: 4px solid var(--accent-gold); }
+        .pillar-card.healing { border-top: 4px solid var(--light-green); }
+
+        .impact-metrics {
+            background: var(--strategic-green);
+            color: var(--primary-white);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: var(--spacing-base);
+        }
+
+        .featured-projects {
+            background: var(--primary-white);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .project-card {
+            background: var(--secondary-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: var(--spacing-lg);
+        }
+
+        .cta-section {
+            background: var(--strategic-brown);
+            color: var(--primary-white);
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--strategic-green);
+            color: var(--primary-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--light-green);
+        }
+
+        .btn-secondary {
+            background: var(--strategic-brown);
+            color: var(--primary-white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-brown);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .pillars-grid,
+            .metrics-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="/img/logos/RTS_Logo.png" alt="Return to the Source" width="120" height="60" 
+                     loading="lazy" decoding="async">
+                <p>Treating history as material, landscape as archive and healing as protocol.</p>
+            </div>
+            
+            <nav class="footer-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="/edition1">Edition 1</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <address>
+                    <p>Windhoek, Namibia</p>
+                    <p><a href="mailto:info@returntothesource.org">info@returntothesource.org</a></p>
+                </address>
+            </div>
+            
+            <div class="footer-social">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/returntothesource_filmlab/" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/rtsfilmlab" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Return to the Source. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Deferred Scripts -->
+    <script type="module" src="/js/main.js" defer></script>
+</body>
+</html>
