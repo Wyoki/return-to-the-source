@@ -3,9 +3,10 @@
   <defs>
     <style>
       .cls-1 {
-        fill: hsl(25, 55%, 29%);
-        stroke: hsl(25, 70%, 20%);
-        stroke-width: 1px;
+        fill: hsl(25, 65%, 35%);
+        stroke: hsl(25, 80%, 25%);
+        stroke-width: 2px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
       }
     </style>
   </defs>

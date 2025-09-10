@@ -888,6 +888,20 @@ body {
    -webkit-backdrop-filter: blur(10px);
  }
 
+ /* Enhanced Mucii Pictures logo styling for better visibility */
+ .partner-item img[src*="mucii-pictures"] {
+   max-width: 160px !important;
+   max-height: 160px !important;
+   object-fit: contain !important;
+   filter: brightness(1.1) contrast(1.1) !important;
+   transition: all var(--transition-base) var(--ease-out) !important;
+ }
+
+ .partner-item img[src*="mucii-pictures"]:hover {
+   filter: brightness(1.2) contrast(1.2) drop-shadow(0 0 15px rgba(139, 69, 19, 0.4)) !important;
+   transform: scale(1.05) !important;
+ }
+
 /* =================================================================
    CTA SECTION - Compelling call to action
    ================================================================= */
