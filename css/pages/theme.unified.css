@@ -1,5 +1,5 @@
 /* =================================================================
-   UNIFIED DESIGN SYSTEM â€“ Optimized & Refined
+   UNIFIED DESIGN SYSTEM – Optimized & Refined
    ================================================================= */
 
 /* 0. RESET & FOUNDATION ----------------------------------------- */
@@ -54,7 +54,7 @@ button, input, select, textarea {
   }
 }
 
-/* 1. DESIGN TOKENS â€“ Enhanced semantic system ------------------ */
+/* 1. DESIGN TOKENS – Enhanced semantic system ------------------ */
 :root {
   /* Core Hue Values - Foundation of color system */
   --hue-primary: 25;
@@ -73,6 +73,8 @@ button, input, select, textarea {
   --primary-600: hsl(var(--hue-primary) 55% 35%);
   --primary-700: hsl(var(--hue-primary) 55% 25%);
   --primary-900: hsl(var(--hue-primary) 55% 15%);
+  --primary: var(--primary-500);
+  --primary-dark: var(--primary-600);
 
   /* Text Color System - Enhanced hierarchy */
   --text-primary: var(--primary-900);
@@ -125,7 +127,7 @@ button, input, select, textarea {
   --text-3xl: clamp(2.07rem, 1.04vw + 1.8rem, 2.33rem);
   --text-4xl: clamp(2.49rem, 1.46vw + 2.11rem, 2.8rem);
   --text-5xl: clamp(2.99rem, 2.04vw + 2.47rem, 3.36rem);
-  --text-6xl: clamp(3.58rem, 2.4vw + 3.08rem, 4.13rem);
+  --text-6xl: clamp(3.58rem, 2.4vw + 2.08rem, 4.13rem);
 
   /* Line Height Scale */
   --lh-tight: 1.1;
@@ -140,7 +142,7 @@ button, input, select, textarea {
   --tracking-wide: 0.04em;
   --tracking-wider: 0.08em;
 
-  /* Spacing Scale - More comprehensive */
+  /* Spacing Scale - Streamlined */
   --space-0: 0;
   --space-px: 1px;
   --space-0_5: 0.125rem;
@@ -187,7 +189,7 @@ button, input, select, textarea {
   --radius-3xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* Enhanced Shadow System */
+  /* Shadow System - Consolidated */
   --shadow-xs: 0 1px 2px hsl(0 0% 0% / 0.05);
   --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.1), 0 1px 2px hsl(0 0% 0% / 0.06);
   --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
@@ -197,12 +199,11 @@ button, input, select, textarea {
   --shadow-inner: inset 0 2px 4px hsl(0 0% 0% / 0.06);
   --shadow-colored: 0 10px 15px -3px hsl(var(--hue-primary) 50% 45% / 0.1);
 
-  /* Motion System - Enhanced timing functions */
+  /* Motion System - Consolidated */
   --duration-fast: 150ms;
   --duration-normal: 300ms;
   --duration-slow: 500ms;
   --duration-instant: 0ms;
-  --duration-normal: 300ms;
   --duration-slowest: 700ms;
   --ease-linear: linear;
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
@@ -210,9 +211,6 @@ button, input, select, textarea {
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-back-in: cubic-bezier(0.6, -0.28, 0.735, 0.045);
   --ease-back-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-bounce-out: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -253,7 +251,7 @@ button, input, select, textarea {
 
 /* 2. ENHANCED COMPONENT SYSTEM --------------------------------- */
 
-/* Enhanced Typography Hierarchy */
+/* Typography Hierarchy - Consolidated */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
@@ -277,7 +275,7 @@ h6 { font-size: var(--text-base); }
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: var(--z-sticky);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -395,7 +393,7 @@ h6 { font-size: var(--text-base); }
   visibility: hidden;
   transform: translateY(-10px);
   transition: all var(--duration-normal) var(--ease-out);
-  z-index: 1000;
+  z-index: var(--z-overlay);
 }
 
 .dropdown.open .dropdown-content {
@@ -561,7 +559,7 @@ h6 { font-size: var(--text-base); }
     visibility: hidden;
     transition: all var(--duration-normal) var(--ease-out);
     box-shadow: var(--shadow-xl);
-    z-index: 1000;
+    z-index: var(--z-overlay);
   }
 
   .nav-menu.active {
@@ -641,7 +639,7 @@ p:last-child {
   padding: var(--space-12) 0;
 }
 
-/* Button System - More variants and states */
+/* Button System - Consolidated */
 .btn {
   /* Layout & Positioning */
   position: relative;
@@ -649,35 +647,35 @@ p:last-child {
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  
+
   /* Spacing */
   padding: var(--space-3) var(--space-6);
-  
+
   /* Typography */
   font-weight: var(--fw-medium);
   font-size: var(--text-base);
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
-  
+
   /* Visual Design */
   border: 2px solid transparent;
   border-radius: var(--radius-md);
   background: var(--primary);
   color: var(--text-inverse);
-  
+
   /* Interaction */
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
-  
-  /* Transitions - GPU optimized */
-  transition: 
+
+  /* Transitions - Consolidated */
+  transition:
     transform var(--duration-fast) var(--ease-back),
     box-shadow var(--duration-fast) var(--ease-out),
     background-color var(--duration-fast) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out);
-  
+
   /* Performance optimization */
   will-change: transform, box-shadow;
 }
@@ -699,7 +697,7 @@ p:last-child {
 .btn:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
-  box-shadow: 
+  box-shadow:
     var(--shadow-md),
     0 0 0 4px hsl(var(--hue-primary) 50% 50% / 0.25);
 }
@@ -775,23 +773,23 @@ p:last-child {
   to { transform: rotate(360deg); }
 }
 
-/* Card System - Enhanced with better interaction states */
+/* Card System - Consolidated */
 .card {
   /* Structure */
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
-  
+
   /* Visual Design */
   background: var(--surface-elevated);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  
+
   /* Shadow & Motion */
   box-shadow: var(--shadow-sm);
-  transition: 
+  transition:
     transform var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out);
@@ -864,21 +862,21 @@ p:last-child {
 .form__control {
   /* Layout */
   width: 100%;
-  
+
   /* Spacing */
   padding: var(--space-3) var(--space-4);
-  
+
   /* Typography */
   font-size: var(--text-base);
-  
+
   /* Visual Design */
   border: 2px solid var(--border-default);
   border-radius: var(--radius-md);
   background: var(--surface-primary);
   color: var(--text-primary);
-  
+
   /* Transitions */
-  transition: 
+  transition:
     border-color var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out),
     background-color var(--duration-fast) var(--ease-out);
@@ -931,7 +929,6 @@ p:last-child {
   padding: var(--space-16) var(--space-4);
   text-align: center;
   overflow: hidden;
-  background-image: url('../img/events/P1091994.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -968,76 +965,21 @@ p:last-child {
   margin: 0 auto;
 }
 
-/* Page-specific hero backgrounds */
-body:has(.hero-section) .hero-section {
-  background-image: url('../img/events/P1091994.webp');
-}
-
-.about .hero-mission {
-  background-image: url('img/events/P1091997.webp');
-}
-
-.contact .hero {
-  background-image: url('img/events/P1092035.webp');
-}
-
-.edition1 .hero {
-  background-image: url('img/events/P1092099.webp');
-}
-
-.impact .hero {
-  background-image: url('img/events/P1092100.webp');
-}
-
-.team .hero {
-  background-image: url('img/events/P1091768.webp');
-}
-
-/* Portfolio page backgrounds */
-.portfolios .hero {
-  background-image: url('../img/partners/Goethe-Institut.webp');
-}
-
-.theory .hero {
-  background-image: url('../img/team/mushaandja.webp');
-}
-
-.infrastructure .hero {
-  background-image: url('../img/team/fibby.webp');
-}
-
-.cinema .hero {
-  background-image: url('../img/team/perivi.webp');
-}
-
-.healing .hero {
-  background-image: url('../img/team/marcella.webp');
-}
-
-/* Hero background styling */
-.hero, .hero-section, .hero-mission {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-.hero::before, .hero-section::before, .hero-mission::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(218, 165, 32, 0.08) 0%, rgba(255, 255, 255, 0.7) 100%);
-  z-index: 1;
-}
-
-.hero .hero-content, .hero-section .hero-content, .hero-mission .hero-content {
-  position: relative;
-  z-index: 2;
-}
+/* Page-specific hero backgrounds - Consolidated */
+.about .hero-section { background-image: url('../../img/events/night_film_screening.webp'); }
+.contact .hero-section { background-image: url('../../img/events/edition_1.webp'); }
+.edition1 .hero-section { background-image: url('../../img/events/P1092099.webp'); }
+.impact .hero-section { background-image: url('../../img/events/Ovaherero_women.webp'); }
+.team .hero-section { background-image: url('../../img/events/P1091768.webp'); }
+.portfolios .hero-section { background-image: url('../../img/partners/Goethe.webp'); }
+.theory .hero-section { background-image: url('../img/team/mushaandja.webp'); }
+.infrastructure .hero-section { background-image: url('../../img/team/fibby.webp'); }
+.cinema .hero-section { background-image: url('../../img/team/perivi.webp'); }
+.healing .hero-section { background-image: url('../../img/team/marcella.webp'); }
 
 /* Responsive hero backgrounds */
 @media (max-width: 768px) {
-  .hero, .hero-section, .hero-mission {
+  .hero-section {
     background-attachment: scroll;
   }
 }
@@ -1226,6 +1168,21 @@ a:hover, a:focus {
   text-decoration-thickness: 2px;
 }
 
+/* Text link styling for inline links */
+.text-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.text-link:hover, .text-link:focus {
+  color: var(--primary-dark);
+  text-decoration-thickness: 2px;
+}
+
 /* Remove underline for buttons and cards */
 .btn, .card {
   text-decoration: none;
@@ -1297,7 +1254,7 @@ a:hover, a:focus {
     box-shadow: none !important;
     text-shadow: none !important;
   }
-  
+
   .btn {
     border: 1px solid #000;
     background: none;
@@ -1323,16 +1280,6 @@ a:hover, a:focus {
   .card:not(:hover) {
     will-change: auto;
   }
-}
-
-/* Critical CSS for above-the-fold content */
-.critical-css {
-  /* Inline critical styles for faster rendering */
-}
-
-/* Non-critical CSS - loaded asynchronously */
-.non-critical-css {
-  /* Styles that can be loaded after initial render */
 }
 
 /* Optimize font loading */

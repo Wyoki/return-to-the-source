@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="../css/pages/theme.unified.css">
   <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/portfolio.css">
 </head>
@@ -18,17 +17,21 @@
 <body class="portfolios infrastructure">
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="header-content">
-   <a href="../index.html" class="logo">
-      <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="100" height="100">
+  <header>
+    <div class="container nav">
+    <a href="../index.html" class="logo">
+      <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50" loading="eager">
     </a>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="nav-menu">
-        <a href="theory.html" class="nav-link">Dr. Mushaandja (Theory)</a>
-        <a href="infrastructure.html" class="nav-link active">Fibby Kioria (Infrastructure)</a>
         <a href="cinema.html" class="nav-link">Perivi Katjavivi (Cinema)</a>
         <a href="healing.html" class="nav-link">Marcella Katjijova (Healing)</a>
-        <a href="../team.html" class="nav-link">← Team Overview</a>
+        <a href="theory.html" class="nav-link">Dr. Mushaandja (Theory)</a>
+        <a href="infrastructure.html" class="nav-link active">Fibby Kioria (Infrastructure)</a>
       </nav>
     </div>
   </header>
@@ -116,8 +119,8 @@
 
         <!-- Innovation Metrics -->
         <div class="metrics-section fade-in">
-          <h3 style="text-align: center; margin-bottom: var(--space-xl); color: var(--color-primary); font-family: var(--font-display); font-size: var(--text-xl);">Innovation Impact</h3>
-          <div class="metrics-grid">
+           <h3 class="section-heading--centered">Innovation Impact</h3>
+           <div class="metrics-grid">
             <div class="metric-item">
               <span class="metric-number">€227k</span>
               <span class="metric-label">DW Akademie Funding Managed</span>
@@ -223,12 +226,12 @@
       </section>
 
       <!-- Visual Break Section -->
-      <section class="section" style="background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%); padding: var(--space-3xl) 0; margin: var(--space-3xl) 0;">
-        <div class="container" style="text-align: center;">
-          <blockquote style="font-family: var(--font-display); font-size: var(--text-xl); font-style: italic; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; position: relative; padding: 0 var(--space-lg);">
+      <section class="section section--visual-break">
+        <div class="container container--centered">
+          <blockquote class="blockquote--featured">
             "Infrastructure is my love-language to continental African stories."
           </blockquote>
-          <cite style="display: block; margin-top: var(--space-lg); color: var(--color-primary); font-weight: 600;">— Fibby Kioria</cite>
+          <cite class="cite--featured">— Fibby Kioria</cite>
         </div>
       </section>
 
@@ -246,7 +249,7 @@
           <div class="pillar-content">
             <h3>International Program Management</h3>
             <p class="pillar-description">Managing complex international funding programs with exceptional financial stewardship and zero audit queries.</p>
-            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+            <ul class="expertise-list expertise-list--spaced">
               <li>DW Akademie €227k fund management</li>
               <li>Cross-border program coordination</li>
               <li>International partnership development</li>
@@ -264,7 +267,7 @@
           <div class="pillar-content">
             <h3>Continental Creative Infrastructure</h3>
             <p class="pillar-description">Building sustainable creative ecosystems through strategic partnerships and replicable capacity building models.</p>
-            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+            <ul class="expertise-list expertise-list--spaced">
               <li>Mucii Pictures creative leadership</li>
               <li>Continental network development</li>
               <li>Creative capacity building programs</li>
@@ -282,7 +285,7 @@
           <div class="pillar-content">
             <h3>International Festival Networks</h3>
             <p class="pillar-description">Curating African content for global audiences through international selection committees and festival partnerships.</p>
-            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+            <ul class="expertise-list expertise-list--spaced">
               <li>Hot Docs Canada selection committee</li>
               <li>Chicken & Egg Films USA curation</li>
               <li>Locarno Open Doors Switzerland</li>
@@ -367,14 +370,9 @@
         </a>
       </div>
       <div class="social-links">
-        <a href="mailto:fibby@rts.africa" class="social-link" aria-label="Email">
+        <a href="mailto:fibby@rts.africa" class="social-link" aria-label="Email Fibby Kioria">
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/mucii_pictures/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
-          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
         </a>
       </div>
@@ -393,7 +391,7 @@
   <script>
     // Enhanced mobile navigation with better accessibility
     const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-menu');
 
     if (mobileToggle && navLinks) {
       mobileToggle.addEventListener('click', () => {

@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="../css/pages/theme.unified.css">
   <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/portfolio.css">
 </head>
@@ -18,17 +17,21 @@
 <body class="portfolios healing">
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="header-content">
-   <a href="../index.html" class="logo">
+  <header>
+    <div class="container nav">
+    <a href="../index.html" class="logo">
       <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
     </a>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="nav-menu">
-        <a href="theory.html" class="nav-link">Dr. Mushaandja (Theory)</a>
-        <a href="infrastructure.html" class="nav-link">Fibby Kioria (Infrastructure)</a>
         <a href="cinema.html" class="nav-link">Perivi Katjavivi (Cinema)</a>
         <a href="healing.html" class="nav-link active">Marcella Katjijova (Healing)</a>
-        <a href="../team.html" class="nav-link">← Team Overview</a>
+        <a href="theory.html" class="nav-link">Dr. Mushaandja (Theory)</a>
+        <a href="infrastructure.html" class="nav-link">Fibby Kioria (Infrastructure)</a>
       </nav>
     </div>
   </header>
@@ -115,8 +118,8 @@
 
         <!-- Innovation Metrics -->
         <div class="metrics-section fade-in">
-          <h3 style="text-align: center; margin-bottom: var(--space-xl); color: var(--color-primary); font-family: var(--font-display); font-size: var(--text-xl);">Innovation Impact</h3>
-          <div class="metrics-grid">
+           <h3 class="section-heading--centered">Innovation Impact</h3>
+           <div class="metrics-grid">
             <div class="metric-item">
               <span class="metric-number">2019</span>
               <span class="metric-label">Healing Circles Founded</span>
@@ -222,12 +225,12 @@
       </section>
 
       <!-- Visual Break Section -->
-      <section class="section" style="background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%); padding: var(--space-3xl) 0; margin: var(--space-3xl) 0;">
-        <div class="container" style="text-align: center;">
-          <blockquote style="font-family: var(--font-display); font-size: var(--text-xl); font-style: italic; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; position: relative; padding: 0 var(--space-lg);">
+      <section class="section section--visual-break">
+        <div class="container container--centered">
+          <blockquote class="blockquote--featured">
             "Our healing practices are rooted in ancestral wisdom and community care."
           </blockquote>
-          <cite style="display: block; margin-top: var(--space-lg); color: var(--color-primary); font-weight: 600;">— Marcella Katjivivo</cite>
+          <cite class="cite--featured">— Marcella Katjivivo</cite>
         </div>
       </section>
 
@@ -245,7 +248,7 @@
           <div class="pillar-content">
             <h3>Traditional Healing</h3>
             <p class="pillar-description">Leading indigenous healing methodologies and ancestral knowledge systems integration.</p>
-            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+            <ul class="expertise-list expertise-list--spaced">
               <li>Indigenous healing methodologies</li>
               <li>Ancestral knowledge systems integration</li>
               <li>Sacred ritual facilitation</li>
@@ -265,7 +268,7 @@
           <div class="pillar-content">
             <h3>Community Development</h3>
             <p class="pillar-description">Facilitating healing circles and designing intergenerational dialogue for community wellbeing.</p>
-            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+            <ul class="expertise-list expertise-list--spaced">
               <li>Healing circle facilitation</li>
               <li>Intergenerational dialogue design</li>
               <li>Cultural education curriculum</li>
@@ -285,7 +288,7 @@
           <div class="pillar-content">
             <h3>Trauma Healing</h3>
             <p class="pillar-description">Specializing in historical trauma resolution and collective healing methodologies.</p>
-            <ul class="expertise-list" style="margin-top: var(--space-lg);">
+            <ul class="expertise-list expertise-list--spaced">
               <li>Historical trauma resolution</li>
               <li>Collective healing methodologies</li>
               <li>Grief support facilitation</li>
@@ -386,7 +389,7 @@
   <script>
     // Enhanced mobile navigation with better accessibility
     const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-menu');
 
     if (mobileToggle && navLinks) {
       mobileToggle.addEventListener('click', () => {

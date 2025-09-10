@@ -3,6 +3,7 @@
  * Optimized for performance, maintainability, and user experience
  */
 
+(function() {
 class InteractionManager {
     constructor() {
         // Store all observers for proper cleanup
@@ -11,10 +12,9 @@ class InteractionManager {
         this.timeouts = new Map();
         // Cache frequently accessed DOM elements
         this.elements = {};
-        // Performance monitoring
-        this.isScrolling = false;
-        this.animationFrameId = null;
-        
+        // Debounce timeout for scroll handling
+        this.debounceTimeout = null;
+
         // Bind methods to maintain context
         this.handleScroll = this.handleScroll.bind(this);
         this.updateHeader = this.updateHeader.bind(this);
@@ -469,13 +469,13 @@ class InteractionManager {
     }
 
     /**
-     * Throttled scroll handler for better performance
+     * Debounced scroll handler for better performance
      */
     handleScroll() {
-        if (!this.isScrolling) {
-            this.isScrolling = true;
-            this.animationFrameId = requestAnimationFrame(this.updateHeader);
-        }
+        if (this.debounceTimeout) clearTimeout(this.debounceTimeout);
+        this.debounceTimeout = setTimeout(() => {
+            this.updateHeader();
+        }, 100);
     }
 
     /**
@@ -510,22 +510,23 @@ class InteractionManager {
             }
         });
         this.observers = [];
-        
+
         // Clear all timeouts
         this.timeouts.forEach(timeout => clearTimeout(timeout));
         this.timeouts.clear();
-        
-        // Cancel animation frames
-        if (this.animationFrameId) {
-            cancelAnimationFrame(this.animationFrameId);
+
+        // Clear debounce timeout
+        if (this.debounceTimeout) {
+            clearTimeout(this.debounceTimeout);
+            this.debounceTimeout = null;
         }
-        
+
         // Remove scroll listener
         window.removeEventListener('scroll', this.handleScroll);
-        
+
         // Clear element cache
         this.elements = {};
-        
+
         console.log('InteractionManager: Cleanup completed');
     }
 }
@@ -834,7 +835,7 @@ function initializeApp() {
             const loadTime = performance.now();
             console.log(`App initialization completed in ${Math.round(loadTime)}ms`);
         }
-        
+
     } catch (error) {
         console.error('Failed to initialize app:', error);
         showNotification('Some interactive features may not be available', 'warning');
@@ -847,3 +848,5 @@ if (document.readyState === 'loading') {
 } else {
     initializeApp();
 }
+
+})();

@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Unified design system -->
-  <link rel="stylesheet" href="../css/pages/theme.unified.css">
+  <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/portfolio.css">
 </head>
 
@@ -26,14 +26,18 @@
   <header>
     <div class="container nav">
     <a href="../index.html" class="logo">
-      <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" 
+      <img src="../img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
     </a>
-      <nav class="pillar-tabs">
-        <a href="theory.html" class="pillar-tab">Dr. Mushaandja (Theory)</a>
-        <a href="infrastructure.html" class="pillar-tab">Fibby Kioria (Infrastructure)</a>
-        <a href="cinema.html" class="pillar-tab active">Perivi Katjavivi (Cinema)</a>
-        <a href="healing.html" class="pillar-tab">Marcella Katjijova (Healing)</a>
-        <a href="../team.html" class="pillar-tab">← Team Overview</a>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-menu">
+        <a href="cinema.html" class="nav-link active">Perivi Katjavivi (Cinema)</a>
+        <a href="healing.html" class="nav-link">Marcella Katjijova (Healing)</a>
+        <a href="theory.html" class="nav-link">Dr. Mushaandja (Theory)</a>
+        <a href="infrastructure.html" class="nav-link">Fibby Kioria (Infrastructure)</a>
       </nav>
     </div>
   </header>
@@ -72,7 +76,7 @@
         <ul class="sidebar-list">
           <li>Under the Hanging Tree (2023)</li>
           <li>The Man with the Crooked Arm (In Development)</li>
-          <li>Emoyeni: Nsanguluko (2022)</li>
+          <li>Emoyeni: Nsanguluko (2018)</li>
           <li>Film Festival Film (2019)</li>
           <li>The Unseen (2016)</li>
         </ul>
@@ -287,7 +291,7 @@
   <script>
     // Enhanced mobile navigation with better accessibility
     const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-menu');
 
     if (mobileToggle && navLinks) {
       mobileToggle.addEventListener('click', () => {
