@@ -815,7 +815,7 @@ body {
 
  .partner-item img {
    max-width: 100%;
-   max-height: 100px; /* Slightly smaller for single row layout */
+   max-height: 140px; /* Increased size for better visibility */
    object-fit: contain;
    filter: grayscale(0.2);
    transition: all var(--transition-base) var(--ease-out);
