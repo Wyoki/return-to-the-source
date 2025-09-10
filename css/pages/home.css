@@ -558,6 +558,18 @@ body {
   font-size: var(--text-sm);
 }
 
+.text-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  transition: color var(--transition-base);
+}
+
+.text-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
 /* =================================================================
    STATS SECTION - Impactful metrics display
    ================================================================= */
