@@ -889,7 +889,7 @@ body {
  }
 
  /* Enhanced Mucii Pictures logo styling for better visibility */
- .partner-item img[src*="mucii-pictures"] {
+ .mucii-logo img {
    max-width: 160px !important;
    max-height: 160px !important;
    object-fit: contain !important;
@@ -897,9 +897,24 @@ body {
    transition: all var(--transition-base) var(--ease-out) !important;
  }
 
- .partner-item img[src*="mucii-pictures"]:hover {
+ .mucii-logo:hover img {
    filter: brightness(1.2) contrast(1.2) drop-shadow(0 0 15px rgba(139, 69, 19, 0.4)) !important;
    transform: scale(1.05) !important;
+ }
+
+ /* Ensure Mucii logo is always visible */
+ .mucii-logo {
+   background: rgba(255, 255, 255, 0.9) !important;
+   border: 2px solid rgba(139, 69, 19, 0.3) !important;
+   border-radius: var(--radius-lg) !important;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+   transition: all var(--transition-base) !important;
+ }
+
+ .mucii-logo:hover {
+   border-color: rgba(139, 69, 19, 0.6) !important;
+   box-shadow: 0 6px 20px rgba(139, 69, 19, 0.2) !important;
+   transform: translateY(-2px) !important;
  }
 
 /* =================================================================
