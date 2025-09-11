@@ -397,20 +397,44 @@ body.portfolios.healing {
     box-shadow: var(--shadow-2xl);
 }
 
-/* Enhanced image loading states */
-.hero__image[loading="lazy"] {
-    opacity: 0;
+/* Enhanced responsive image handling */
+.hero__image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--surface-primary);
+    box-shadow: var(--shadow-xl);
+    transition: all var(--duration-normal) var(--ease-out);
+    /* Better mobile performance */
+    will-change: transform;
+    /* Enhanced loading states */
     background: linear-gradient(45deg, var(--color-neutral-200), var(--color-neutral-100));
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
 }
 
 .hero__image[loading="eager"] {
     opacity: 1;
 }
 
+.hero__image[loading="lazy"] {
+    opacity: 0;
+    background: linear-gradient(45deg, var(--color-neutral-200), var(--color-neutral-100));
+}
+
 /* Pillar image loading states */
 .pillar-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     background: linear-gradient(45deg, var(--color-neutral-200), var(--color-neutral-100));
     transition: opacity var(--duration-normal) var(--ease-out);
+    border-radius: var(--radius-lg);
+    /* Better mobile performance */
+    will-change: opacity;
 }
 
 .pillar-image[loading] {
@@ -420,6 +444,84 @@ body.portfolios.healing {
 .pillar-image[loading="lazy"] {
     opacity: 0;
     background: linear-gradient(45deg, var(--color-neutral-200), var(--color-neutral-100));
+}
+
+/* Enhanced logo images */
+.hero__logo,
+.sidebar-logo {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(1.0) contrast(1.1);
+    transition: all var(--duration-fast) var(--ease-out);
+    background: var(--surface-primary);
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Mobile-optimized image sizes */
+@media (max-width: 768px) {
+    .hero__image {
+        max-width: 220px;
+        border-width: 3px;
+    }
+
+    .hero__logo,
+    .sidebar-logo {
+        max-width: 100px;
+        padding: var(--space-xs);
+    }
+
+    .pillar-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__image {
+        max-width: 180px;
+        border-width: 2px;
+    }
+
+    .hero__logo,
+    .sidebar-logo {
+        max-width: 80px;
+    }
+
+    .pillar-image {
+        height: 160px;
+    }
+}
+
+/* Enhanced image loading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Better image aspect ratios for mobile */
+@media (max-width: 768px) {
+    .hero__profile {
+        flex-direction: column;
+        gap: var(--space-xl);
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__branding {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+    }
 }
 
 .hero__branding {
@@ -587,49 +689,73 @@ body {
     letter-spacing: var(--letter-spacing-normal);
 }
 
-/* Enhanced Typography Hierarchy */
+/* Enhanced Mobile-First Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-display);
     font-weight: 600;
     line-height: var(--line-height-tight);
     letter-spacing: var(--letter-spacing-tight);
     margin: 0 0 var(--space-md) 0;
+    text-wrap: balance;
+    /* Enhanced mobile readability */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
+/* Mobile-first responsive typography with improved readability */
 h1 {
-    font-size: var(--font-size-4xl);
+    font-size: clamp(2rem, 8vw, 3.5rem);
     font-weight: 700;
     letter-spacing: var(--letter-spacing-tight);
+    line-height: 1.1;
+    /* Better mobile spacing */
+    margin-bottom: var(--space-lg);
 }
 
 h2 {
-    font-size: var(--font-size-3xl);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
     font-weight: 600;
     letter-spacing: var(--letter-spacing-tight);
+    line-height: 1.2;
+    /* Enhanced mobile readability */
+    margin-bottom: var(--space-lg);
 }
 
 h3 {
-    font-size: var(--font-size-2xl);
+    font-size: clamp(1.25rem, 4vw, 2rem);
     font-weight: 600;
     letter-spacing: var(--letter-spacing-normal);
+    line-height: 1.3;
+    /* Better mobile hierarchy */
+    margin-bottom: var(--space-md);
 }
 
 h4 {
-    font-size: var(--font-size-xl);
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
     font-weight: 600;
     letter-spacing: var(--letter-spacing-normal);
+    line-height: 1.4;
+    /* Improved mobile spacing */
+    margin-bottom: var(--space-sm);
 }
 
 h5 {
-    font-size: var(--font-size-lg);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 600;
     letter-spacing: var(--letter-spacing-normal);
+    line-height: 1.4;
+    /* Better mobile readability */
+    margin-bottom: var(--space-sm);
 }
 
 h6 {
-    font-size: var(--font-size-base);
+    font-size: clamp(0.875rem, 2vw, 1.125rem);
     font-weight: 600;
     letter-spacing: var(--letter-spacing-normal);
+    line-height: 1.5;
+    /* Enhanced mobile hierarchy */
+    margin-bottom: var(--space-sm);
 }
 
 /* Optimized Paragraph Readability */
@@ -1758,6 +1884,977 @@ main {
     -webkit-backdrop-filter: blur(10px);
 }
 
+/* ===== GRANT REVIEWER ELEMENTS ===== */
+.funding-grid,
+.evaluation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.funding-card,
+.evaluation-card {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.funding-card::before,
+.evaluation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.funding-card:hover,
+.evaluation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.funding-card:hover::before,
+.evaluation-card:hover::before {
+    opacity: 1;
+}
+
+.funding-title,
+.evaluation-criterion {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 1;
+}
+
+.funding-amount {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.funding-description,
+.evaluation-description {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 1;
+}
+
+.funding-source {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.evaluation-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    position: relative;
+    z-index: 1;
+}
+
+.rating-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+.rating-stars {
+    color: var(--color-accent);
+    font-size: var(--font-size-lg);
+    letter-spacing: 2px;
+}
+
+/* Responsive adjustments for grant reviewer elements */
+@media (max-width: 768px) {
+    .funding-grid,
+    .evaluation-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .funding-card,
+    .evaluation-card {
+        padding: var(--space-lg);
+    }
+
+    .funding-amount {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+/* ===== EXPERT PORTFOLIO CREATOR ELEMENTS ===== */
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.methodology-card {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.methodology-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.methodology-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.methodology-card:hover::before {
+    opacity: 1;
+}
+
+.methodology-title {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.tech-specs {
+    display: grid;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.spec-item:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.spec-value {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    font-weight: 500;
+    text-align: right;
+}
+
+.methodology-description {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive adjustments for expert portfolio creator elements */
+@media (max-width: 768px) {
+    .methodology-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .methodology-card {
+        padding: var(--space-lg);
+    }
+
+    .spec-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+
+    .spec-value {
+        text-align: left;
+    }
+}
+
+/* ===== UI/UX EXPERT ENHANCEMENTS ===== */
+
+/* Enhanced Visual Hierarchy */
+.section__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.section__title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    border-radius: 2px;
+}
+
+/* Enhanced Card Interactions */
+.achievement-card,
+.expertise-card,
+.funding-card,
+.evaluation-card,
+.methodology-card {
+    /* Improved focus states for accessibility */
+    transition: all var(--duration-normal) var(--ease-out);
+    cursor: pointer;
+    position: relative;
+}
+
+.achievement-card:focus-visible,
+.expertise-card:focus-visible,
+.funding-card:focus-visible,
+.evaluation-card:focus-visible,
+.methodology-card:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Enhanced Button Interactions */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0); /* Hardware acceleration */
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width var(--duration-normal), height var(--duration-normal);
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Improved Navigation UX */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--duration-slow) var(--ease-out);
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Loading States */
+.portfolio-loading {
+    opacity: 0;
+    animation: fadeInScale 0.8s var(--ease-out) forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Improved Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* Enhanced Accessibility Features */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-accent: hsl(0 0% 0%);
+        --color-text-primary: hsl(0 0% 0%);
+        --color-text-secondary: hsl(0 0% 30%);
+        --color-border-light: hsl(0 0% 0%);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Focus management for keyboard navigation */
+.keyboard-nav .nav-link:focus,
+.keyboard-nav .btn:focus,
+.keyboard-nav .achievement-card:focus,
+.keyboard-nav .expertise-card:focus {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Enhanced mobile touch targets and navigation */
+@media (max-width: 768px) {
+    .nav-link,
+    .btn,
+    .social-link {
+        min-height: 48px;
+        min-width: 48px;
+        /* Better touch targets for accessibility */
+        padding: var(--space-md) var(--space-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Enhanced mobile navigation */
+    .nav-menu {
+        padding: var(--space-lg) 0;
+        gap: var(--space-sm);
+    }
+
+    .nav-menu a {
+        padding: var(--space-lg) var(--space-xl);
+        font-size: var(--text-base);
+        font-weight: 600;
+        border-radius: var(--radius-lg);
+        margin: var(--space-xs) var(--space-md);
+        /* Better visual feedback */
+        transition: all var(--duration-fast) var(--ease-out);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-menu a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left var(--duration-normal) var(--ease-out);
+    }
+
+    .nav-menu a:active::before {
+        left: 100%;
+    }
+
+    /* Better touch feedback for all interactive elements */
+    .achievement-card:active,
+    .expertise-card:active,
+    .funding-card:active,
+    .evaluation-card:active,
+    .methodology-card:active,
+    .pillar-card:active {
+        transform: scale(0.98);
+        transition-duration: 100ms;
+        box-shadow: var(--shadow-sm);
+    }
+
+    /* Enhanced mobile menu toggle */
+    .mobile-toggle {
+        width: 48px;
+        height: 48px;
+        padding: var(--space-md);
+        border-radius: var(--radius-lg);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all var(--duration-normal) var(--ease-out);
+    }
+
+    .mobile-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+    }
+
+    .mobile-toggle.active {
+        background: var(--primary);
+        border-color: var(--primary);
+    }
+
+    /* Improved mobile card spacing */
+    .achievement-card,
+    .expertise-card,
+    .funding-card,
+    .evaluation-card,
+    .methodology-card {
+        margin-bottom: var(--space-lg);
+        padding: var(--space-xl);
+        border-radius: var(--radius-xl);
+    }
+
+    /* Better mobile button styling */
+    .btn {
+        padding: var(--space-lg) var(--space-2xl);
+        font-size: var(--text-base);
+        font-weight: 600;
+        border-radius: var(--radius-lg);
+        min-height: 48px;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Enhanced social links for mobile */
+    .social-link {
+        width: 56px;
+        height: 56px;
+        border-radius: var(--radius-xl);
+        font-size: var(--text-xl);
+        margin: 0 var(--space-sm);
+    }
+}
+
+/* Progressive enhancement for modern browsers */
+@supports (backdrop-filter: blur(10px)) {
+    .hero {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* Enhanced print styles for better UX */
+@media print {
+    .nav-menu,
+    .btn,
+    .social-links {
+        display: none !important;
+    }
+
+    .section__title::after {
+        display: none;
+    }
+
+    .achievement-card,
+    .expertise-card,
+    .funding-card,
+    .evaluation-card,
+    .methodology-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+}
+
+/* ===== TABLE OF CONTENTS NAVIGATION ===== */
+.toc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.toc-link {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: all var(--duration-fast) var(--ease-out);
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.toc-link:hover,
+.toc-link:focus {
+    color: var(--color-accent);
+    background: var(--primary-50);
+    border-left-color: var(--color-accent);
+    transform: translateX(4px);
+}
+
+.toc-link:active {
+    transform: translateX(2px);
+}
+
+/* Active section highlighting */
+.toc-link.active {
+    color: var(--color-accent);
+    background: var(--primary-50);
+    border-left-color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* Progress indicator for UX */
+.toc-nav::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border-light);
+    border-radius: 1px;
+}
+
+.toc-nav {
+    position: relative;
+    padding-left: var(--space-sm);
+}
+
+/* Responsive adjustments for table of contents */
+@media (max-width: 768px) {
+    .toc-nav {
+        gap: var(--space-xs);
+    }
+
+    .toc-link {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* ===== ACADEMIC RESEARCHER ELEMENTS ===== */
+.citations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.citation-card {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.citation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.citation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.citation-card:hover::before {
+    opacity: 1;
+}
+
+.citation-title {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.theoretical-framework,
+.methodology-framework,
+.peer-review-framework {
+    position: relative;
+    z-index: 1;
+}
+
+.framework-description,
+.methodology-description,
+.peer-review-description {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+}
+
+.key-citations h4,
+.methodology-components h4,
+.review-elements h4 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.citation-list,
+.methodology-list,
+.review-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.citation-list li,
+.methodology-list li,
+.review-list li {
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-lg);
+    position: relative;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.citation-list li::before,
+.methodology-list li::before,
+.review-list li::before {
+    content: "•";
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
+.citation-list li strong,
+.methodology-list li strong,
+.review-list li strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+/* Responsive adjustments for academic researcher elements */
+@media (max-width: 768px) {
+    .citations-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .citation-card {
+        padding: var(--space-lg);
+    }
+
+    .citation-list li,
+    .methodology-list li,
+    .review-list li {
+        font-size: var(--font-size-xs);
+        padding-left: var(--space-md);
+    }
+}
+
+/* ===== INDUSTRY RECRUITER ELEMENTS ===== */
+.skills-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.skills-card {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.skills-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.skills-card:hover::before {
+    opacity: 1;
+}
+
+.skills-title {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.skill-levels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.skill-name {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--color-border-light);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    border-radius: 4px;
+    transition: width var(--duration-slow) var(--ease-out);
+}
+
+.skill-rating {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    font-weight: 600;
+    text-align: right;
+}
+
+.certifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.certification-item {
+    padding: var(--space-md);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-accent);
+}
+
+.certification-item h4 {
+    font-size: var(--font-size-sm);
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+.certification-item p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.certification-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-accent);
+    color: var(--text-inverse);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.career-progression {
+    margin-top: var(--space-3xl);
+    padding: var(--space-2xl);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-xl);
+}
+
+.progression-title {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-xl);
+    color: var(--color-accent);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-accent);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    position: relative;
+}
+
+.timeline-year {
+    width: 60px;
+    height: 60px;
+    background: var(--color-accent);
+    color: var(--text-inverse);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    padding-top: var(--space-sm);
+}
+
+.timeline-content h4 {
+    font-size: var(--font-size-base);
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+.timeline-content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for industry recruiter elements */
+@media (max-width: 768px) {
+    .skills-matrix {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .skills-card {
+        padding: var(--space-lg);
+    }
+
+    .timeline-item {
+        gap: var(--space-md);
+    }
+
+    .timeline-year {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-xs);
+    }
+
+    .timeline::before {
+        left: 25px;
+    }
+}
+
 .innovation-title {
     font-family: var(--font-display);
     font-size: var(--text-2xl);
@@ -2253,10 +3350,12 @@ main {
 
     .portfolio-stats {
       grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
     }
 
     .pillars-grid {
       grid-template-columns: 1fr;
+      gap: var(--space-xl);
     }
 
     .pillar-tabs {
@@ -2275,7 +3374,7 @@ main {
     .achievement-grid,
     .expertise-grid {
       grid-template-columns: 1fr;
-      gap: var(--space-6);
+      gap: var(--space-lg);
     }
 
     .main-content {
@@ -2285,42 +3384,97 @@ main {
     /* Enhanced mobile card design */
     .achievement-card,
     .expertise-card {
-      padding: var(--space-6);
-      border-radius: var(--radius-xl); /* Maintain rounded corners on mobile */
-      /* Better touch targets on mobile */
-      margin-bottom: var(--space-4);
+      padding: var(--space-xl);
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-lg);
+      /* Better mobile spacing */
+      box-shadow: var(--shadow-sm);
     }
 
     /* Improve readability on mobile */
     .achievement-title,
     .expertise-title {
-      font-size: var(--text-base);
-      margin-bottom: var(--space-3);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-md);
+      line-height: 1.3;
     }
 
-    .achievement-description {
-      font-size: var(--text-sm);
-      line-height: var(--lh-relaxed);
+    .achievement-description,
+    .expertise-list {
+      font-size: var(--text-base);
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+
+    /* Better mobile hero section */
+    .hero {
+      min-height: 60vh;
+      padding: var(--space-3xl) var(--container-padding);
+    }
+
+    .hero__content {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .hero__name {
+      font-size: clamp(2.5rem, 10vw, 4rem);
+      margin-bottom: var(--space-xl);
+    }
+
+    .hero__quote {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      line-height: 1.4;
+    }
+
+    /* Enhanced mobile sidebar */
+    .sidebar {
+      padding: var(--space-xl);
+      margin-bottom: var(--space-3xl);
+      border-radius: var(--radius-xl);
+    }
+
+    .sidebar-section {
+      margin-bottom: var(--space-xl);
+    }
+
+    .sidebar-heading {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-lg);
+    }
+
+    .sidebar-list li {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-md);
+      line-height: 1.5;
     }
 }
 
 @media (max-width: 480px) {
+    :root {
+      --container-padding: clamp(0.75rem, 4vw, 1rem);
+      --section-spacing: clamp(1.5rem, 4vw, 2rem);
+    }
+
     .portfolio-stats {
       grid-template-columns: 1fr;
-      gap: var(--space-6);
+      gap: var(--space-md);
     }
 
     .pillar-links {
       flex-direction: column;
+      gap: var(--space-md);
     }
 
     .social-links {
-      gap: var(--space-4);
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .social-link {
-      width: 50px;
-      height: 50px;
+      width: 52px;
+      height: 52px;
       font-size: var(--text-lg);
     }
 
@@ -2337,10 +3491,59 @@ main {
       border: 1px solid var(--border-light);
       padding: var(--space-4) var(--space-6);
       font-size: var(--text-sm);
+      font-weight: 600;
     }
 
     .pillar-tab.active::after {
-      display: none; /* Hide bottom accent on mobile */
+      display: none;
+    }
+
+    /* Ultra-mobile optimizations */
+    .hero__name {
+      font-size: clamp(2rem, 12vw, 3.5rem);
+    }
+
+    .hero__quote {
+      font-size: clamp(1rem, 5vw, 1.3rem);
+    }
+
+    .section__title {
+      font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .section__subtitle {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-lg);
+    }
+
+    /* Better mobile card layout */
+    .achievement-card,
+    .expertise-card {
+      padding: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .achievement-title,
+    .expertise-title {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-sm);
+    }
+
+    .achievement-description,
+    .expertise-list {
+      font-size: var(--text-sm);
+      line-height: 1.6;
+    }
+
+    /* Mobile-optimized contact section */
+    .contact-section {
+      padding: var(--space-3xl) var(--container-padding);
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-xl);
     }
 }
 
@@ -3255,5 +4458,259 @@ main {
 /* Expertise list with top margin */
 .expertise-list--spaced {
     margin-top: var(--space-lg);
+}
+
+/* Enhanced accessibility for all interactive elements */
+.achievement-card:focus-visible,
+.expertise-card:focus-visible,
+.funding-card:focus-visible,
+.evaluation-card:focus-visible,
+.methodology-card:focus-visible,
+.pillar-card:focus-visible,
+.btn:focus-visible,
+.social-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 6px rgba(212, 98, 15, 0.15);
+}
+
+/* Better keyboard navigation indicators */
+.keyboard-nav .nav-link:focus,
+.keyboard-nav .btn:focus,
+.keyboard-nav .achievement-card:focus,
+.keyboard-nav .expertise-card:focus {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 6px rgba(212, 98, 15, 0.2);
+}
+
+/* Enhanced touch interactions for mobile */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch device optimizations */
+    .achievement-card,
+    .expertise-card,
+    .pillar-card {
+        /* Remove hover effects on touch devices */
+        transition: transform 0.1s ease-out;
+    }
+
+    .achievement-card:hover,
+    .expertise-card:hover,
+    .pillar-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Better touch feedback */
+    .achievement-card:active,
+    .expertise-card:active,
+    .pillar-card:active {
+        transform: scale(0.98);
+        transition-duration: 0.1s;
+    }
+}
+
+/* Improved screen reader support */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Better ARIA support */
+[aria-expanded="true"] .mobile-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+[aria-expanded="true"] .mobile-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+[aria-expanded="false"] .mobile-toggle span:nth-child(1),
+[aria-expanded="false"] .mobile-toggle span:nth-child(3) {
+    transform: none;
+}
+
+/* Enhanced mobile accessibility */
+@media (max-width: 768px) {
+    /* Larger touch targets for better accessibility */
+    .nav-link,
+    .btn,
+    .social-link,
+    .pillar-link {
+        min-height: 48px;
+        min-width: 48px;
+        /* Better visual feedback for touch */
+        position: relative;
+    }
+
+    .nav-link:active,
+    .btn:active,
+    .social-link:active,
+    .pillar-link:active {
+        transform: scale(0.95);
+        transition-duration: 0.1s;
+    }
+
+    /* Improved focus indicators on mobile */
+    .nav-link:focus-visible,
+    .btn:focus-visible,
+    .social-link:focus-visible {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 0 0 6px rgba(212, 98, 15, 0.15);
+    }
+
+    /* Better mobile navigation accessibility */
+    .mobile-toggle {
+        /* Ensure it's always visible and accessible */
+        position: relative;
+        z-index: 1001;
+    }
+
+    .mobile-toggle:focus-visible {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 6px rgba(212, 98, 15, 0.2);
+    }
+}
+
+/* ===== MOBILE PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Optimize animations for mobile performance */
+@media (max-width: 768px) {
+    /* Reduce motion for better performance on mobile */
+    .achievement-card,
+    .expertise-card,
+    .pillar-card,
+    .funding-card,
+    .evaluation-card,
+    .methodology-card {
+        /* Use transform3d for hardware acceleration */
+        transform: translateZ(0);
+        /* Optimize animation properties */
+        will-change: transform;
+        /* Reduce animation complexity on mobile */
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+
+    /* Disable expensive effects on low-end mobile devices */
+    @media (max-width: 480px) {
+        .achievement-card,
+        .expertise-card,
+        .pillar-card {
+            /* Remove will-change for better memory usage */
+            will-change: auto;
+            /* Simplify transitions */
+            transition: transform 0.15s ease-out;
+        }
+
+        /* Disable backdrop-filter on low-end devices */
+        .hero,
+        .site-header.scrolled {
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        /* Simplify box-shadows for performance */
+        .achievement-card,
+        .expertise-card,
+        .pillar-card {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Reduce image quality for better performance */
+        .hero__image,
+        .sidebar-logo,
+        .pillar-image {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
+        }
+    }
+}
+
+/* Optimize font loading for mobile */
+@media (max-width: 768px) {
+    /* Use system fonts as fallback for better performance */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    /* Load web fonts only when needed */
+    .hero__name,
+    .section__title,
+    .pillar-name {
+        font-family: 'Playfair Display', Georgia, serif;
+    }
+}
+
+/* Optimize layout for mobile performance */
+@media (max-width: 768px) {
+    /* Use simpler grid layouts */
+    .achievement-grid,
+    .expertise-grid,
+    .funding-grid,
+    .evaluation-grid {
+        display: block;
+        /* Remove gap for better performance */
+        gap: 0;
+    }
+
+    .achievement-card,
+    .expertise-card,
+    .funding-card,
+    .evaluation-card,
+    .methodology-card {
+        /* Add margin instead of gap for better performance */
+        margin-bottom: var(--space-lg);
+        /* Remove complex border-radius on mobile */
+        border-radius: var(--radius-lg);
+    }
+
+    /* Simplify sidebar layout */
+    .sidebar {
+        /* Use simpler positioning */
+        position: relative;
+        order: -1;
+        margin-bottom: var(--space-3xl);
+    }
+
+    /* Optimize hero section */
+    .hero {
+        /* Reduce background complexity */
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .hero::before {
+        /* Simplify overlay */
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}
+
+/* Critical CSS for above-the-fold content */
+@media (max-width: 768px) {
+    /* Ensure critical content loads first */
+    .hero,
+    .hero__content,
+    .hero__name,
+    .hero__quote,
+    .nav-menu,
+    .mobile-toggle {
+        /* Prioritize rendering */
+        content-visibility: auto;
+        contain: layout style paint;
+    }
 }
 }

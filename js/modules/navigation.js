@@ -54,7 +54,8 @@ export class NavigationController {
       
       this.attachEventListeners();
       this.initializeScrollState();
-      
+      this.optimizeForMobile();
+
       this.state.isInitialized = true;
       console.log('Navigation initialized successfully');
       
@@ -113,6 +114,92 @@ export class NavigationController {
   initializeScrollState() {
     this.state.currentScrollY = window.scrollY;
     this.updateHeaderStyle();
+  }
+
+  optimizeForMobile() {
+    // Detect mobile devices
+    const isMobile = window.innerWidth < this.config.MOBILE_BREAKPOINT ||
+                    ('ontouchstart' in window) ||
+                    (navigator.maxTouchPoints > 0);
+
+    if (isMobile) {
+      // Add mobile-specific optimizations
+      document.body.classList.add('mobile-device');
+
+      // Optimize touch interactions
+      this.optimizeTouchInteractions();
+
+      // Add passive event listeners for better scroll performance
+      this.addPassiveListeners();
+
+      // Optimize animations for mobile
+      this.optimizeAnimations();
+
+      console.log('Mobile optimizations applied');
+    }
+  }
+
+  optimizeTouchInteractions() {
+    // Add touch-specific event handlers
+    if (this.elements.mobileMenuToggle) {
+      // Prevent double-tap zoom on mobile toggle
+      this.elements.mobileMenuToggle.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+      }, { passive: false });
+
+      // Add haptic feedback if available
+      if ('vibrate' in navigator) {
+        this.elements.mobileMenuToggle.addEventListener('click', () => {
+          navigator.vibrate(50);
+        });
+      }
+    }
+
+    // Optimize nav links for touch
+    if (this.elements.navMenu) {
+      const navLinks = this.elements.navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        // Add touch feedback
+        link.addEventListener('touchstart', () => {
+          link.style.transform = 'scale(0.95)';
+        }, { passive: true });
+
+        link.addEventListener('touchend', () => {
+          link.style.transform = '';
+        }, { passive: true });
+      });
+    }
+  }
+
+  addPassiveListeners() {
+    // Add passive listeners for better scroll performance
+    const passiveOptions = { passive: true, capture: false };
+
+    // Re-attach scroll listener with passive option
+    window.removeEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll, passiveOptions);
+
+    // Add touch-specific passive listeners
+    if ('ontouchstart' in window) {
+      document.addEventListener('touchstart', () => {}, passiveOptions);
+      document.addEventListener('touchmove', () => {}, passiveOptions);
+    }
+  }
+
+  optimizeAnimations() {
+    // Reduce animation complexity on mobile
+    const isLowEndDevice = navigator.hardwareConcurrency <= 2 ||
+                          (window.innerWidth < 480 && window.innerHeight < 800);
+
+    if (isLowEndDevice) {
+      // Disable complex animations on low-end devices
+      document.body.classList.add('reduced-motion');
+
+      // Simplify scroll behavior
+      if ('scrollBehavior' in document.documentElement.style) {
+        document.documentElement.style.scrollBehavior = 'auto';
+      }
+    }
   }
 
   handleScroll() {

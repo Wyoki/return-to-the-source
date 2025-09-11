@@ -1260,6 +1260,141 @@ a:hover, a:focus {
     background: none;
     color: #000;
   }
+
+  /* Portfolio-specific print optimizations */
+  .funding-card, .evaluation-card, .methodology-card,
+  .citation-card, .skills-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #000 !important;
+    background: white !important;
+  }
+
+  .skill-bar, .skill-fill {
+    background: #000 !important;
+  }
+
+  .timeline::before {
+    background: #000 !important;
+  }
+
+  .toc-nav {
+    display: none !important;
+  }
+}
+
+/* ===== PORTFOLIO PERSONA OPTIMIZATIONS ===== */
+
+/* Enhanced focus management for all interactive elements */
+.funding-card:focus-within,
+.evaluation-card:focus-within,
+.methodology-card:focus-within,
+.citation-card:focus-within,
+.skills-card:focus-within {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Improved loading states for better UX */
+.portfolio-loading .achievement-card,
+.portfolio-loading .expertise-card,
+.portfolio-loading .funding-card,
+.portfolio-loading .evaluation-card,
+.portfolio-loading .methodology-card,
+.portfolio-loading .citation-card,
+.portfolio-loading .skills-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.portfolio-loading .achievement-card:nth-child(1),
+.portfolio-loading .expertise-card:nth-child(1),
+.portfolio-loading .funding-card:nth-child(1),
+.portfolio-loading .evaluation-card:nth-child(1),
+.portfolio-loading .methodology-card:nth-child(1),
+.portfolio-loading .citation-card:nth-child(1),
+.portfolio-loading .skills-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.portfolio-loading .achievement-card:nth-child(2),
+.portfolio-loading .expertise-card:nth-child(2),
+.portfolio-loading .funding-card:nth-child(2),
+.portfolio-loading .evaluation-card:nth-child(2),
+.portfolio-loading .methodology-card:nth-child(2),
+.portfolio-loading .citation-card:nth-child(2),
+.portfolio-loading .skills-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.portfolio-loading .achievement-card:nth-child(3),
+.portfolio-loading .expertise-card:nth-child(3),
+.portfolio-loading .funding-card:nth-child(3),
+.portfolio-loading .evaluation-card:nth-child(3),
+.portfolio-loading .methodology-card:nth-child(3),
+.portfolio-loading .citation-card:nth-child(3),
+.portfolio-loading .skills-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Enhanced accessibility for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Better keyboard navigation indicators */
+@media (prefers-reduced-motion: no-preference) {
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    transition: outline-color 0.2s ease;
+  }
+}
+
+/* High contrast mode optimizations */
+@media (prefers-contrast: high) {
+  .skill-fill {
+    background: #000 !important;
+  }
+
+  .timeline-year {
+    background: #000 !important;
+    color: #fff !important;
+  }
+
+  .certification-badge {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .achievement-card,
+  .expertise-card,
+  .funding-card,
+  .evaluation-card,
+  .methodology-card,
+  .citation-card,
+  .skills-card {
+    animation: none;
+    transition: none;
+  }
+
+  .skill-fill {
+    transition: none;
+  }
 }
 
 /* 6. PERFORMANCE OPTIMIZATIONS --------------------------------- */
