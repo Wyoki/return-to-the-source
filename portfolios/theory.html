@@ -345,6 +345,23 @@
   </footer>
 
   <script>
+    // Diagnostic logs for hero rendering analysis
+    console.log('=== THEORY PAGE HERO DIAGNOSTICS ===');
+    console.log('Body classes:', document.body.className);
+    console.log('Hero element found:', !!document.querySelector('.hero'));
+    console.log('Hero image element:', document.querySelector('.hero__image'));
+    console.log('Hero image src:', document.querySelector('.hero__image')?.src);
+    console.log('Hero logo element:', document.querySelector('.hero__logo'));
+    console.log('Hero logo src:', document.querySelector('.hero__logo')?.src);
+
+    // Check if CSS is loaded
+    const heroElement = document.querySelector('.hero');
+    if (heroElement) {
+      const computedStyle = window.getComputedStyle(heroElement);
+      console.log('Hero computed background:', computedStyle.background);
+      console.log('Hero computed min-height:', computedStyle.minHeight);
+    }
+
     // Enhanced mobile navigation with better accessibility
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-menu');

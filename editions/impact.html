@@ -755,6 +755,22 @@
     }
   </style>
   <script>
+    // Diagnostic logs for hero rendering analysis
+    console.log('=== IMPACT PAGE HERO DIAGNOSTICS ===');
+    console.log('Body classes:', document.body.className);
+    console.log('Hero element found:', !!document.querySelector('.hero'));
+    console.log('Hero heading element:', document.querySelector('#hero-heading'));
+    console.log('Hero subtitle element:', document.querySelector('.subtitle'));
+
+    // Check if CSS is loaded
+    const heroElement = document.querySelector('.hero');
+    if (heroElement) {
+      const computedStyle = window.getComputedStyle(heroElement);
+      console.log('Hero computed background:', computedStyle.background);
+      console.log('Hero computed min-height:', computedStyle.minHeight);
+      console.log('Hero computed background-image:', computedStyle.backgroundImage);
+    }
+
     // Enhanced accessibility and interaction
     document.addEventListener('DOMContentLoaded', function() {
       // Debug: Check if hero background image is applied

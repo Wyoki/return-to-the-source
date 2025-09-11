@@ -24,7 +24,7 @@
       hsl(var(--hue-earth) 35% 15% / 0.65) 35%,
       hsl(var(--hue-forest) 40% 10% / 0.9) 100%
     ),
-    url("../img/events/P1092099.webp") center/cover no-repeat;
+    url("../../img/events/P1092099.webp") center/cover no-repeat;
 
   color: var(--text-inverse);
   position: relative;

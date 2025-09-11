@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -177,12 +178,31 @@
 
     /* Hero section */
     .filmmakers-hero {
-      background: linear-gradient(135deg, hsl(35 45% 8% / 0.85) 0%, hsl(35 35% 15% / 0.65) 35%, hsl(120 40% 10% / 0.9) 100%),
-                  radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.3)),
-                  linear-gradient(45deg, #d4a934, #e6c565);
+      background: linear-gradient(135deg, hsl(35 45% 8% / 0.5) 0%, hsl(35 35% 15% / 0.4) 35%, hsl(120 40% 10% / 0.6) 100%),
+        radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.3)),
+        linear-gradient(45deg, #d4a934, #e6c565) / 0.5,
+        url('img/events/night_film_screening.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: scroll;
       color: var(--text-inverse);
       padding: var(--space-16) 0;
       text-align: center;
+      position: relative;
+    }
+
+    .filmmakers-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .filmmakers-hero .container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, hsl(35 45% 8% / 0.8) 0%, hsl(35 35% 15% / 0.7) 35%, hsl(120 40% 10% / 0.9) 100%),
+        radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.5));
+      z-index: 1;
     }
 
     .filmmakers-hero .container {
@@ -576,7 +596,7 @@
   </style>
 </head>
 
-<body>
+<body class="filmmakers">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="site-header">

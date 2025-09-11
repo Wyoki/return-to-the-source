@@ -25,6 +25,10 @@ class InteractionManager {
      * This is the main entry point for setting up the enhanced interactions
      */
     init() {
+        console.log('=== JS INTERACTION MANAGER DIAGNOSTICS ===');
+        console.log('Bundle.js loaded successfully');
+        console.log('Document ready state:', document.readyState);
+
         // Wait for DOM to be fully ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.setupAllSystems());
