@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey of Resilience - Return to the Source</title>
+    <meta name="description" content="A poetic reflection on resilience, survival, and the enduring strength of African communities in the face of historical challenges.">
+    <link rel="stylesheet" href="css/pages/theme.unified.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <style>
+        /* Poem-specific styling integrated with unified theme */
+        .poem-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(24, 85, 35, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%),
+                        url('img/events/Ovaherero_women.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poem-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(24, 85, 35, 0.1) 0%, transparent 70%);
+        }
+
+        .poem-hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .poem-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .poem-subtitle {
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            max-width: 60ch;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .poem-content {
+            background: var(--surface-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-12);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            margin: var(--space-8) 0;
+            position: relative;
+        }
+
+        .poem-text {
+            font-family: 'Inter', sans-serif;
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            text-align: justify;
+            color: var(--text-primary);
+            max-width: 70ch;
+            margin: 0 auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+
+        .poem-highlight {
+            color: var(--primary);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .poem-emphasis {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .poem-strong {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .poem-signature {
+            margin-top: var(--space-8);
+            text-align: right;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: var(--text-base);
+            border-top: 1px solid var(--border-light);
+            padding-top: var(--space-4);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .poem-hero {
+                min-height: 50vh;
+                padding: var(--space-8) 0;
+            }
+
+            .poem-content {
+                padding: var(--space-6);
+                margin: var(--space-4) 0;
+            }
+
+            .poem-text {
+                font-size: var(--text-base);
+                line-height: 1.7;
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.3s; }
+        .fade-in:nth-child(3) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="img/logos/return-to-the-source.webp" alt="Return to the Source" width="50" height="50">
+                <span>Return to the Source</span>
+            </a>
+
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="editions/RTS1.html">RTS1</a></li>
+                    <li><a href="blog/healing-through-film.html">Blog</a></li>
+                    <li><a href="filmmakers.html">Filmmakers</a></li>
+                </ul>
+                <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="poem-hero">
+        <div class="container">
+            <h1 class="poem-title">The Journey of Resilience</h1>
+            <p class="poem-subtitle">A testament to survival, strength, and the enduring spirit of African communities</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="poem-content fade-in">
+                    <div class="poem-text">
+                        <span class="poem-highlight">Not there yet, but we are here!</span> The journey was perilous but somehow we arrived, lessons we derived, of how to hypothetically thrive, but things on the ground are different. You respect the grind but the feeling isn't always mutual, came up short as usual, but it's all about <span class="poem-emphasis">the long game</span>. Haven't seen success yet so I belabor the merits of failure, embody the tenets of resilience. <span class="poem-strong">I'm, we are still here</span>, somehow we survived, deprived, somehow we revived the teachings of our ancestors recognizing that the answer may only breed more questions, like what next, why now, are we there yet? The spoon they gave us is bent but we didn't relent—<span class="poem-highlight">rediscovered our hands</span>, that's how we survived.
+                    </div>
+
+                    <div class="poem-signature">
+                        ~ A voice of enduring hope
+                    </div>
+                </div>
+
+                <!-- Context Section -->
+                <div class="section bg-light" style="margin-top: var(--space-8);">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">In the Context of Return to the Source</h2>
+                            <p class="section-intro">This poem reflects the resilience that defines our work at Return to the Source. Through trauma-informed filmmaking and cultural reclamation, we honor the enduring strength of African communities while building pathways for future generations.</p>
+                        </div>
+
+                        <div class="btn-group" style="justify-content: center; margin-top: var(--space-6);">
+                            <a href="index.html#four-pillar-leadership" class="btn btn-primary">Meet Our Leadership Team</a>
+                            <a href="mailto:perivi@rts.africa" class="btn btn-outline">Connect With Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Return to the Source</h3>
+                    <p>Pan-African Film Lab dedicated to historical reckoning, memory preservation, and community healing through cinema and multimedia arts.</p>
+                    <div style="margin-top: var(--space-4);">
+                        <a href="https://www.instagram.com/returntothesource_filmlab/" style="display: inline-block; padding: var(--space-2); border-radius: var(--radius-md); background: rgba(255,255,255,0.1); transition: background 200ms ease;" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Navigate</h3>
+                    <ul>
+                        <li><a href="about.html">Mission & Values</a></li>
+                        <li><a href="editions/RTS1.html">RTS 1: Origins</a></li>
+                        <li><a href="editions/impact.html">Impact & Metrics</a></li>
+                        <li><a href="blog/healing-through-film.html">Blog & Stories</a></li>
+                        <li><a href="about.html">Get Involved</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Team Portfolios</h3>
+                    <ul>
+                        <li><a href="portfolios/theory.html">Theory & Research</a></li>
+                        <li><a href="portfolios/infrastructure.html">Infrastructure & Strategy</a></li>
+                        <li><a href="portfolios/cinema.html">Cinema & Production</a></li>
+                        <li><a href="portfolios/healing.html">Healing & Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect & Support</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <a href="mailto:perivi@rts.africa" style="display: block; margin-bottom: var(--space-2);">
+                            perivi@rts.africa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 Return to the Source Film Lab. All rights reserved.</p>
+                <div style="display: flex; gap: var(--space-4); font-size: var(--text-sm);">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="accessibility.html">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bundle.js"></script>
+</body>
+</html>
