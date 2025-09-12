@@ -259,36 +259,74 @@
 
         .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
             margin-top: 2rem;
+            justify-items: center;
         }
 
-        .partner-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 2rem;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+        .partner-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .partner-logo {
-            height: 60px;
-            width: auto;
+            font-size: 4rem;
             margin-bottom: 1rem;
             filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Adjust specific logo sizes for better consistency */
+        .partner-item:nth-child(1) .partner-logo { /* Mastercard */
+            font-size: 3.5rem;
+        }
+
+        .partner-item:nth-child(2) .partner-logo { /* Goethe */
+            font-size: 4.2rem;
+        }
+
+        .partner-item:nth-child(3) .partner-logo { /* Old Location */
+            font-size: 3.8rem;
+        }
+
+        .partner-item:nth-child(4) .partner-logo { /* Mucii */
+            font-size: 4rem;
+        }
+
+        .partner-item:nth-child(5) .partner-logo { /* Berlinale */
+            font-size: 3.8rem;
+        }
+
+        .partner-item:nth-child(6) .partner-logo { /* Namibia Film Commission */
+            font-size: 4.2rem;
         }
 
         .partner-name {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            text-align: center;
+            color: white;
         }
 
         .partner-description {
-            opacity: 0.9;
-            line-height: 1.6;
+            opacity: 0.8;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            text-align: center;
+            max-width: 180px;
+            margin: 0 auto;
         }
 
         .contact-section {
@@ -340,7 +378,13 @@
             }
 
             .partners-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 2rem;
+            }
+
+            .partner-logo {
+                font-size: 3rem !important;
+                min-height: 60px;
             }
 
             .contact-grid {
@@ -815,38 +859,38 @@
         </div>
 
         <div class="partners-grid">
-            <div class="partner-card">
-                <div class="partner-logo" style="font-size: 3rem; margin-bottom: 1rem;">💳</div>
+            <div class="partner-item">
+                <div class="partner-logo">💳</div>
                 <h3 class="partner-name">Mastercard Foundation</h3>
                 <p class="partner-description">Funding partner providing core financial support and strategic investment in transformative cultural programming.</p>
             </div>
 
-            <div class="partner-card">
-                <div class="partner-logo" style="font-size: 3rem; margin-bottom: 1rem;">🇩🇪</div>
+            <div class="partner-item">
+                <div class="partner-logo">🇩🇪</div>
                 <h3 class="partner-name">Goethe-Institut Namibia</h3>
                 <p class="partner-description">Cultural institution facilitating meaningful dialogue between German colonial history and contemporary Namibian narratives.</p>
             </div>
 
-            <div class="partner-card">
-                <div class="partner-logo" style="font-size: 3rem; margin-bottom: 1rem;">🎬</div>
+            <div class="partner-item">
+                <div class="partner-logo">🎬</div>
                 <h3 class="partner-name">Old Location Films</h3>
                 <p class="partner-description">Production partner contributing essential expertise and ensuring authentic representation of Namibian stories.</p>
             </div>
 
-            <div class="partner-card">
-                <div class="partner-logo" style="font-size: 3rem; margin-bottom: 1rem;">🎭</div>
+            <div class="partner-item">
+                <div class="partner-logo">🎭</div>
                 <h3 class="partner-name">Mucii Pictures</h3>
                 <p class="partner-description">Lead organization coordinating the programme and bringing together diverse stakeholders for successful execution.</p>
             </div>
 
-            <div class="partner-card">
-                <div class="partner-logo" style="font-size: 3rem; margin-bottom: 1rem;">🎪</div>
+            <div class="partner-item">
+                <div class="partner-logo">🎪</div>
                 <h3 class="partner-name">Berlinale Film Festival</h3>
                 <p class="partner-description">International festival partner providing global recognition and networking opportunities for African filmmakers.</p>
             </div>
 
-            <div class="partner-card">
-                <div class="partner-logo" style="font-size: 3rem; margin-bottom: 1rem;">🇳🇦</div>
+            <div class="partner-item">
+                <div class="partner-logo">🇳🇦</div>
                 <h3 class="partner-name">Namibia Film Commission</h3>
                 <p class="partner-description">National support partner providing regulatory guidance and industry expertise for film production in Namibia.</p>
             </div>
