@@ -826,6 +826,22 @@ body {
    transform: scale(1.05);
  }
 
+ /* Specific styling for Mucii Pictures SVG logo */
+ .partner-item img[src*="mucii-logo1.svg"] {
+   width: 120px !important;
+   height: 120px !important;
+   max-width: 120px !important;
+   max-height: 120px !important;
+   object-fit: contain !important;
+   filter: brightness(1.2) contrast(1.2) !important;
+   transition: all var(--transition-base) var(--ease-out) !important;
+ }
+
+ .partner-item:hover img[src*="mucii-logo1.svg"] {
+   filter: brightness(1.3) contrast(1.3) drop-shadow(0 0 20px rgba(139, 69, 19, 0.6)) !important;
+   transform: scale(1.1) !important;
+ }
+
  /* Mastercard Logo Specific Styling */
  .mastercard-logo {
    position: relative;

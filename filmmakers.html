@@ -178,10 +178,7 @@
 
     /* Hero section */
     .filmmakers-hero {
-      background: linear-gradient(135deg, hsl(35 45% 8% / 0.5) 0%, hsl(35 35% 15% / 0.4) 35%, hsl(120 40% 10% / 0.6) 100%),
-        radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.3)),
-        linear-gradient(45deg, #d4a934, #e6c565) / 0.5,
-        url('img/events/night_film_screening.webp');
+      background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('img/events/edition_1.webp');
       background-size: cover;
       background-position: center;
       background-attachment: scroll;
@@ -194,15 +191,6 @@
     .filmmakers-hero .container {
       position: relative;
       z-index: 2;
-    }
-
-    .filmmakers-hero .container::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, hsl(35 45% 8% / 0.8) 0%, hsl(35 35% 15% / 0.7) 35%, hsl(120 40% 10% / 0.9) 100%),
-        radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.5));
-      z-index: 1;
     }
 
     .filmmakers-hero .container {
@@ -374,6 +362,21 @@
       margin-bottom: var(--space-4);
       border: 4px solid var(--surface-primary);
       box-shadow: var(--shadow-sm);
+    }
+
+    .facilitator-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: var(--space-4);
+      border: 4px solid var(--surface-primary);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--duration-normal);
+    }
+
+    .facilitator-photo:hover {
+      transform: scale(1.05);
     }
 
     /* Facilitators section */
@@ -751,30 +754,35 @@
 
         <div class="facilitators-grid">
           <article class="facilitator-card">
-            <h3 class="facilitator-name">Dr. Nashilongweshipwe Mushaandja</h3>
-            <p class="facilitator-role">Performance Scholar & Cultural Worker</p>
+                       <h3 class="facilitator-name">Dr. Nashilongweshipwe Mushaandja</h3>
+                       <img class="facilitator-photo" src="img/team/mushaandja.webp" alt="Profile photo of Dr. Nashilongweshipwe Mushaandja">
+                       <p class="facilitator-role">Performance Scholar & Cultural Worker</p>
             <p class="facilitator-bio">Resident cultural worker, educator, and writer at Owela Live Arts Collective Trust since 2014. As a performance artist, his practice focuses on African performance archives and public cultures of social movements. Holds a PhD in Performance Studies from the University of Cape Town and teaches at the University of Namibia.</p>
           </article>
 
           <article class="facilitator-card">
+            <img class="facilitator-photo" src="img/filmmakers/khalid shamis.webp" alt="Profile photo of Khalid Shamis">
             <h3 class="facilitator-name">Khalid Shamis</h3>
             <p class="facilitator-role">Documentary Director & Editor</p>
             <p class="facilitator-bio">Documentary director, producer, and editor with a preference for editing. Doctoral fellow at the Centre for Humanities Research at the University of the Western Cape and director of Rough Cut Lab Africa, the only lab dedicated to supporting story construction for African documentaries on the continent.</p>
           </article>
 
           <article class="facilitator-card">
-            <h3 class="facilitator-name">Perivi Katjavivi</h3>
-            <p class="facilitator-role">Lead Facilitator & Filmmaker</p>
+                       <h3 class="facilitator-name">Perivi Katjavivi</h3>
+                       <img class="facilitator-photo" src="img/team/perivi.webp" alt="Profile photo of Perivi Katjavivi">
+                       <p class="facilitator-role">Lead Facilitator & Filmmaker</p>
             <p class="facilitator-bio">Distinguished Namibian filmmaker whose films have premiered at major festivals including Berlinale, Rotterdam, and Busan. His recent feature "Under the Hanging Tree" was Namibia's first Academy Awards submission. Currently pursuing a PhD in History at the University of the Western Cape, researching colonial memory sites.</p>
           </article>
 
           <article class="facilitator-card">
-            <h3 class="facilitator-name">Fibby Kioria</h3>
-            <p class="facilitator-role">Program Director & Producer</p>
+                       <h3 class="facilitator-name">Fibby Kioria</h3>
+                       <img class="facilitator-photo" src="img/team/fibby.webp" alt="Profile photo of Fibby Kioria">
+                       <p class="facilitator-role">Program Director & Producer</p>
             <p class="facilitator-bio">Accomplished producer with over thirty short films and founder of Mucii Pictures. In 2018, she co-founded Manyatta Screenings, an online and outdoor short film festival in Kenya. Founding member of the East African Screen Collective advocating for narrative sovereignty in screen-based sectors.</p>
           </article>
 
           <article class="facilitator-card">
+            <img class="facilitator-photo" src="img/filmmakers/Merapi Gottlieb.webp" alt="Profile photo of Merapi Gottlieb Kazombiaze">
             <h3 class="facilitator-name">Merapi Gottlieb Kazombiaze</h3>
             <p class="facilitator-role">Community Historian & Educator</p>
             <p class="facilitator-bio">Herero historian and teacher from Okandjira, Namibia, dedicated to preserving the memory of the Herero Genocide. Raised by his grandmother, a survivor of the 1904 German colonial massacres. Has taught in his community for 38 years and maintains connections with Germany through friends and family.</p>
