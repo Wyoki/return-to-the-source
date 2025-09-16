@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return to the Source - Team Profiles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --namibian-earth: #8B4513;
+            --kenyan-gold: #B8860B;
+            --healing-green: #2F4F2F;
+            --warm-ivory: #F5F5DC;
+            --deep-red: #A0522D;
+            --charcoal: #36454F;
+            --soft-gray: #f8f8f5;
+            --accent-blue: #4A6FA5;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background: var(--warm-ivory);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: linear-gradient(135deg, var(--namibian-earth), var(--deep-red));
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--kenyan-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--warm-ivory);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--kenyan-gold);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        /* Page System */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, 
+                rgba(139, 69, 19, 0.9), 
+                rgba(160, 82, 45, 0.8)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="bg" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23F5F5DC;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%238B4513;stop-opacity:0.3"/></radialGradient></defs><rect width="1000" height="1000" fill="url(%23bg)"/></svg>');
+            color: var(--warm-ivory);
+            padding: 4rem 0 6rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(184, 134, 11, 0.1) 35px,
+                rgba(184, 134, 11, 0.1) 70px
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, var(--kenyan-gold), var(--warm-ivory));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        /* Gender Parity Section */
+        .gender-parity-section {
+            background: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--namibian-earth);
+            margin-bottom: 1rem;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--kenyan-gold);
+            margin: 0 auto 2rem;
+        }
+
+        .gender-parity-visual {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .parity-chart {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .parity-bar {
+            display: flex;
+            height: 60px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .parity-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .parity-segment.female {
+            background: var(--deep-red);
+        }
+
+        .parity-segment.male {
+            background: var(--accent-blue);
+        }
+
+        .parity-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .legend-color.female {
+            background: var(--deep-red);
+        }
+
+        .legend-color.male {
+            background: var(--accent-blue);
+        }
+
+        .parity-text {
+            text-align: left;
+        }
+
+        .parity-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Team Preview Cards */
+        .team-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: rgba(245, 245, 220, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: left;
+            color: var(--charcoal);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--kenyan-gold);
+        }
+
+        .team-card.perivi { border-left: 5px solid var(--accent-blue); }
+        .team-card.fibby { border-left: 5px solid var(--kenyan-gold); }
+        .team-card.ntare { border-left: 5px solid var(--healing-green); }
+        .team-card.mariane { border-left: 5px solid var(--deep-red); }
+
+        .team-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--namibian-earth);
+        }
+
+        .team-title {
+            font-size: 1rem;
+            color: var(--deep-red);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .team-preview-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Individual Profile Pages */
+        .profile-header {
+            background: linear-gradient(135deg, var(--soft-gray), var(--warm-ivory));
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--kenyan-gold);
+        }
+
+        .profile-name-large {
+            font-size: 3rem;
+            color: var(--namibian-earth);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title-large {
+            font-size: 1.3rem;
+            color: var(--deep-red);
+            font-style: italic;
+        }
+
+        .profile-content {
+            padding: 4rem 0;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--namibian-earth);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--kenyan-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-content {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .profile-main {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .section-heading {
+            font-size: 1.8rem;
+            color: var(--namibian-earth);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--kenyan-gold);
+            padding-left: 1rem;
+        }
+
+        .achievement-item {
+            background: var(--soft-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--deep-red);
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            color: var(--namibian-earth);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background: var(--soft-gray);
+            padding: 4rem 0;
+        }
+
+        .partners-text {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .partner-logo {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        /* Join Team Section */
+        .join-team {
+            background: linear-gradient(135deg, var(--healing-green), var(--accent-blue));
+            color: var(--warm-ivory);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .join-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .join-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--kenyan-gold);
+            color: var(--charcoal);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .team-preview {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gender-parity-visual {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">Return to the Source</div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link active" data-page="team">Our Team</a>
+                    <a href="#" class="nav-link" data-page="perivi">Perivi Katjavivi</a>
+                    <a href="#" class="nav-link" data-page="fibby">Fibby Kioria</a>
+                    <a href="#" class="nav-link" data-page="ntare">Ntare Guma</a>
+                    <a href="#" class="nav-link" data-page="mariane">Mariane Katjivena</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Team Overview Page -->
+    <div class="page active" id="team">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1 class="hero-title">Our Team</h1>
+                    <p class="hero-subtitle">Meet the diverse voices behind Return to the Source</p>
+                    <p class="hero-description">
+                        Our team brings together expertise in filmmaking, cultural work, performance, and production to create a comprehensive environment for nurturing African cinema and supporting emerging filmmakers across the continent.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gender Parity Section -->
+        <section class="gender-parity-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Gender Parity in Action</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="gender-parity-visual">
+                    <div class="parity-chart fade-in">
+                        <div class="parity-bar">
+                            <div class="parity-segment female" style="width: 50%;">50%</div>
+                            <div class="parity-segment male" style="width: 50%;">50%</div>
+                        </div>
+                        <div class="parity-legend">
+                            <div class="legend-item">
+                                <span class="legend-color female"></span>
+                                <span class="legend-text">Female Filmmakers</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color male"></span>
+                                <span class="legend-text">Male Filmmakers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parity-text fade-in">
+                        <p>At Return to the Source, we are committed to gender parity across all aspects of our film lab. Our team, mentors, and selected filmmakers reflect this commitment, with equal representation of women and men in leadership and creative roles.</p>
+                        <p>This approach ensures diverse perspectives and experiences inform our work, enriching the stories we help bring to life and challenging traditional power dynamics in the film industry.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Members Preview -->
+        <section class="container" style="padding: 4rem 0;">
+            <div class="section-header fade-in">
+                <h2 style="text-align: center; font-size: 2.5rem; color: var(--namibian-earth); margin-bottom: 3rem;">Core Team</h2>
+            </div>
+            <div class="team-preview fade-in">
+                <div class="team-card perivi" data-page="perivi">
+                    <h3 class="team-name">Perivi Katjavivi</h3>
+                    <p class="team-title">Founder & Creative Director</p>
+                    <p class="team-preview-text">
+                        Perivi is a Namibian filmmaker and academic whose work explores themes of identity, memory, and history. He founded Return to the Source to create a space for Pan-African storytelling and decolonial filmmaking practices.
+                    </p>
+                </div>
+                
+                <div class="team-card fibby" data-page="fibby">
+                    <h3 class="team-name">Fibby Kioria</h3>
+                    <p class="team-title">Program Director</p>
+                    <p class="team-preview-text">
+                        Fibby is a Kenyan film producer and cultural worker with extensive experience in developing filmmaker training programs across Africa. She oversees the curriculum and mentorship structure of the film lab.
+                    </p>
+                </div>
+                
+                <div class="team-card ntare" data-page="ntare">
+                    <h3 class="team-name">Ntare Guma Mbaho Mwine</h3>
+                    <p class="team-title">Lead Mentor</p>
+                    <p class="team-preview-text">
+                        Ntare is a Ugandan-American actor, photographer, and filmmaker known for his work on stage, film, and television. He brings his multidisciplinary approach to storytelling to the film lab as a mentor and advisor.
+                    </p>
+                </div>
+                
+                <div class="team-card mariane" data-page="mariane">
+                    <h3 class="team-name">Mariane Katjivena</h3>
+                    <p class="team-title">Production Coordinator</p>
+                    <p class="team-preview-text">
+                        Mariane is a Namibian filmmaker and production specialist who manages the logistical aspects of the film lab. Her expertise ensures smooth operations and creates an environment where creativity can flourish.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 style="text-align: center; font-size: 2.5rem; color: var(--namibian-earth); margin-bottom: 1rem;">Our Partners</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="partners-text fade-in">
+                    <p>Return to the Source collaborates with organizations that share our commitment to nurturing African cinema and supporting emerging filmmakers. Our partners provide resources, expertise, and platforms that amplify the impact of our work.</p>
+                </div>
+                <div class="partners-grid fade-in">
+                    <div class="partner-logo">
+                        <span style="color: var(--namibian-earth); font-weight: bold;">Old Location Films</span>
+                    </div>
+                    <div class="partner-logo">
+                        <span style="color: var(--namibian-earth); font-weight: bold;">Partner Organization</span>
+                    </div>
+                    <div class="partner-logo">
+                        <span style="color: var(--namibian-earth); font-weight: bold;">Cultural Institution</span>
+                    </div>
+                    <div class="partner-logo">
+                        <span style="color: var(--namibian-earth); font-weight: bold;">Film Foundation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Team Section -->
+        <section class="join-team">
+            <div class="container">
+                <div class="join-content fade-in">
+                    <h2>Join Our Community</h2>
+                    <p>We're always looking for passionate individuals to join our network of mentors, collaborators, and supporters. If you're interested in contributing to the Return to the Source Film Lab, we'd love to hear from you.</p>
+                    <a href="#" class="btn">Get Involved</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Individual Team Member Profiles -->
+    
+    <!-- Perivi Katjavivi Profile -->
+    <div class="page" id="perivi">
+        <div class="profile-header" style="background: linear-gradient(135deg, var(--accent-blue), var(--namibian-earth));">
+            <div class="container">
+                <h1 class="profile-name-large" style="color: var(--warm-ivory);">Perivi Katjavivi</h1>
+                <p class="profile-title-large" style="color: var(--kenyan-gold);">Founder & Creative Director</p>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div class="container">
+                <div class="profile-grid fade-in">
+                    <div class="profile-sidebar">
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Background</h3>
+                            <div class="sidebar-content">
+                                <p><strong>Nationality:</strong> Namibian</p>
+                                <p><strong>Focus:</strong> Identity, Memory, History</p>
+                                <p><strong>Specialization:</strong> Pan-African Storytelling</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Role at Return to Source</h3>
+                            <div class="sidebar-content">
+                                <p>As founder, Perivi provides the creative vision and philosophical foundation for the film lab's approach to decolonial filmmaking practices.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Areas of Expertise</h3>
+                            <div class="sidebar-content">
+                                <p>• Academic research in cinema<br>
+                                • Cultural identity exploration<br>
+                                • Historical narrative development<br>
+                                • Cross-cultural collaboration</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-main">
+                        <h2 class="section-heading">Vision & Philosophy</h2>
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                            Perivi Katjavivi brings a unique academic and artistic perspective to Return to the Source, combining scholarly research with practical filmmaking experience. His work explores the intersection of personal and collective memory, examining how cinema can serve as a tool for cultural healing and identity formation in post-colonial African contexts.
+                        </p>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Academic Foundation</h3>
+                            <p>His research in cinema and cultural studies provides the theoretical framework that distinguishes Return to the Source from traditional film training programs. This academic grounding ensures that practical filmmaking skills are taught within a broader context of cultural and historical understanding.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Decolonial Filmmaking Practices</h3>
+                            <p>Perivi's approach to filmmaking challenges conventional Western narrative structures, instead drawing from African storytelling traditions and epistemologies. This methodology helps participants develop authentic voices that honor their cultural heritage while creating contemporary cinema.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Pan-African Collaboration</h3>
+                            <p>His vision extends beyond individual filmmaker development to creating networks of collaboration across the African continent. Through Return to the Source, he fosters connections that enable knowledge sharing and collective growth within African cinema communities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fibby Kioria Profile -->
+    <div class="page" id="fibby">
+        <div class="profile-header" style="background: linear-gradient(135deg, var(--kenyan-gold), var(--deep-red));">
+            <div class="container">
+                <h1 class="profile-name-large" style="color: var(--warm-ivory);">Fibby Kioria</h1>
+                <p class="profile-title-large" style="color: var(--charcoal);">Program Director</p>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div class="container">
+                <div class="profile-grid fade-in">
+                    <div class="profile-sidebar">
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Background</h3>
+                            <div class="sidebar-content">
+                                <p><strong>Nationality:</strong> Kenyan</p>
+                                <p><strong>Profession:</strong> Film Producer & Cultural Worker</p>
+                                <p><strong>Experience:</strong> Film Training Programs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Program Leadership</h3>
+                            <div class="sidebar-content">
+                                <p>Fibby oversees the curriculum development and mentorship structure, ensuring that participants receive comprehensive training that balances technical skills with cultural awareness.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Continental Network</h3>
+                            <div class="sidebar-content">
+                                <p>Her extensive experience across African film communities enables her to connect participants with opportunities and collaborators throughout the continent.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-main">
+                        <h2 class="section-heading">Program Development Expertise</h2>
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                            Fibby Kioria brings invaluable experience in developing and implementing filmmaker training programs across Africa. Her approach combines practical production skills with cultural understanding, ensuring that participants develop both technical competency and authentic creative voices.
+                        </p>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Curriculum Design</h3>
+                            <p>Her expertise in program development ensures that Return to the Source offers a comprehensive learning experience that addresses all aspects of filmmaking, from storytelling and production techniques to distribution strategies and industry navigation.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Mentorship Structure</h3>
+                            <p>Fibby has developed innovative mentorship models that pair emerging filmmakers with experienced industry professionals, creating supportive learning environments that extend beyond formal training periods.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Cultural Integration</h3>
+                            <p>Her work ensures that technical training is always grounded in cultural context, helping participants understand how their personal and community stories can be effectively translated into compelling cinema that resonates with both local and international audiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ntare Guma Profile -->
+    <div class="page" id="ntare">
+        <div class="profile-header" style="background: linear-gradient(135deg, var(--healing-green), var(--accent-blue));">
+            <div class="container">
+                <h1 class="profile-name-large" style="color: var(--warm-ivory);">Ntare Guma Mbaho Mwine</h1>
+                <p class="profile-title-large" style="color: var(--kenyan-gold);">Lead Mentor</p>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div class="container">
+                <div class="profile-grid fade-in">
+                    <div class="profile-sidebar">
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Background</h3>
+                            <div class="sidebar-content">
+                                <p><strong>Nationality:</strong> Ugandan-American</p>
+                                <p><strong>Profession:</strong> Actor, Photographer, Filmmaker</p>
+                                <p><strong>Medium:</strong> Stage, Film, Television</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Multidisciplinary Approach</h3>
+                            <div class="sidebar-content">
+                                <p>Ntare brings his extensive experience across multiple creative mediums to provide comprehensive mentorship that encompasses all aspects of visual storytelling.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Mentorship Philosophy</h3>
+                            <div class="sidebar-content">
+                                <p>His approach emphasizes the integration of performance, visual composition, and narrative structure in creating authentic cinematic experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-main">
+                        <h2 class="section-heading">Multidisciplinary Expertise</h2>
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                            Ntare Guma Mbaho Mwine brings a unique multidisciplinary perspective to Return to the Source, combining his experience as an accomplished actor, photographer, and filmmaker. His diverse background enables him to guide participants in understanding storytelling from multiple angles and creative approaches.
+                        </p>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Performance Integration</h3>
+                            <p>His extensive acting experience across stage, film, and television provides invaluable insight into character development and performance direction. He helps emerging filmmakers understand how to work effectively with actors and create authentic, compelling performances.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Visual Storytelling</h3>
+                            <p>His work as a photographer brings a sophisticated understanding of visual composition, lighting, and the power of images to convey emotion and meaning. This expertise is essential in helping participants develop their cinematic eye and visual storytelling skills.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Cross-Cultural Bridge</h3>
+                            <p>As a Ugandan-American artist, Ntare understands the challenges and opportunities of working across cultural contexts. His mentorship helps participants navigate the balance between cultural authenticity and international accessibility in their work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mariane Katjivena Profile -->
+    <div class="page" id="mariane">
+        <div class="profile-header" style="background: linear-gradient(135deg, var(--deep-red), var(--namibian-earth));">
+            <div class="container">
+                <h1 class="profile-name-large" style="color: var(--warm-ivory);">Mariane Katjivena</h1>
+                <p class="profile-title-large" style="color: var(--kenyan-gold);">Production Coordinator</p>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div class="container">
+                <div class="profile-grid fade-in">
+                    <div class="profile-sidebar">
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Background</h3>
+                            <div class="sidebar-content">
+                                <p><strong>Nationality:</strong> Namibian</p>
+                                <p><strong>Profession:</strong> Filmmaker & Production Specialist</p>
+                                <p><strong>Focus:</strong> Logistics & Operations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Operational Excellence</h3>
+                            <div class="sidebar-content">
+                                <p>Mariane ensures that all logistical aspects of the film lab run smoothly, creating an environment where participants can focus entirely on their creative development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Creative Support</h3>
+                            <div class="sidebar-content">
+                                <p>Her production expertise helps participants understand the practical aspects of filmmaking while maintaining focus on artistic vision and cultural authenticity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-main">
+                        <h2 class="section-heading">Production Excellence</h2>
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                            Mariane Katjivena plays a crucial role in ensuring that Return to the Source operates with the highest level of professional standards. Her expertise in production management creates the supportive infrastructure necessary for successful creative work and learning.
+                        </p>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Logistical Coordination</h3>
+                            <p>Her meticulous attention to detail ensures that all aspects of the film lab—from equipment management to scheduling and location coordination—operate seamlessly, allowing participants to focus entirely on their creative development.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Production Training</h3>
+                            <p>Beyond coordination, Mariane provides valuable training in production management skills, teaching participants how to organize and execute film projects efficiently while maintaining high artistic standards.</p>
+                        </div>
+
+                        <div class="achievement-item slide-in-left">
+                            <h3 class="achievement-title">Creative Environment</h3>
+                            <p>Her work creates an environment where creativity can flourish by removing logistical barriers and ensuring that participants have access to the resources and support they need throughout their learning journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page Navigation System
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+        const teamCards = document.querySelectorAll('.team-card');
+
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Trigger animations for new page
+            setTimeout(() => {
+                const newPageElements = document.getElementById(pageId).querySelectorAll('.fade-in, .slide-in-left');
+                newPageElements.forEach(el => {
+                    el.classList.remove('visible');
+                    setTimeout(() => el.classList.add('visible'), 100);
+                });
+            }, 100);
+        }
+
+        // Navigation event listeners
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage(link.dataset.page);
+            });
+        });
+
+        // Team card navigation
+        teamCards.forEach(card => {
+            card.addEventListener('click', () => {
+                showPage(card.dataset.page);
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in, .slide-in-left').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced team card interactions
+        teamCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.03)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Mobile menu functionality
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                const navContainer = document.querySelector('.nav-container');
+                const navLinks = document.querySelector('.nav-links');
+                
+                if (navLinks && !document.querySelector('.mobile-menu-btn')) {
+                    navLinks.style.display = 'none';
+                    
+                    const mobileButton = document.createElement('button');
+                    mobileButton.className = 'mobile-menu-btn';
+                    mobileButton.innerHTML = '☰';
+                    mobileButton.style.cssText = `
+                        background: none;
+                        border: none;
+                        color: var(--warm-ivory);
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        padding: 0.5rem;
+                    `;
+                    navContainer.appendChild(mobileButton);
+                    
+                    mobileButton.addEventListener('click', () => {
+                        const isVisible = navLinks.style.display !== 'none';
+                        navLinks.style.display = isVisible ? 'none' : 'flex';
+                        if (!isVisible) {
+                            navLinks.style.flexDirection = 'column';
+                            navLinks.style.position = 'absolute';
+                            navLinks.style.top = '100%';
+                            navLinks.style.left = '0';
+                            navLinks.style.right = '0';
+                            navLinks.style.background = 'var(--namibian-earth)';
+                            navLinks.style.padding = '1rem';
+                            navLinks.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+                        }
+                    });
+                }
+            } else {
+                const navLinks = document.querySelector('.nav-links');
+                const mobileButton = document.querySelector('.mobile-menu-btn');
+                
+                if (navLinks) {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'row';
+                    navLinks.style.position = 'static';
+                    navLinks.style.background = 'transparent';
+                    navLinks.style.padding = '0';
+                    navLinks.style.boxShadow = 'none';
+                }
+                
+                if (mobileButton) {
+                    mobileButton.remove();
+                }
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', () => {
+            handleResize();
+            
+            // Initial animation trigger
+            setTimeout(() => {
+                document.querySelectorAll('#team .fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>

@@ -8,6 +8,7 @@
   <meta name="description" content="Meet the filmmakers, facilitators, and program details from Return to the Source's Pan-African Film Lab & Residency in Namibia.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/navigation.css">
+  <link rel="manifest" href="manifest.json">
 
   <style>
     /* Enhanced CSS with improved design tokens and accessibility */
@@ -967,5 +968,16 @@
       </div>
     </div>
   </footer>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('SW registered: ', registration);
+      })
+      .catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  }
+</script>
 </body>
 </html>

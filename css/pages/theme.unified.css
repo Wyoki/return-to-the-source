@@ -965,17 +965,36 @@ p:last-child {
   margin: 0 auto;
 }
 
-/* Page-specific hero backgrounds - Consolidated */
-.about .hero-section { background-image: url('../../img/events/night_film_screening.webp'); }
-.contact .hero-section { background-image: url('../../img/events/edition_1.webp'); }
-.edition1 .hero-section { background-image: url('../../img/events/P1092099.webp'); }
-.impact .hero-section { background-image: url('../../img/events/Ovaherero_women.webp'); }
-.team .hero-section { background-image: url('../../img/events/P1091768.webp'); }
-.portfolios .hero-section { background-image: url('../../img/partners/Goethe.webp'); }
-.theory .hero-section { background-image: url('../img/team/mushaandja.webp'); }
-.infrastructure .hero-section { background-image: url('../../img/team/fibby.webp'); }
-.cinema .hero-section { background-image: url('../../img/team/perivi.webp'); }
-.healing .hero-section { background-image: url('../../img/team/marcella.webp'); }
+/* Page-specific hero backgrounds - Consolidated with lazy loading */
+.about .hero-section { background-image: none; }
+.about .hero-section.bg-loaded { background-image: url('../../img/events/night_film_screening.webp'); }
+
+.contact .hero-section { background-image: none; }
+.contact .hero-section.bg-loaded { background-image: url('../../img/events/edition_1.webp'); }
+
+.edition1 .hero-section { background-image: none; }
+.edition1 .hero-section.bg-loaded { background-image: url('../../img/events/P1092099.webp'); }
+
+.impact .hero-section { background-image: none; }
+.impact .hero-section.bg-loaded { background-image: url('../../img/events/Ovaherero_women.webp'); }
+
+.team .hero-section { background-image: none; }
+.team .hero-section.bg-loaded { background-image: url('../../img/events/P1091768.webp'); }
+
+.portfolios .hero-section { background-image: none; }
+.portfolios .hero-section.bg-loaded { background-image: url('../../img/partners/Goethe.webp'); }
+
+.theory .hero-section { background-image: none; }
+.theory .hero-section.bg-loaded { background-image: url('../img/team/mushaandja.webp'); }
+
+.infrastructure .hero-section { background-image: none; }
+.infrastructure .hero-section.bg-loaded { background-image: url('../../img/team/fibby.webp'); }
+
+.cinema .hero-section { background-image: none; }
+.cinema .hero-section.bg-loaded { background-image: url('../../img/team/perivi.webp'); }
+
+.healing .hero-section { background-image: none; }
+.healing .hero-section.bg-loaded { background-image: url('../../img/team/marcella.webp'); }
 
 /* Responsive hero backgrounds */
 @media (max-width: 768px) {

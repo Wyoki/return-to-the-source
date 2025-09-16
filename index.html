@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="css/pages/theme.unified.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preload" as="image" href="img/logos/return-to-the-source.webp">
   <style>
     /* Hero Videos Styles - Integrated Design */
     .hero-videos {
@@ -895,5 +897,16 @@
 
 </script>
 <script src="js/bundle.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('SW registered: ', registration);
+      })
+      .catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  }
+</script>
 </body>
 </html>

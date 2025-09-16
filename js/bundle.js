@@ -58,7 +58,8 @@ class InteractionManager {
             this.setupMobileMenu();
             this.setupDropdowns();
             this.setupLazyLoading();
-            
+            this.setupLazyBackgrounds();
+
             // Form handling
             this.setupFormEnhancements();
             
@@ -396,6 +397,38 @@ class InteractionManager {
 
         images.forEach(img => imageObserver.observe(img));
         this.observers.push(imageObserver);
+    }
+
+    /**
+     * Lazy loading for CSS background images using Intersection Observer
+     */
+    setupLazyBackgrounds() {
+        if (!('IntersectionObserver' in window)) {
+            // Fallback for browsers without Intersection Observer
+            document.querySelectorAll('.hero-section').forEach(section => {
+                section.classList.add('bg-loaded');
+            });
+            return;
+        }
+
+        const bgObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('bg-loaded');
+                    bgObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px', // Start loading 50px before entering viewport
+            threshold: 0.1
+        });
+
+        // Observe all hero sections
+        document.querySelectorAll('.hero-section').forEach(section => {
+            bgObserver.observe(section);
+        });
+
+        this.observers.push(bgObserver);
     }
 
     /**

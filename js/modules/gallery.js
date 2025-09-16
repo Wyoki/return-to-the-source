@@ -83,7 +83,12 @@ export function initGallery(opts = {}) {
   items.forEach(img => {
     // Skip if already has a listener (to prevent duplicates)
     if (img._galleryListener) return;
-    
+
+    // Add lazy loading if not already present
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+
     img.style.cursor = 'zoom-in';
     img.setAttribute('tabindex', '0');
     img.setAttribute('role', 'button');

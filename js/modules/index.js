@@ -22,3 +22,6 @@ export { initGallery } from './gallery.js';
 
 // Re-export all functions from webp-support.js
 export { initWebPSupport } from './webp-support.js';
+
+// Re-export lazy background loading
+export { initLazyBackgrounds } from './lazy-bg.js';
